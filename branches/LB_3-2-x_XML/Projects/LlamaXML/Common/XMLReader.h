@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "DataInputStream.h"
+#include "InputStream.h"
 #include "TextEncoding.h"
 #include "UnicodeString.h"
 #include "ToUnicodeConverter.h"
@@ -14,7 +14,7 @@ namespace LlamaXML {
 
 	class XMLReader {
 	public:
-		XMLReader(DataInputStream & input);
+		XMLReader(InputStream & input);
 		~XMLReader();
 
 		enum NodeType {
@@ -179,7 +179,7 @@ namespace LlamaXML {
 		static const size_t kInputBufferCount = 512;
 		static const size_t kOutputBufferCount = 512;
 
-		DataInputStream &				mInput;
+		InputStream &				mInput;
 		TextEncoding					mDocumentEncoding;
 		char *							mInputBuffer;
 		char *							mInputStart;

@@ -13,11 +13,11 @@ namespace LlamaXML {
 	
 	// If this were Java, this would be an interface rather than a class.
 	
-	class DataInputStream {
+	class InputStream {
 	public:
 		virtual uint32_t ReadUpTo(char * buffer, uint32_t length) = 0;
 		virtual void Restart() = 0;
-		virtual bool EndOfFile() const = 0;
+		virtual bool EndOfFile() = 0;
 	};
 	
 }

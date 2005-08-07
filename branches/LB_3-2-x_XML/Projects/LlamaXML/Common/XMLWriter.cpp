@@ -7,7 +7,7 @@
 namespace LlamaXML {
 
 
-	XMLWriter::XMLWriter(DataOutputStream & output)
+	XMLWriter::XMLWriter(OutputStream & output)
 	: mOutput(output),
 	  mState(kStateNormal)
 	{

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "DataOutputStream.h"
+#include "OutputStream.h"
 #include <VfsMgr.h>
 
 namespace LlamaXML {
 
-	class VFSOutputStream: public DataOutputStream {
+	class VFSOutputStream: public OutputStream {
 	public:
 		VFSOutputStream(uint16_t volRefNum, const char * pathNameP);
 		~VFSOutputStream();

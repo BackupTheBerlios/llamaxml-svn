@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "DataOutputStream.h"
+#include "OutputStream.h"
 #include <vector>
 #include <string>
 
@@ -11,7 +11,7 @@ namespace LlamaXML {
 
 	class XMLWriter {
 	public:
-		XMLWriter(DataOutputStream & output);
+		XMLWriter(OutputStream & output);
 		~XMLWriter();
 		
 		void StartDocument(const char * version,
@@ -55,7 +55,7 @@ namespace LlamaXML {
     	};
 	
 	private:
-		DataOutputStream &			mOutput;
+		OutputStream &			mOutput;
 		State						mState;
 		std::vector<std::string>	mElementStack;
 	};

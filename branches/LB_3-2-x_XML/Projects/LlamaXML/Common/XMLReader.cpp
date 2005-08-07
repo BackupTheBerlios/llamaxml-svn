@@ -40,7 +40,7 @@ namespace LlamaXML {
 	}
 
 
-	XMLReader::XMLReader(DataInputStream & input)
+	XMLReader::XMLReader(InputStream & input)
 		: mInput(input),
 		mNodeType(kNone),
 		mInputBuffer(new char[kInputBufferCount]),
@@ -778,7 +778,7 @@ namespace LlamaXML {
 
 #if LLAMA_DEBUG
 
-	class StringInputStream: public DataInputStream {
+	class StringInputStream: public InputStream {
 	public:
 		StringInputStream(const char * s);
 
