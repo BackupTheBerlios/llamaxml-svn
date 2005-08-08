@@ -1,9 +1,29 @@
-#pragma once
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
 
-#include "InputStream.h"
+#ifndef VFSINPUTSTREAM_H
+#define VFSINPUTSTREAM_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
+
+#include <PalmOS.h>
 #include <VfsMgr.h>
+#include "InputStream.h"
 
 namespace LlamaXML {
+
+	/**
+		\brief An InputStream subclass that reads data from the Palm OS
+		Virtual File System.
+		
+		Note that any errors that occur while opening or reading
+		the file will throw an ErrorCodeException.
+	*/
 
 	class VFSInputStream: public InputStream {
 	public:
@@ -19,3 +39,5 @@ namespace LlamaXML {
 	};
 	
 }
+
+#endif

@@ -1,9 +1,28 @@
-#pragma once
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
+#ifndef STRINGINPUTSTREAM_H
+#define STRINGINPUTSTREAM_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
 
 #include "InputStream.h"
 #include <string>
 
 namespace LlamaXML {
+
+	/**
+		InputStream subclass for reading data from a C or C++ string.
+		
+		Note that this class copies the input string.  While this is safe,
+		if you don't need the data to be copied the BufferInputStream
+		class is more efficient.
+	*/
 
 	class StringInputStream: public InputStream {
 	public:
@@ -20,3 +39,5 @@ namespace LlamaXML {
 	};
 	
 }
+
+#endif

@@ -1,4 +1,7 @@
-#pragma once
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
 
 #include "VFSInputStream.h"
 #include "ErrorCodeException.h"

@@ -1,7 +1,14 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #ifndef ERRORCODEEXCEPTION_H
 #define ERRORCODEEXCEPTION_H
 
-#pragma once
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
 
 #include <exception>
 #include <stdint.h>

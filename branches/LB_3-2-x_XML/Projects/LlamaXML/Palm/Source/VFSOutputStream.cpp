@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #include "VFSOutputStream.h"
 #include "ErrorCodeException.h"
 

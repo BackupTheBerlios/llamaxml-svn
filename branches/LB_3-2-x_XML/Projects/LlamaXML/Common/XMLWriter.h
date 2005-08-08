@@ -1,7 +1,15 @@
-#ifndef LLAMAXMLWRITER_H
-#define LLAMAXMLWRITER_H
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
 
-#pragma once
+#ifndef XMLWRITER_H
+#define XMLWRITER_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
 
 #include "OutputStream.h"
 #include <vector>

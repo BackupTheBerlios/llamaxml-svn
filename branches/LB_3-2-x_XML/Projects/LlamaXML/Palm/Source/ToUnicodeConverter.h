@@ -1,9 +1,29 @@
-#pragma once
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
 
+#ifndef TOUNICODECONVERTER_H
+#define TOUNICODECONVERTER_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
+
+#include <PalmOS.h>
 #include "UnicodeString.h"
 #include "TextEncoding.h"
 
 namespace LlamaXML {
+
+	/**
+		\brief An internal class used by XMLReader to convert text in other
+		encodings to Unicode.  You should not need to use this class
+		directly.
+		
+		This class has different implementations on different platforms.
+	*/
 
 	class ToUnicodeConverter {
 	public:
@@ -27,3 +47,5 @@ namespace LlamaXML {
 	};
 
 }
+
+#endif

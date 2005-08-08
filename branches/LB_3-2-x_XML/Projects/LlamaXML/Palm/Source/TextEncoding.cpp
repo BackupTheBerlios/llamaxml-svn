@@ -1,5 +1,11 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #include "TextEncoding.h"
 #include <string>
+#include <PalmOS.h>
 
 
 namespace LlamaXML {

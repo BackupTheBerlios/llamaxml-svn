@@ -1,7 +1,15 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #ifndef UNICODESTRING_H
 #define UNICODESTRING_H
 
-#pragma once
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
 
 #include <string>
 #include <stdint.h>

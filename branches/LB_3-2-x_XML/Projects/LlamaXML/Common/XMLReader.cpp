@@ -1,9 +1,21 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #include "XMLReader.h"
 #include <stddef.h>
 
 #define countof(x) (sizeof(x) / sizeof(*x))
 
 namespace LlamaXML {
+	
+	void XMLReader::Name::SetName(const char * name) {
+		// Perform a crude conversion from ASCII to Unicode
+		while (*name) {
+			mName += UnicodeChar(*name++);
+		}
+	}
 
 	void XMLReader::Name::SetName(const UnicodeChar * name)
 	{
@@ -68,7 +80,7 @@ namespace LlamaXML {
 			case kNone:
 				FillInputBuffer();
 				if ((mInputEnd - mInputStart) >= 2) {
-					UInt16 x = (UInt16(mInputBuffer[0]) << 8) | mInputBuffer[1];
+					uint16_t x = (uint16_t(mInputBuffer[0]) << 8) | mInputBuffer[1];
 					switch (x) {
 						case 0xFEFF:
 						case 0x003C:
@@ -432,7 +444,7 @@ namespace LlamaXML {
 		// SDDecl ::=  S 'standalone' Eq (("'" ('yes' | 'no') "'") | ('"' ('yes' | 'no') '"'))
 		if (ParseString("<?xml")) {
 			mNodeType = kXmlDeclaration;
-			mCurrentName.SetName(L"xml");
+			mCurrentName.SetName("xml");
 			mAttributes.clear();
 			while (ParseRequiredWhitespace()) {
 				Attribute attribute;

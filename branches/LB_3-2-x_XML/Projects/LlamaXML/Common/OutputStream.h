@@ -1,4 +1,15 @@
-#pragma once
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
+#ifndef OUTPUTSTREAM_H
+#define OUTPUTSTREAM_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
 
 #include <stdint.h>
 
@@ -13,3 +24,5 @@ namespace LlamaXML {
 
 LlamaXML::OutputStream & operator << (LlamaXML::OutputStream & stream,
 	const char * s);
+
+#endif

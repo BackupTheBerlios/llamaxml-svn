@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #include "OutputStream.h"
 #include <string.h>
 

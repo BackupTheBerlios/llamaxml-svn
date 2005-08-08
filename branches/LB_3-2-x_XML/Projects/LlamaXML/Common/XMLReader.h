@@ -1,7 +1,15 @@
-#ifndef LLAMAXMLREADER_H
-#define LLAMAXMLREADER_H
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
 
-#pragma once
+#ifndef XMLREADER_H
+#define XMLREADER_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
 
 #include "InputStream.h"
 #include "TextEncoding.h"
@@ -11,6 +19,36 @@
 #include <vector>
 
 namespace LlamaXML {
+
+	/**
+		\brief The main XML parser class.
+		
+		To use this class, first construct one of the subclasses of
+		InputStream.  Then construct the XMLReader on the InputStream.
+		Then call Read() repeatedly to parse the document.  When Read()
+		returns false, you have finished parsing the file.
+		
+		As the reader parses the XML file, it moves through a
+		number of states identified by the NodeType returned by
+		the GetNodeType function.  The other data available from
+		the reader depends on the current NodeType.
+		
+		\code
+	StringInputStream input("<a/>");
+	XMLReader reader(input);
+
+	while (reader.Read()) {
+	    switch (reader.GetNodeType()) {
+	        case kElement:
+	            break;
+	        case kEndElement:
+	            break;
+	        case kText:
+	            break;
+	    }
+	}
+		\endcode
+	*/
 
 	class XMLReader {
 	public:
@@ -114,6 +152,7 @@ namespace LlamaXML {
 		static const UniCharRange sDigitRanges[];
 
 		struct Name {
+			void SetName(const char * name);
 			void SetName(const UnicodeChar * name);
 			void SetName(const UnicodeString & name);
 			void DivideName();
@@ -179,7 +218,7 @@ namespace LlamaXML {
 		static const size_t kInputBufferCount = 512;
 		static const size_t kOutputBufferCount = 512;
 
-		InputStream &				mInput;
+		InputStream &					mInput;
 		TextEncoding					mDocumentEncoding;
 		char *							mInputBuffer;
 		char *							mInputStart;

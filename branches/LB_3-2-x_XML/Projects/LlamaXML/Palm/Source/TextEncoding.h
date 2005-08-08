@@ -1,11 +1,28 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #ifndef TEXTENCODING_H
 #define TEXTENCODING_H
 
-#pragma once
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
 
+
+#include <PalmOS.h>
 #include "UnicodeString.h"
 
 namespace LlamaXML {
+
+	/**
+		\brief An internal class that XMLReader uses to represent a text
+		encoding.  You should not have to use this class in your
+		own code.
+		
+		This class is implemented differently on different platforms.
+	*/
 
 	class TextEncoding {
 	public:

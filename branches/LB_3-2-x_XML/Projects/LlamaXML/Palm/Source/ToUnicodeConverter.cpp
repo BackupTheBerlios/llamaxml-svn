@@ -1,6 +1,10 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
 #include "ToUnicodeConverter.h"
 #include "ErrorCodeException.h"
-#include <TxtGlue.h>
 
 namespace LlamaXML {
 
@@ -20,8 +24,13 @@ namespace LlamaXML {
 		char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{
-		UInt16 sourceBytes = UInt16(sourceEnd - sourceStart);
-		UInt16 destBytes = UInt16((destEnd - destStart) * sizeof(UnicodeChar));
+#if PALMOS_SDK_VERSION >= 0x600
+		typedef size_t TxtConvertLength;
+#else
+		typedef uint16_t TxtConvertLength;
+#endif
+		TxtConvertLength sourceBytes = TxtConvertLength(sourceEnd - sourceStart);
+		TxtConvertLength destBytes = TxtConvertLength((destEnd - destStart) * sizeof(UnicodeChar));
 		Err err = ::TxtConvertEncoding(mNewConversion, &mState,
 			sourceStart, &sourceBytes, mSourceEncoding.AsPalmCharEncoding(),
 			reinterpret_cast<Char *>(destStart),
