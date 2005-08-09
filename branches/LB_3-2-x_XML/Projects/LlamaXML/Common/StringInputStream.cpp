@@ -21,7 +21,7 @@ namespace LlamaXML {
 	}
 	
 	uint32_t StringInputStream::ReadUpTo(char * buffer, uint32_t length) {
-		length = std::min(length, mString.size() - mOffset);
+		length = std::min<uint32_t>(length, mString.size() - mOffset);
 		memcpy(buffer, mString.data() + mOffset, length);
 		mOffset += length;
 		return length;

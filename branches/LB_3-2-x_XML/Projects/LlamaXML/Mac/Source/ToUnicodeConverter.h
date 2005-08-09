@@ -1,0 +1,51 @@
+/*
+ * Copyright (c) 2005, Llamagraphics, Inc.
+ * All rights reserved.
+ */
+
+#ifndef TOUNICODECONVERTER_H
+#define TOUNICODECONVERTER_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
+
+#include <Carbon/Carbon.h>
+#include "UnicodeString.h"
+#include "TextEncoding.h"
+
+namespace LlamaXML {
+
+	/**
+		\brief An internal class used by XMLReader to convert text in other
+		encodings to Unicode.  You should not need to use this class
+		directly.
+		
+		This class has different implementations on different platforms.
+	*/
+
+	class ToUnicodeConverter {
+	public:
+		ToUnicodeConverter(TextEncoding sourceEncoding);
+		~ToUnicodeConverter();
+
+		void Reset(TextEncoding sourceEncoding);
+		
+		void Convert(char * & sourceStart,
+			char * sourceEnd, UnicodeChar * & destStart,
+			UnicodeChar * destEnd);
+		
+		TextEncoding GetSourceEncoding() const
+		{
+			return mSourceEncoding;
+		}
+
+	private:
+		TextEncoding			mSourceEncoding;
+		TextToUnicodeInfo		mState;
+	};
+
+}
+
+#endif

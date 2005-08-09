@@ -54,13 +54,13 @@ namespace LlamaXML {
 
 	XMLReader::XMLReader(InputStream & input)
 		: mInput(input),
-		mNodeType(kNone),
 		mInputBuffer(new char[kInputBufferCount]),
 		mInputStart(mInputBuffer),
 		mInputEnd(mInputBuffer),
 		mOutputBuffer(new UnicodeChar[kOutputBufferCount]),
 		mOutputStart(mOutputBuffer),
 		mOutputEnd(mOutputBuffer),
+		mNodeType(kNone),
 		mConverter(TextEncoding::UTF8())
 	{
 	}
