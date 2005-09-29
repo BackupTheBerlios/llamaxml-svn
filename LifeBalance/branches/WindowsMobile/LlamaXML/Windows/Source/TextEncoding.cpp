@@ -4,7 +4,7 @@
  */
 
 #include "TextEncoding.h"
-#include "ErrorCodeException.h"
+#include "XMLException.h"
 #include <Windows.h>
 
 
@@ -21,7 +21,7 @@ namespace LlamaXML {
 		LlamaPlatform::Component<IMultiLanguage2> multiLanguage(CLSID_CMultiLanguage);
 		LlamaPlatform::Component<IEnumCodePage> enumCodePage;
 
-		ThrowIfError(multiLanguage->EnumCodePages(0, LOCALE_INVARIANT, enumCodePage.Adopt()));
+		ThrowIfXMLError(multiLanguage->EnumCodePages(0, LOCALE_INVARIANT, enumCodePage.Adopt()));
 
 		MIMECPINFO cpInfo;
 		ULONG cpCount;

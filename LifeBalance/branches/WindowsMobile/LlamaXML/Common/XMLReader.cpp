@@ -486,7 +486,7 @@ namespace LlamaXML {
 		if (remainingCapacity > 0) {
 			FillInputBuffer();
 			if (mInputEnd > mInputStart) {
-				mConverter.Convert(mInputStart, mInputEnd,
+				mConverter.Convert(const_cast<const char * &>(mInputStart), mInputEnd,
 					mOutputEnd, mOutputBuffer + kOutputBufferCount);
 			}
 		}
@@ -828,9 +828,9 @@ namespace LlamaXML {
 			mCurrentPosition += length;
 		}
 #if TARGET_OS_WIN32
-		else ThrowError(E_FAIL);
+		else ThrowXMLError(E_FAIL);
 #elif TARGET_OS_PALM
-		else ThrowError(vfsErrFileEOF);
+		else ThrowXMLError(vfsErrFileEOF);
 #else
 	#error Unknown platform for EOF error
 #endif

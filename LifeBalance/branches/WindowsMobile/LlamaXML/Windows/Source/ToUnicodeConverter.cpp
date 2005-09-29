@@ -4,7 +4,7 @@
  */
 
 #include "ToUnicodeConverter.h"
-#include "ErrorCodeException.h"
+#include "XMLException.h"
 #include <Windows.h>
 
 namespace LlamaXML {
@@ -21,12 +21,11 @@ namespace LlamaXML {
 	{
 	}
 		
-	void ToUnicodeConverter::Convert(char * & sourceStart,
-		char * sourceEnd, UnicodeChar * & destStart,
-		UnicodeChar * destEnd)
+	void ToUnicodeConverter::Convert(const char * & sourceStart, const char * sourceEnd,
+		UnicodeChar * & destStart, UnicodeChar * destEnd)
 	{
 		while ((sourceStart < sourceEnd) && (destStart < destEnd)) {
-			char * charEnd = sourceStart;
+			const char * charEnd = sourceStart;
 			while (true) {
 				if (charEnd >= sourceEnd) return;
 				if (! ::IsDBCSLeadByteEx(mSourceEncoding, *charEnd++)) break;
@@ -41,7 +40,7 @@ namespace LlamaXML {
 				if (result == 0) {
 					result = ::GetLastError();
 				}
-				if (result != ERROR_INSUFFICIENT_BUFFER) ThrowError(result);
+				if (result != ERROR_INSUFFICIENT_BUFFER) ThrowXMLError(result);
 			}
 		}
 	}

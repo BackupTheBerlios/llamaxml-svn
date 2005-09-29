@@ -4,17 +4,34 @@
  */
 
 #include "XMLWriter.h"
-#include "ErrorCodeException.h"
+#include "XMLException.h"
 #include <cstring>
 #include <stddef.h>
 #include <assert.h>
+#include <limits>
+
+#define countof(x) (sizeof(x) / sizeof(*x))
 
 namespace LlamaXML {
 
+	const char * XMLWriter::kNewline =
+#if TARGET_OS_WIN32
+		"\r\n";
+#else
+		"\n";
+#endif
+	const char * XMLWriter::kIndent = "  ";
+	const char * XMLWriter::kAmpersand = "&amp;";
+	const char * XMLWriter::kLessThan = "&lt;";
+	const char * XMLWriter::kGreaterThan = "&gt;";
+	const char * XMLWriter::kQuote = "&quot;";
 
-	XMLWriter::XMLWriter(OutputStream & output)
+	XMLWriter::XMLWriter(OutputStream & output, TextEncoding applicationEncoding)
 	: mOutput(output),
-	  mState(kStateNormal)
+	  mState(kStateNormal),
+	  mIndentLevel(std::numeric_limits<size_t>::max()),
+	  mApplicationToUnicode(applicationEncoding),
+	  mUnicodeToUTF8(TextEncoding::UTF8())
 	{
 	}
 	
@@ -32,7 +49,7 @@ namespace LlamaXML {
 		mOutput << "<?xml version=\"" << version
 			<< "\" encoding=\"" << encoding
 			<< "\" standalone=\"" << standalone
-			<< "\"?>\n";
+			<< "\"?>" << kNewline;
 	}
 	
 	
@@ -57,6 +74,12 @@ namespace LlamaXML {
 				break;
 		}
 		
+		if (mElementStack.size() < mIndentLevel) {
+			mOutput << kNewline;
+			for (size_t i = mElementStack.size(); i > 0; --i) {
+				mOutput << kIndent;
+			}
+		}
 		mOutput << "<" << name;
 		mElementStack.push_back(name);
 		mState = kStateOpenTag;
@@ -67,7 +90,7 @@ namespace LlamaXML {
 		const char * namespaceURI)
 	{
 		std::string buffer;
-		if (prefix) {
+		if (prefix && *prefix) {
 			buffer = prefix;
 			buffer += ':';
 		}
@@ -76,7 +99,7 @@ namespace LlamaXML {
 		
 		if (namespaceURI) {
 			buffer = "xmlns";
-			if (prefix) {
+			if (prefix && *prefix) {
 				buffer += ':';
 				buffer += prefix;
 			}
@@ -98,12 +121,138 @@ namespace LlamaXML {
 					mOutput << "/>";
 					break;
 				case kStateNormal:
+					if (mElementStack.size() < mIndentLevel) {
+						mOutput << kNewline;
+						for (size_t i = mElementStack.size() - 1; i > 0; --i) {
+							mOutput << kIndent;
+						}
+					}
+					else if (mElementStack.size() == mIndentLevel) {
+						mIndentLevel = std::numeric_limits<size_t>::max();
+					}
+
 					mOutput << "</" << mElementStack.back().c_str() << ">";
 					break;
 			}
 			mElementStack.pop_back();
 		}
 		mState = kStateNormal;
+	}
+
+
+	void XMLWriter::WriteElement(const char * name)
+	{
+		StartElement(name);
+		EndElement();
+	}
+
+	const char * XMLWriter::Scan(const char * content, const char * tokens) {
+		while (*content) {
+			for (const char * token = tokens; *token; ++token) {
+				if (*content == *token) return content;
+			}
+			++content;
+		}
+		return content;
+	}
+
+	const UnicodeChar * XMLWriter::Scan(const UnicodeChar * content, const UnicodeChar * contentEnd, const char * tokens) {
+		while (content < contentEnd) {
+			for (const char * token = tokens; *token; ++token) {
+				if (*content == UnicodeChar(*token)) return content;
+			}
+			++content;
+		}
+		return content;
+	}
+
+	const char * XMLWriter::StringEnd(const char * s) {
+		while (*s) ++s;
+		return s;
+	}
+
+	const UnicodeChar * XMLWriter::StringEnd(const UnicodeChar * s) {
+		while (*s) ++s;
+		return s;
+	}
+
+	void XMLWriter::WriteApplicationContent(const char * content) {
+		if (mApplicationToUnicode.GetSourceEncoding() == mUnicodeToUTF8.GetDestinationEncoding()) {
+			WriteUTF8Content(content);
+		}
+		else {
+			UnicodeChar buffer[kBufferSize];
+			const char * contentEnd = StringEnd(content);
+			while (content < contentEnd) {
+				UnicodeChar * bufferStart = buffer;
+				mApplicationToUnicode.Convert(content, contentEnd, bufferStart, buffer + countof(buffer));
+				WriteUnicodeContent(buffer, bufferStart);
+			}
+		}
+	}
+
+	void XMLWriter::WriteUTF8Content(const char * content) {
+		while (*content) {
+			const char * token = Scan(content, "<>\"&");
+			if (content < token) {
+				mOutput.WriteData(content, token - content);
+				content = token;
+			}
+			switch (*content) {
+				case '<':
+					mOutput << kLessThan;
+					break;
+				case '>':
+					mOutput << kGreaterThan;
+					break;
+				case '"':
+					mOutput << kQuote;
+					break;
+				case '&':
+					mOutput << kAmpersand;
+					break;
+				default:
+					return;
+			}
+			++content;
+		}
+	}
+
+
+	void XMLWriter::WriteRawUnicode(const UnicodeChar * unicodeStart, const UnicodeChar * unicodeEnd) {
+		char buffer[kBufferSize];
+		while (unicodeStart < unicodeEnd) {
+			char * utf8Start = buffer;
+			char * utf8End = buffer + countof(buffer);
+			mUnicodeToUTF8.Convert(unicodeStart, unicodeEnd, utf8Start, utf8End);
+			mOutput.WriteData(buffer, utf8Start - buffer);
+		}
+	}
+
+
+	void XMLWriter::WriteUnicodeContent(const UnicodeChar * content, const UnicodeChar * contentEnd) {
+		while (content < contentEnd) {
+			const UnicodeChar * token = Scan(content, contentEnd, "<>\"&");
+			if (content < token) {
+				WriteRawUnicode(content, token);
+				content = token;
+			}
+			switch (*content) {
+				case UnicodeChar('<'):
+					mOutput << kLessThan;
+					break;
+				case UnicodeChar('>'):
+					mOutput << kGreaterThan;
+					break;
+				case UnicodeChar('"'):
+					mOutput << kQuote;
+					break;
+				case UnicodeChar('&'):
+					mOutput << kAmpersand;
+					break;
+			}
+			++content;
+		}
 	}
 	
 	
@@ -115,53 +264,47 @@ namespace LlamaXML {
 				mState = kStateNormal;
 				// fall through
 			case kStateNormal:
-				while (*content) {
-					size_t count = std::strcspn(content, "<>&");
-					if (count) {
-						mOutput.WriteData(content, count);
-						content += count;
-					}
-					switch (*content) {
-						case '<':
-							mOutput << "&lt;";
-							break;
-						case '>':
-							mOutput << "&gt;";
-							break;
-						case '&':
-							mOutput << "&amp;";
-							break;
-						default:
-							return;
-					}
-					++content;
-				}
+				mIndentLevel = std::min<size_t>(mIndentLevel, mElementStack.size());
+				WriteApplicationContent(content);
 				break;
 			case kStateOpenAttribute:
-				while (*content) {
-					size_t count = std::strcspn(content, "<>\"&");
-					if (count) {
-						mOutput.WriteData(content, count);
-						content += count;
-					}
-					switch (*content) {
-						case '<':
-							mOutput << "&lt;";
-							break;
-						case '>':
-							mOutput << "&gt;";
-							break;
-						case '"':
-							mOutput << "&quot;";
-							break;
-						case '&':
-							mOutput << "&amp;";
-							break;
-						default:
-							return;
-					}
-					++content;
-				}
+				WriteApplicationContent(content);
+				break;
+		}
+	}
+	
+	
+	void XMLWriter::WriteString(const UnicodeString & content)
+	{
+		switch (mState) {
+			case kStateOpenTag:
+				mOutput << ">";
+				mState = kStateNormal;
+				// fall through
+			case kStateNormal:
+				mIndentLevel = std::min<size_t>(mIndentLevel, mElementStack.size());
+				WriteUnicodeContent(content.data(), content.data() + content.size());
+				break;
+			case kStateOpenAttribute:
+				WriteUnicodeContent(content.data(), content.data() + content.size());
+				break;
+		}
+	}
+	
+	
+	void XMLWriter::WriteString(const UnicodeChar * content)
+	{
+		switch (mState) {
+			case kStateOpenTag:
+				mOutput << ">";
+				mState = kStateNormal;
+				// fall through
+			case kStateNormal:
+				mIndentLevel = std::min<size_t>(mIndentLevel, mElementStack.size());
+				WriteUnicodeContent(content, StringEnd(content));
+				break;
+			case kStateOpenAttribute:
+				WriteUnicodeContent(content, StringEnd(content));
 				break;
 		}
 	}
@@ -194,7 +337,7 @@ namespace LlamaXML {
 		std::string buffer;
 		if (namespaceURI) {
 			buffer = "xmlns";
-			if (prefix) {
+			if (prefix && *prefix) {
 				buffer += ':';
 				buffer += prefix;
 			}
@@ -202,7 +345,7 @@ namespace LlamaXML {
 		}
 		
 		buffer.clear();
-		if (prefix) {
+		if (prefix && *prefix) {
 			buffer = prefix;
 			buffer += ':';
 		}
@@ -253,6 +396,33 @@ LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
 	return output;
 }
 
+
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
+										const LlamaXML::UnicodeString & s)
+{
+	output.WriteString(s);
+	return output;
+}
+
+
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
+										int n)
+{
+	char buffer[64];
+	std::sprintf(buffer, "%d", n);
+	output.WriteString(buffer);
+	return output;
+}
+
+
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
+										double n)
+{
+	char buffer[64];
+	std::sprintf(buffer, "%lf", n);
+	output.WriteString(buffer);
+	return output;
+}
 
 #if LLAMA_DEBUG
 namespace Llamagraphics {

@@ -628,6 +628,14 @@
 			Name="Windows"
 			>
 			<File
+				RelativePath="..\..\Windows\Source\FromUnicodeConverter.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\FromUnicodeConverter.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\Windows\Source\LlamaStdInt.h"
 				>
 			</File>
@@ -660,14 +668,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\ErrorCodeException.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\ErrorCodeException.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\Common\InputStream.h"
 				>
 			</File>
@@ -697,6 +697,14 @@
 			</File>
 			<File
 				RelativePath="..\..\Common\UnicodeString.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Common\XMLException.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Common\XMLException.h"
 				>
 			</File>
 			<File
