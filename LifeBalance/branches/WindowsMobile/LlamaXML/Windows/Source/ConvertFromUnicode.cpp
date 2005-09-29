@@ -3,21 +3,21 @@
  * All rights reserved.
  */
 
-#include "FromUnicodeConverter.h"
+#include "ConvertFromUnicode.h"
 #include "XMLException.h"
 #include <Windows.h>
 
 namespace LlamaXML {
 
-	FromUnicodeConverter::FromUnicodeConverter(TextEncoding destinationEncoding)
+	ConvertFromUnicode::ConvertFromUnicode(TextEncoding destinationEncoding)
 	: mDestinationEncoding(destinationEncoding)
 	{
 	}
 	
-	FromUnicodeConverter::~FromUnicodeConverter() {
+	ConvertFromUnicode::~ConvertFromUnicode() {
 	}
 		
-	void FromUnicodeConverter::Convert(const UnicodeChar * & sourceStart,
+	void ConvertFromUnicode::Convert(const UnicodeChar * & sourceStart,
 		const UnicodeChar * sourceEnd, char * & destStart,
 		char * destEnd)
 	{

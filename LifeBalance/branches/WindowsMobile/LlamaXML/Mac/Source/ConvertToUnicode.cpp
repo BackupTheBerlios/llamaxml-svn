@@ -3,23 +3,23 @@
  * All rights reserved.
  */
 
-#include "ToUnicodeConverter.h"
+#include "ConvertToUnicode.h"
 #include "ErrorCodeException.h"
 
 namespace LlamaXML {
 
-	ToUnicodeConverter::ToUnicodeConverter(TextEncoding sourceEncoding)
+	ConvertToUnicode::ConvertToUnicode(TextEncoding sourceEncoding)
 	: mSourceEncoding(sourceEncoding),
 	  mState(0)
 	{
 		ThrowIfError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
 	}
 	
-	ToUnicodeConverter::~ToUnicodeConverter() {
+	ConvertToUnicode::~ConvertToUnicode() {
 		::DisposeTextToUnicodeInfo(&mState);
 	}
 
-	void ToUnicodeConverter::Reset(TextEncoding sourceEncoding)
+	void ConvertToUnicode::Reset(TextEncoding sourceEncoding)
 	{
 		::DisposeTextToUnicodeInfo(&mState);
 		mState = 0;
@@ -27,7 +27,7 @@ namespace LlamaXML {
 		ThrowIfError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
 	}
 		
-	void ToUnicodeConverter::Convert(char * & sourceStart,
+	void ConvertToUnicode::Convert(char * & sourceStart,
 		char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{

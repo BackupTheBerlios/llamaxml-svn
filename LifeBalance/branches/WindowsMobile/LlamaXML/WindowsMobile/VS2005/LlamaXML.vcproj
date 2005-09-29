@@ -6,6 +6,7 @@
 	ProjectGUID="{9ACB7FF6-0ED4-4049-9F7C-CAE702FDF2D3}"
 	RootNamespace="LlamaXML"
 	Keyword="Win32Proj"
+	SignManifests="true"
 	>
 	<Platforms>
 		<Platform
@@ -628,11 +629,19 @@
 			Name="Windows"
 			>
 			<File
-				RelativePath="..\..\Windows\Source\FromUnicodeConverter.cpp"
+				RelativePath="..\..\Windows\Source\ConvertFromUnicode.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\FromUnicodeConverter.h"
+				RelativePath="..\..\Windows\Source\ConvertFromUnicode.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\ConvertToUnicode.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\ConvertToUnicode.h"
 				>
 			</File>
 			<File
@@ -645,14 +654,6 @@
 			</File>
 			<File
 				RelativePath="..\..\Windows\Source\TextEncoding.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\ToUnicodeConverter.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\ToUnicodeConverter.h"
 				>
 			</File>
 		</Filter>

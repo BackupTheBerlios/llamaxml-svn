@@ -13,8 +13,8 @@
 
 #include "OutputStream.h"
 #include "TextEncoding.h"
-#include "ToUnicodeConverter.h"
-#include "FromUnicodeConverter.h"
+#include "ConvertToUnicode.h"
+#include "ConvertFromUnicode.h"
 #include <vector>
 #include <string>
 
@@ -94,8 +94,8 @@ namespace LlamaXML {
 		State						mState;
 		std::vector<std::string>	mElementStack;
 		size_t						mIndentLevel;
-		ToUnicodeConverter			mApplicationToUnicode;
-		FromUnicodeConverter		mUnicodeToUTF8;
+		ConvertToUnicode			mApplicationToUnicode;
+		ConvertFromUnicode		mUnicodeToUTF8;
 	};
 
 }

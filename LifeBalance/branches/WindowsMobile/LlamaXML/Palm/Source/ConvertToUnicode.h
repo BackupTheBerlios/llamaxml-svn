@@ -3,8 +3,8 @@
  * All rights reserved.
  */
 
-#ifndef TOUNICODECONVERTER_H
-#define TOUNICODECONVERTER_H
+#ifndef CONVERTTOUNICODE_H
+#define CONVERTTOUNICODE_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once
@@ -25,9 +25,9 @@ namespace LlamaXML {
 		This class has different implementations on different platforms.
 	*/
 
-	class ToUnicodeConverter {
+	class ConvertToUnicode {
 	public:
-		ToUnicodeConverter(TextEncoding sourceEncoding);
+		ConvertToUnicode(TextEncoding sourceEncoding);
 
 		void Reset(TextEncoding sourceEncoding);
 		

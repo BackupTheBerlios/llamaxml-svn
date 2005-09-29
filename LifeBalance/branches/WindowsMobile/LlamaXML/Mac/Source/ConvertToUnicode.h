@@ -3,14 +3,15 @@
  * All rights reserved.
  */
 
-#ifndef FROMUNICODECONVERTER_H
-#define FROMUNICODECONVERTER_H
+#ifndef CONVERTTOUNICODE_H
+#define CONVERTTOUNICODE_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once
 #endif
 
 
+#include <Carbon/Carbon.h>
 #include "UnicodeString.h"
 #include "TextEncoding.h"
 
@@ -24,21 +25,25 @@ namespace LlamaXML {
 		This class has different implementations on different platforms.
 	*/
 
-	class FromUnicodeConverter {
+	class ConvertToUnicode {
 	public:
-		FromUnicodeConverter(TextEncoding destinationEncoding);
-		~FromUnicodeConverter();
+		ConvertToUnicode(TextEncoding sourceEncoding);
+		~ConvertToUnicode();
+
+		void Reset(TextEncoding sourceEncoding);
 		
-		void Convert(const UnicodeChar * & sourceStart, const UnicodeChar * sourceEnd,
-			char * & destStart, char * destEnd);
+		void Convert(char * & sourceStart,
+			char * sourceEnd, UnicodeChar * & destStart,
+			UnicodeChar * destEnd);
 		
-		TextEncoding GetDestinationEncoding() const
+		TextEncoding GetSourceEncoding() const
 		{
-			return mDestinationEncoding;
+			return mSourceEncoding;
 		}
 
 	private:
-		TextEncoding			mDestinationEncoding;
+		TextEncoding			mSourceEncoding;
+		TextToUnicodeInfo		mState;
 	};
 
 }

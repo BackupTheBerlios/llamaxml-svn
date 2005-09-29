@@ -14,7 +14,7 @@
 #include "InputStream.h"
 #include "TextEncoding.h"
 #include "UnicodeString.h"
-#include "ToUnicodeConverter.h"
+#include "ConvertToUnicode.h"
 #include <stddef.h>
 #include <vector>
 
@@ -235,7 +235,7 @@ namespace LlamaXML {
 		std::vector<Tag>				mOpenTags;
 		bool							mIsEmptyElement;
 
-		ToUnicodeConverter				mConverter;
+		ConvertToUnicode				mConverter;
 	};
 
 }
