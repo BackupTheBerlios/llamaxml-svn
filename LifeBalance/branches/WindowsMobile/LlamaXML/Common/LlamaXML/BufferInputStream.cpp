@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-#include "BufferInputStream.h"
+#include "LlamaXML/BufferInputStream.h"
 #include <string.h>
 
 namespace LlamaXML {

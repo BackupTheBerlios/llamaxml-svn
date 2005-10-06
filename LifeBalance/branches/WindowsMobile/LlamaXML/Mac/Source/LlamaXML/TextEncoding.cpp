@@ -1,11 +1,5 @@
-#include "TextEncoding.h"
-#include "XMLException.h"
-#if 0
-#include "UnitTest.h"
-#include "DebugFormat.h"
-#include "PalmLocale.h"
-#include <UnicodeConverter.h>
-#endif
+#include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/XMLException.h"
 
 
 #if UNIVERSAL_INTERFACES_VERSION < 0x0400

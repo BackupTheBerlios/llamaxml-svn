@@ -11,7 +11,7 @@
 #endif
 
 #include <exception>
-#include "LlamaStdInt.h"
+#include "LlamaXML/LlamaStdInt.h"
 
 namespace LlamaXML {
 

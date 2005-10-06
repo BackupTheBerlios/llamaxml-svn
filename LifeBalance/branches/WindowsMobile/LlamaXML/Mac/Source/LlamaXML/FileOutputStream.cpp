@@ -3,8 +3,8 @@
  * All rights reserved.
  */
 
-#include "FileOutputStream.h"
-#include "XMLException.h"
+#include "LlamaXML/FileOutputStream.h"
+#include "LlamaXML/XMLException.h"
 
 namespace LlamaXML {
     
@@ -15,6 +15,11 @@ namespace LlamaXML {
         ThrowIfXMLError(::FSGetDataForkName(&dataForkName));
         ThrowIfXMLError(::FSOpenFork(fileRef, dataForkName.length, dataForkName.unicode,
             fsWrDenyPerm, &mRefnum));
+    }
+    
+    
+    FileOutputStream::~FileOutputStream() {
+        ::FSCloseFork(mRefnum);
     }
     
 

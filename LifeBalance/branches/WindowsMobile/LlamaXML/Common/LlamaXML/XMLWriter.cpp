@@ -3,8 +3,8 @@
  * All rights reserved.
  */
 
-#include "XMLWriter.h"
-#include "XMLException.h"
+#include "LlamaXML/XMLWriter.h"
+#include "LlamaXML/XMLException.h"
 #include <cstring>
 #include <stddef.h>
 #include <assert.h>

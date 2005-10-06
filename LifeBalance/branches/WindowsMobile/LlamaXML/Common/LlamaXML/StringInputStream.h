@@ -11,7 +11,7 @@
 #endif
 
 
-#include "InputStream.h"
+#include "LlamaXML/InputStream.h"
 #include <string>
 
 namespace LlamaXML {

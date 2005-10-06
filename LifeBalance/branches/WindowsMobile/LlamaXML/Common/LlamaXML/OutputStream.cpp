@@ -3,8 +3,15 @@
  * All rights reserved.
  */
 
-#include "OutputStream.h"
+#include "LlamaXML/OutputStream.h"
 #include <string.h>
+
+namespace LlamaXML {
+    
+    OutputStream::~OutputStream() {
+    }
+    
+}
 
 LlamaXML::OutputStream & operator << (LlamaXML::OutputStream & stream,
 	const char * s) {

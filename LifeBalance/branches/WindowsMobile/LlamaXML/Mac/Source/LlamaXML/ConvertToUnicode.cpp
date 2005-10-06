@@ -3,8 +3,9 @@
  * All rights reserved.
  */
 
-#include "ConvertToUnicode.h"
-#include "XMLException.h"
+#include "LlamaXML/ConvertToUnicode.h"
+#include "LlamaXML/XMLException.h"
+#include "LlamaXML/TextEncoding.h"
 
 namespace LlamaXML {
 
@@ -12,19 +13,19 @@ namespace LlamaXML {
 	: mSourceEncoding(sourceEncoding),
 	  mState(0)
 	{
-		ThrowIfXMLError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
+		ThrowIfXMLError(::TECCreateConverter(&mState, sourceEncoding, TextEncoding::UCS2()));
 	}
 	
 	ConvertToUnicode::~ConvertToUnicode() {
-		::DisposeTextToUnicodeInfo(&mState);
+		::TECDisposeConverter(mState);
 	}
 
 	void ConvertToUnicode::Reset(TextEncoding sourceEncoding)
 	{
-		::DisposeTextToUnicodeInfo(&mState);
+		::TECDisposeConverter(mState);
 		mState = 0;
 		mSourceEncoding = sourceEncoding;
-		ThrowIfXMLError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
+		ThrowIfXMLError(::TECCreateConverter(&mState, sourceEncoding, TextEncoding::UCS2()));
 	}
 		
 	void ConvertToUnicode::Convert(const char * & sourceStart,
@@ -32,15 +33,13 @@ namespace LlamaXML {
 		UnicodeChar * destEnd)
 	{
 		ByteCount sourceRead = 0;
-		ByteCount unicodeLen = 0;
-		OSStatus status = ::ConvertFromTextToUnicode(mState, sourceEnd - sourceStart, sourceStart,
-			kUnicodeUseFallbacksMask | kUnicodeKeepInfoMask | kUnicodeLooseMappingsMask | kUnicodeStringUnterminatedMask,
-			0, NULL, NULL, NULL,
-			(destEnd - destStart) * sizeof(UnicodeChar), &sourceRead, &unicodeLen, destStart);
+		ByteCount destWritten = 0;
+		OSStatus status = ::TECConvertText(mState, reinterpret_cast<ConstTextPtr>(sourceStart), (sourceEnd - sourceStart) * sizeof(*sourceStart),
+		    &sourceRead, reinterpret_cast<TextPtr>(destStart), (destEnd - destStart) * sizeof(*destStart), &destWritten);
 		if ((status == noErr) || (status == kTECArrayFullErr) || (status == kTECPartialCharErr) || (status == kTECIncompleteElementErr)
 			|| (status == kTECUsedFallbacksStatus) || (status == kTECOutputBufferFullStatus)) {
-			sourceStart += sourceRead;
-			destStart += (unicodeLen / sizeof(UnicodeChar));
+			sourceStart += sourceRead / sizeof(*sourceStart);
+			destStart += destWritten / sizeof(*destStart);
 		}
 		else ThrowXMLError(status);
 	}

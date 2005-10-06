@@ -12,7 +12,7 @@
 
 
 #include <string>
-#include "LlamaStdInt.h"
+#include "LlamaXML/LlamaStdInt.h"
 
 namespace LlamaXML {
 

@@ -11,12 +11,14 @@
 #endif
 
 
-#include "LlamaStdInt.h"
+#include "LlamaXML/LlamaStdInt.h"
 
 namespace LlamaXML {
 
 	class OutputStream {
 	public:
+	    virtual ~OutputStream();
+	    
 		virtual void WriteData(const char * buffer, uint32_t length) = 0;
 	};
 

@@ -11,10 +11,10 @@
 #endif
 
 
-#include "OutputStream.h"
-#include "TextEncoding.h"
-#include "ConvertToUnicode.h"
-#include "ConvertFromUnicode.h"
+#include "LlamaXML/OutputStream.h"
+#include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/ConvertToUnicode.h"
+#include "LlamaXML/ConvertFromUnicode.h"
 #include <vector>
 #include <string>
 

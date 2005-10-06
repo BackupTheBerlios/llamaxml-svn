@@ -11,14 +11,15 @@
 #endif
 
 
-#include "OutputStream.h"
+#include "LlamaXML/OutputStream.h"
 #include <Carbon/Carbon.h>
 
 namespace LlamaXML {
 
-	class FileOutputStream {
+	class FileOutputStream: public OutputStream {
 	public:
 	    FileOutputStream(const FSRef * fileRef);
+	    virtual ~FileOutputStream();
 	    
 		virtual void WriteData(const char * buffer, uint32_t length);
 	

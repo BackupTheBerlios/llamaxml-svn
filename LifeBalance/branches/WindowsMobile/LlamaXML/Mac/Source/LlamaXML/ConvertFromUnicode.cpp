@@ -3,8 +3,8 @@
  * All rights reserved.
  */
 
-#include "ConvertFromUnicode.h"
-#include "XMLException.h"
+#include "LlamaXML/ConvertFromUnicode.h"
+#include "LlamaXML/XMLException.h"
 
 namespace LlamaXML {
 
@@ -12,11 +12,11 @@ namespace LlamaXML {
 	: mDestinationEncoding(destinationEncoding),
 	  mState(0)
 	{
-		ThrowIfXMLError(::CreateUnicodeToTextInfoByEncoding(mDestinationEncoding, &mState));
+		ThrowIfXMLError(::TECCreateConverter(&mState, TextEncoding::UCS2(), mDestinationEncoding));
 	}
 	
 	ConvertFromUnicode::~ConvertFromUnicode() {
-	    ::DisposeUnicodeToTextInfo(&mState);
+		::TECDisposeConverter(mState);
 	}
 		
 	void ConvertFromUnicode::Convert(const UnicodeChar * & sourceStart,
@@ -25,14 +25,12 @@ namespace LlamaXML {
 	{
 		ByteCount sourceRead = 0;
 		ByteCount destWritten = 0;
-		OSStatus status = ::ConvertFromUnicodeToText(mState, (sourceEnd - sourceStart) * sizeof(*sourceStart), sourceStart,
-			kUnicodeUseFallbacksMask | kUnicodeKeepInfoMask | kUnicodeLooseMappingsMask | kUnicodeStringUnterminatedMask,
-			0, NULL, NULL, NULL,
-			(destEnd - destStart) * sizeof(*destStart), &sourceRead, &destWritten, destStart);
+		OSStatus status = ::TECConvertText(mState, reinterpret_cast<ConstTextPtr>(sourceStart), (sourceEnd - sourceStart) * sizeof(*sourceStart),
+		    &sourceRead, reinterpret_cast<TextPtr>(destStart), (destEnd - destStart) * sizeof(*destStart), &destWritten);
 		if ((status == noErr) || (status == kTECArrayFullErr) || (status == kTECPartialCharErr) || (status == kTECIncompleteElementErr)
 			|| (status == kTECUsedFallbacksStatus) || (status == kTECOutputBufferFullStatus)) {
-			sourceStart += sourceRead;
-			destStart += (destWritten / sizeof(*destStart));
+			sourceStart += sourceRead / sizeof(*sourceStart);
+			destStart += destWritten / sizeof(*destStart);
 		}
 		else ThrowXMLError(status);
 	}

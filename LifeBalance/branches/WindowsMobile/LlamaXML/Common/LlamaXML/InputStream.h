@@ -10,7 +10,7 @@
 	#pragma once
 #endif
 
-#include "LlamaStdInt.h"
+#include "LlamaXML/LlamaStdInt.h"
 
 namespace LlamaXML {
 

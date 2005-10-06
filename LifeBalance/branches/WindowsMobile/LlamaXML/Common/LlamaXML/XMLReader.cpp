@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-#include "XMLReader.h"
+#include "LlamaXML/XMLReader.h"
 #include <stddef.h>
 
 #define countof(x) (sizeof(x) / sizeof(*x))

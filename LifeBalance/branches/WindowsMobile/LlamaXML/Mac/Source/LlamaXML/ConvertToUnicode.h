@@ -12,8 +12,8 @@
 
 
 #include <Carbon/Carbon.h>
-#include "UnicodeString.h"
-#include "TextEncoding.h"
+#include "LlamaXML/UnicodeString.h"
+#include "LlamaXML/TextEncoding.h"
 
 namespace LlamaXML {
 
@@ -43,7 +43,7 @@ namespace LlamaXML {
 
 	private:
 		TextEncoding			mSourceEncoding;
-		TextToUnicodeInfo		mState;
+		TECObjectRef    		mState;
 	};
 
 }

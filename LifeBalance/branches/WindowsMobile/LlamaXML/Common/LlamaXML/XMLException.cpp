@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-#include "XMLException.h"
+#include "LlamaXML/XMLException.h"
 
 namespace LlamaXML {
 

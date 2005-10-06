@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-#include "StringOutputStream.h"
+#include "LlamaXML/StringOutputStream.h"
 
 namespace LlamaXML {
 
