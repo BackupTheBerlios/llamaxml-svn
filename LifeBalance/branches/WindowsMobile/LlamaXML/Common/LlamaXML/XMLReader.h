@@ -79,6 +79,16 @@ namespace LlamaXML {
 		bool Read();
 		NodeType MoveToContent();
 		void Skip();
+		
+		bool IsStartElement();
+		bool IsStartElement(const char * name);
+		bool IsStartElement(const char * localName, const char * namespaceURI);
+
+		void ReadStartElement();
+		void ReadStartElement(const char * name);
+		void ReadStartElement(const char * localName, const char * namespaceURI);
+		
+		void ReadEndElement();
 
 		bool EndOfFile() const;
 
@@ -140,6 +150,8 @@ namespace LlamaXML {
 		static bool IsNameChar(UnicodeChar c);
 		static bool IsNameToken(const UnicodeString & token);
 		static bool IsName(const UnicodeString & name);
+		
+		static bool Equals(const UnicodeString & a, const char * b);
 
 	private:
 		struct UniCharRange {
@@ -210,7 +222,6 @@ namespace LlamaXML {
 
 		static bool IsInRange(UnicodeChar c, const UniCharRange ranges[],
 			size_t n);
-		static bool Equals(const UnicodeString & a, const char * b);
 
 	private:
 		static UnicodeString	sEmptyUniCharString;

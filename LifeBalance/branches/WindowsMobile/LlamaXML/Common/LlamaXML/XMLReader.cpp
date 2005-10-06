@@ -4,6 +4,7 @@
  */
 
 #include "LlamaXML/XMLReader.h"
+#include "LlamaXML/XMLException.h"
 #include <stddef.h>
 
 #define countof(x) (sizeof(x) / sizeof(*x))
@@ -144,6 +145,88 @@ namespace LlamaXML {
 				else return ParseText();
 		}
 		return false;
+	}
+	
+	
+	XMLReader::NodeType XMLReader::MoveToContent() {
+	    // (non-white space text, CDATA, Element, EndElement, EntityReference, or EndEntity)
+        while ((mNodeType != kText) && (mNodeType != kCDATA) && (mNodeType != kElement)
+                && (mNodeType != kEndElement) && (mNodeType != kEntityReference)
+                && (mNodeType != kEndEntity)) {
+            Read();
+        }
+        return mNodeType;
+	}
+	
+	
+	bool XMLReader::IsStartElement() {
+	    return MoveToContent() == kElement;
+	}
+	
+	
+	bool XMLReader::IsStartElement(const char * name) {
+	    return (MoveToContent() == kElement) && Equals(GetName(), name);
+	}
+	
+	
+	bool XMLReader::IsStartElement(const char * localName, const char * namespaceURI) {
+	    return (MoveToContent() == kElement)
+	        && Equals(GetLocalName(), localName)
+	        && Equals(GetNamespaceURI(), namespaceURI);
+	}
+	
+	
+	void XMLReader::ReadStartElement() {
+	    if (IsStartElement()) {
+	        Read();
+	    }
+	    else {
+	        ThrowXMLError(0);
+	    }
+	}
+	
+	
+	void XMLReader::ReadStartElement(const char * name) {
+	    if (IsStartElement(name)) {
+	        Read();
+	    }
+	    else {
+	        ThrowXMLError(0);
+	    }
+	}
+	
+	
+	void XMLReader::ReadStartElement(const char * localName, const char * namespaceURI) {
+	    if (IsStartElement(localName, namespaceURI)) {
+	        Read();
+	    }
+	    else {
+	        ThrowXMLError(0);
+	    }
+	}
+	
+	
+	void XMLReader::ReadEndElement() {
+	    if (MoveToContent() == kEndElement) {
+	        Read();
+	    }
+	    else {
+	        ThrowXMLError(0);
+	    }
+	}
+	
+	
+	void XMLReader::Skip() {
+        int depth = 0;
+        do {
+            if ((mNodeType == kElement) && (! mIsEmptyElement)) {
+                ++depth;
+            }
+            else if (mNodeType == kEndElement) {
+                --depth;
+            }
+            Read();
+        } while (depth > 0);
 	}
 
 

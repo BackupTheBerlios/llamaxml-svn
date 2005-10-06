@@ -68,7 +68,8 @@ namespace LlamaXML {
     	enum State {
     		kStateNormal,
     		kStateOpenTag,
-    		kStateOpenAttribute
+    		kStateOpenAttribute,
+    		kStateDocumentClosed
     	};
 
 		static const char * Scan(const char * content, const char * tokens);
@@ -95,7 +96,7 @@ namespace LlamaXML {
 		std::vector<std::string>	mElementStack;
 		size_t						mIndentLevel;
 		ConvertToUnicode			mApplicationToUnicode;
-		ConvertFromUnicode		mUnicodeToUTF8;
+		ConvertFromUnicode		    mUnicodeToUTF8;
 	};
 
 }

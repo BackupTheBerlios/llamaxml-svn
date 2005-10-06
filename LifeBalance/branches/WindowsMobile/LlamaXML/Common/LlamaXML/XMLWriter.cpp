@@ -49,15 +49,19 @@ namespace LlamaXML {
 		mOutput << "<?xml version=\"" << version
 			<< "\" encoding=\"" << encoding
 			<< "\" standalone=\"" << standalone
-			<< "\"?>" << kNewline;
+			<< "\" ?>";
 	}
 	
 	
 	void XMLWriter::EndDocument()
 	{
-		while (! mElementStack.empty()) {
-			EndElement();
-		}
+	    if (mState != kStateDocumentClosed) {
+    		while (! mElementStack.empty()) {
+    			EndElement();
+    		}
+    		mOutput << kNewline;
+    		mState = kStateDocumentClosed;
+	    }
 	}
 	
 	
