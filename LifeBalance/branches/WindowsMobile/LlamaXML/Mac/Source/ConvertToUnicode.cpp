@@ -4,7 +4,7 @@
  */
 
 #include "ConvertToUnicode.h"
-#include "ErrorCodeException.h"
+#include "XMLException.h"
 
 namespace LlamaXML {
 
@@ -12,7 +12,7 @@ namespace LlamaXML {
 	: mSourceEncoding(sourceEncoding),
 	  mState(0)
 	{
-		ThrowIfError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
+		ThrowIfXMLError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
 	}
 	
 	ConvertToUnicode::~ConvertToUnicode() {
@@ -24,11 +24,11 @@ namespace LlamaXML {
 		::DisposeTextToUnicodeInfo(&mState);
 		mState = 0;
 		mSourceEncoding = sourceEncoding;
-		ThrowIfError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
+		ThrowIfXMLError(::CreateTextToUnicodeInfoByEncoding(mSourceEncoding, &mState));
 	}
 		
-	void ConvertToUnicode::Convert(char * & sourceStart,
-		char * sourceEnd, UnicodeChar * & destStart,
+	void ConvertToUnicode::Convert(const char * & sourceStart,
+		const char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{
 		ByteCount sourceRead = 0;
@@ -42,6 +42,6 @@ namespace LlamaXML {
 			sourceStart += sourceRead;
 			destStart += (unicodeLen / sizeof(UnicodeChar));
 		}
-		else ThrowError(status);
+		else ThrowXMLError(status);
 	}
 }

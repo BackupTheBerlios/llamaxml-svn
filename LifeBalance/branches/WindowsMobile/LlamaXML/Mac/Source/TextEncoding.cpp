@@ -1,5 +1,5 @@
 #include "TextEncoding.h"
-#include "ErrorCodeException.h"
+#include "XMLException.h"
 #if 0
 #include "UnitTest.h"
 #include "DebugFormat.h"
@@ -305,7 +305,7 @@ namespace LlamaXML {
 			pascalName[++pascalName[0]] = uint8_t(*name++);
 		}
 		::TextEncoding macEncoding;
-		ThrowIfError(::TECGetTextEncodingFromInternetName(&macEncoding, pascalName));
+		ThrowIfXMLError(::TECGetTextEncodingFromInternetName(&macEncoding, pascalName));
 		return TextEncoding(macEncoding);
 	}
 	
