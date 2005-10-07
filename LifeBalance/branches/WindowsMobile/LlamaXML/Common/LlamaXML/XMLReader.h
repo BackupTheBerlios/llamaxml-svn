@@ -79,6 +79,7 @@ namespace LlamaXML {
 		bool Read();
 		NodeType MoveToContent();
 		void Skip();
+		UnicodeString ReadString();
 		
 		bool IsStartElement();
 		bool IsStartElement(const char * name);
@@ -89,6 +90,10 @@ namespace LlamaXML {
 		void ReadStartElement(const char * localName, const char * namespaceURI);
 		
 		void ReadEndElement();
+		
+		UnicodeString ReadElementString();
+		UnicodeString ReadElementString(const char * name);
+		UnicodeString ReadElementString(const char * localName, const char * namespaceURI);
 
 		bool EndOfFile() const;
 
@@ -152,6 +157,7 @@ namespace LlamaXML {
 		static bool IsName(const UnicodeString & name);
 		
 		static bool Equals(const UnicodeString & a, const char * b);
+		static bool StartsWith(const UnicodeChar * haystack, const char * needle);
 
 	private:
 		struct UniCharRange {
@@ -194,7 +200,7 @@ namespace LlamaXML {
 		void FillOutputBuffer();
 		size_t ConvertInput(char * outputBuffer, size_t len);
 
-		bool StartsWith(const char * prefix);
+		bool BufferStartsWith(const char * prefix);
 		bool StartsWithWhitespace();
 
 		bool ParseElement();

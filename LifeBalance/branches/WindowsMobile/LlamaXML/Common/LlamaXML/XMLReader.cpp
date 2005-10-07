@@ -112,7 +112,7 @@ namespace LlamaXML {
 				// set the default encoding.
 				ParseChar(UnicodeChar(0xFEFF));
 
-				if (StartsWith("<?xml")) {
+				if (BufferStartsWith("<?xml")) {
 					if (! ParseXmlDeclaration()) return false;
 					UnicodeString encodingName = GetAttribute("encoding");
 					if (encodingName.empty()) return true;
@@ -130,18 +130,18 @@ namespace LlamaXML {
 					return ParseXmlDeclaration();
 				}
 				else if (StartsWithWhitespace()) return ParseRequiredWhitespace();
-				//else if (StartsWith("<!--")) return ParseComment();
-				//else if (StartsWith("<?")) return ParseProcessingInstruction();
-				//else if (StartsWith("<!DOCTYPE")) return ParseDocumentType();
-				else if (StartsWith("<")) return ParseElement();
+				//else if (BufferStartsWith("<!--")) return ParseComment();
+				//else if (BufferStartsWith("<?")) return ParseProcessingInstruction();
+				//else if (BufferStartsWith("<!DOCTYPE")) return ParseDocumentType();
+				else if (BufferStartsWith("<")) return ParseElement();
 				else return false;
 
 			case kXmlDeclaration:
 			case kElement:
 			case kEndElement:
 			case kText:
-				if (StartsWith("</")) return ParseEndElement();
-				else if (StartsWith("<")) return ParseElement();
+				if (BufferStartsWith("</")) return ParseEndElement();
+				else if (BufferStartsWith("<")) return ParseElement();
 				else return ParseText();
 		}
 		return false;
@@ -215,6 +215,45 @@ namespace LlamaXML {
 	    }
 	}
 	
+	
+	UnicodeString XMLReader::ReadString() {
+	    if (mNodeType == kElement) {
+	        if (IsEmptyElement()) return UnicodeString();
+	        Read();
+	    }
+	    UnicodeString result;
+	    while ((mNodeType == kText) || (mNodeType == kWhitespace) ||
+	           (mNodeType == kSignificantWhitespace) || (mNodeType == kCDATA)) {
+	        result += mValue;
+	        Read();
+        }
+        return result;
+	}
+	
+	
+    UnicodeString XMLReader::ReadElementString() {
+        if (! IsStartElement()) {
+            ThrowXMLError(0);
+        }
+        return ReadString();
+    }
+    
+    
+	UnicodeString XMLReader::ReadElementString(const char * name) {
+        if (! IsStartElement(name)) {
+            ThrowXMLError(0);
+        }
+        return ReadString();
+	}
+	
+	
+	UnicodeString XMLReader::ReadElementString(const char * localName, const char * namespaceURI) {
+        if (! IsStartElement(localName, namespaceURI)) {
+            ThrowXMLError(0);
+        }
+        return ReadString();
+	}
+
 	
 	void XMLReader::Skip() {
         int depth = 0;
@@ -576,7 +615,7 @@ namespace LlamaXML {
 	}
 
 
-	bool XMLReader::StartsWith(const char * prefix)
+	bool XMLReader::BufferStartsWith(const char * prefix)
 	{
 		ptrdiff_t prefixLen = std::strlen(prefix);
 		if (mOutputEnd - mOutputStart < prefixLen) FillOutputBuffer();
@@ -593,7 +632,7 @@ namespace LlamaXML {
 
 	bool XMLReader::ParseString(const char * s)
 	{
-		if (StartsWith(s)) {
+		if (BufferStartsWith(s)) {
 			mOutputStart += std::strlen(s);
 			return true;
 		}
@@ -794,6 +833,14 @@ namespace LlamaXML {
 			if (a[i] != UnicodeChar(b[i])) return false;
 		}
 		return true;
+	}
+	
+	
+	bool XMLReader::StartsWith(const UnicodeChar * haystack, const char * needle) {
+	    while (*needle) {
+	        if (*haystack++ != UnicodeChar(*needle++)) return false;
+	    }
+	    return true;
 	}
 
 
