@@ -11,7 +11,11 @@
 #endif
 
 
-#include <Carbon/Carbon.h>
+#if __MACH__
+	#include <Carbon/Carbon.h>
+#else
+    #include <Carbon.h>
+#endif
 #include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/TextEncoding.h"
 

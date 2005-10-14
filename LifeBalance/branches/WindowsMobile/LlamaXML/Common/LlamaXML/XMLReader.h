@@ -75,6 +75,12 @@ namespace LlamaXML {
 			kWhitespace,
 			kXmlDeclaration
 		};
+		
+		enum WhitespaceHandling {
+		    kWhitespaceHandlingAll,
+		    kWhitespaceHandlingNone,
+		    kWhitespaceHandlingSignificant
+		};
 
 		bool Read();
 		NodeType MoveToContent();
@@ -88,6 +94,9 @@ namespace LlamaXML {
 		void ReadStartElement();
 		void ReadStartElement(const char * name);
 		void ReadStartElement(const char * localName, const char * namespaceURI);
+		
+		bool IsNotEmptyElementRead();
+		bool MoveToSubElement();
 		
 		void ReadEndElement();
 		
@@ -141,6 +150,18 @@ namespace LlamaXML {
 		{
 			return mAttributes.size();
 		}
+		
+		WhitespaceHandling GetWhitespaceHandling() const {
+		    return mWhitespaceHandling;
+		}
+		
+		void SetWhitespaceHandling(WhitespaceHandling whitespaceHandling) {
+		    mWhitespaceHandling = whitespaceHandling;
+		}
+		
+		bool HasAttribute(size_t i) const;
+		bool HasAttribute(const char * name) const;
+		bool HasAttribute(const char * localName, const char * namespaceURI) const;
 
 		UnicodeString GetAttribute(size_t i) const;
 		UnicodeString GetAttribute(const char * name) const;
@@ -196,6 +217,7 @@ namespace LlamaXML {
 		};
 
 	private:
+		bool ReadInternal();
 		void FillInputBuffer();
 		void FillOutputBuffer();
 		size_t ConvertInput(char * outputBuffer, size_t len);
@@ -234,6 +256,8 @@ namespace LlamaXML {
 		
 		static const size_t kInputBufferCount = 512;
 		static const size_t kOutputBufferCount = 512;
+		
+		WhitespaceHandling              mWhitespaceHandling;
 
 		InputStream &					mInput;
 		TextEncoding					mDocumentEncoding;

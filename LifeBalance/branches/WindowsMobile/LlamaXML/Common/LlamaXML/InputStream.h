@@ -26,6 +26,8 @@ namespace LlamaXML {
 	
 	class InputStream {
 	public:
+	    virtual ~InputStream();
+	    
 		/**
 			Fills the buffer with up to length chars, and returns
 			the number of chars placed in the buffer.

@@ -54,15 +54,16 @@ namespace LlamaXML {
 
 
 	XMLReader::XMLReader(InputStream & input)
-		: mInput(input),
-		mInputBuffer(new char[kInputBufferCount]),
-		mInputStart(mInputBuffer),
-		mInputEnd(mInputBuffer),
-		mOutputBuffer(new UnicodeChar[kOutputBufferCount]),
-		mOutputStart(mOutputBuffer),
-		mOutputEnd(mOutputBuffer),
-		mNodeType(kNone),
-		mConverter(TextEncoding::UTF8())
+	: mWhitespaceHandling(kWhitespaceHandlingAll),
+	  mInput(input),
+	  mInputBuffer(new char[kInputBufferCount]),
+	  mInputStart(mInputBuffer),
+	  mInputEnd(mInputBuffer),
+	  mOutputBuffer(new UnicodeChar[kOutputBufferCount]),
+	  mOutputStart(mOutputBuffer),
+	  mOutputEnd(mOutputBuffer),
+	  mNodeType(kNone),
+	  mConverter(TextEncoding::UTF8())
 	{
 	}
 	
@@ -72,10 +73,25 @@ namespace LlamaXML {
 		delete [] mInputBuffer;
 		delete [] mOutputBuffer;
 	}
+	
+	
+	bool XMLReader::Read() {
+	    if (mWhitespaceHandling == kWhitespaceHandlingNone) {
+	        while (ReadInternal()) {
+	            if (mNodeType != kWhitespace) {
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+	    else {
+	        return ReadInternal();
+	    }
+	}
 
 
 	// Returns true if a node was read successfully, false on EOF
-	bool XMLReader::Read()
+	bool XMLReader::ReadInternal()
 	{
 		switch (mNodeType) {
 			case kNone:
@@ -140,6 +156,7 @@ namespace LlamaXML {
 			case kElement:
 			case kEndElement:
 			case kText:
+		    case kWhitespace:
 				if (BufferStartsWith("</")) return ParseEndElement();
 				else if (BufferStartsWith("<")) return ParseElement();
 				else return ParseText();
@@ -150,11 +167,21 @@ namespace LlamaXML {
 	
 	XMLReader::NodeType XMLReader::MoveToContent() {
 	    // (non-white space text, CDATA, Element, EndElement, EntityReference, or EndEntity)
-        while ((mNodeType != kText) && (mNodeType != kCDATA) && (mNodeType != kElement)
-                && (mNodeType != kEndElement) && (mNodeType != kEntityReference)
-                && (mNodeType != kEndEntity)) {
-            Read();
-        }
+	    do {
+#if 0
+	        // We don't support MoveToAttribute, so we don't need this code yet.
+            if (mNodeType == kAttribute) {
+                MoveToElement();
+                return mNodeType;
+            }
+            else
+#endif
+            if ((mNodeType == kText) || (mNodeType == kCDATA) || (mNodeType == kElement)
+                    || (mNodeType == kEndElement) || (mNodeType == kEntityReference)
+                    || (mNodeType == kEndEntity)) {
+                return mNodeType;
+            }
+	    } while (Read());
         return mNodeType;
 	}
 	
@@ -202,6 +229,29 @@ namespace LlamaXML {
 	    }
 	    else {
 	        ThrowXMLError(0);
+	    }
+	}
+	
+	
+	bool XMLReader::IsNotEmptyElementRead() {
+	    bool result = ! IsEmptyElement();
+	    Read();
+	    return result;
+	}
+	
+	
+	bool XMLReader::MoveToSubElement() {
+	    while (true) {
+	        switch (MoveToContent()) {
+	            case kElement:
+	                return true;
+	            case kEndElement:
+	                Read();
+	                return false;
+	            default:
+	                Skip();
+	                break;
+	        }
 	    }
 	}
 	
@@ -395,7 +445,7 @@ namespace LlamaXML {
 		// CharData ::= [^<&]* - ([^<&]* ']]>' [^<&]*)
 
 		mValue.clear();
-		mNodeType = kText;
+		mNodeType = kWhitespace;
 		mCurrentName.Clear();
 		while (true) {
 			switch (PeekChar()) {
@@ -406,9 +456,12 @@ namespace LlamaXML {
 					ReadChar();
 					if (! ParseReference(mValue)) return false;
 					break;
-				default:
-					mValue += ReadChar();
+				default: {
+				    UnicodeChar c = ReadChar();
+				    if (! IsWhitespace(c)) mNodeType = kText;
+					mValue += c;
 					break;
+				}
 			}
 		}
 	}
@@ -841,6 +894,30 @@ namespace LlamaXML {
 	        if (*haystack++ != UnicodeChar(*needle++)) return false;
 	    }
 	    return true;
+	}
+
+
+	bool XMLReader::HasAttribute(size_t i) const
+	{
+		return (i < mAttributes.size());
+	}
+
+	
+	bool XMLReader::HasAttribute(const char * name) const
+	{
+		for (std::vector<Attribute>::const_iterator i = mAttributes.begin(); i != mAttributes.end(); ++i) {
+			if (Equals(i->mName, name)) return true;
+		}
+		return false;
+	}
+
+
+	bool XMLReader::HasAttribute(const char * localName, const char * namespaceURI) const
+	{
+		for (std::vector<Attribute>::const_iterator i = mAttributes.begin(); i != mAttributes.end(); ++i) {
+			if (Equals(i->mLocalName, localName) && Equals(i->mNamespaceURI, namespaceURI)) return true;
+		}
+		return false;
 	}
 
 

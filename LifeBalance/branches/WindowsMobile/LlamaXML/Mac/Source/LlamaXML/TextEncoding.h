@@ -1,6 +1,11 @@
 #pragma once
 
 #include "LlamaXML/UnicodeString.h"
+#if __MACH__
+	#include <Carbon/Carbon.h>
+#else
+    #include <Carbon.h>
+#endif
 
 namespace LlamaXML {
 

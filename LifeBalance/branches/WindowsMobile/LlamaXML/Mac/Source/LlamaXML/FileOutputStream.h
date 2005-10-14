@@ -12,7 +12,11 @@
 
 
 #include "LlamaXML/OutputStream.h"
-#include <Carbon/Carbon.h>
+#if __MACH__
+	#include <Carbon/Carbon.h>
+#else
+    #include <Carbon.h>
+#endif
 
 namespace LlamaXML {
 
