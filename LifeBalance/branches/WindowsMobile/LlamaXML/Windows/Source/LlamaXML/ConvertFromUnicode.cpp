@@ -3,9 +3,9 @@
  * All rights reserved.
  */
 
-#include "ConvertFromUnicode.h"
-#include "XMLException.h"
-#include <Windows.h>
+#include "LlamaXML/ConvertFromUnicode.h"
+#include "LlamaXML/XMLException.h"
+#include "LlamaXML/PlatformConfig.h"
 
 namespace LlamaXML {
 
@@ -23,7 +23,7 @@ namespace LlamaXML {
 	{
 		while ((sourceStart < sourceEnd) && (destStart < destEnd)) {
 			int result = ::WideCharToMultiByte(mDestinationEncoding, 0, sourceStart, 1,
-				destStart, destEnd - destStart, 0, 0);
+				destStart, int(destEnd - destStart), 0, 0);
 			if (result > 0) {
 				destStart += result;
 				sourceStart += 1;

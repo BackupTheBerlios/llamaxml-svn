@@ -15,6 +15,6 @@ namespace LlamaXML {
 
 LlamaXML::OutputStream & operator << (LlamaXML::OutputStream & stream,
 	const char * s) {
-	stream.WriteData(s, strlen(s));
+	stream.WriteData(s, LlamaXML::uint32_t(strlen(s)));
 	return stream;
 }

@@ -644,7 +644,7 @@ namespace LlamaXML {
 		}
 		size_t remainingCapacity = mInputBuffer + kInputBufferCount - mInputEnd;
 		if (remainingCapacity > 0) {
-			mInputEnd += mInput.ReadUpTo(mInputEnd, remainingCapacity);
+			mInputEnd += mInput.ReadUpTo(mInputEnd, uint32_t(remainingCapacity));
 		}
 	}
 

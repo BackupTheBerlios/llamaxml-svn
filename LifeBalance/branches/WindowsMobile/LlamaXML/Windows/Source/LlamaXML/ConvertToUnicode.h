@@ -11,8 +11,8 @@
 #endif
 
 
-#include "UnicodeString.h"
-#include "TextEncoding.h"
+#include "LlamaXML/UnicodeString.h"
+#include "LlamaXML/TextEncoding.h"
 
 namespace LlamaXML {
 

@@ -157,6 +157,9 @@
 				RelativePath="..\..\Common\LlamaXML\OutputStream.h">
 			</File>
 			<File
+				RelativePath="..\Source\LlamaXML\PlatformConfig.h">
+			</File>
+			<File
 				RelativePath="..\..\Common\LlamaXML\StringInputStream.h">
 			</File>
 			<File

@@ -3,9 +3,9 @@
  * All rights reserved.
  */
 
-#include "ConvertToUnicode.h"
-#include "XMLException.h"
-#include <Windows.h>
+#include "LlamaXML/ConvertToUnicode.h"
+#include "LlamaXML/XMLException.h"
+#include "LlamaXML/PlatformConfig.h"
 
 namespace LlamaXML {
 
@@ -30,8 +30,8 @@ namespace LlamaXML {
 				if (charEnd >= sourceEnd) return;
 				if (! ::IsDBCSLeadByteEx(mSourceEncoding, *charEnd++)) break;
 			}
-			int result = ::MultiByteToWideChar(mSourceEncoding, 0, sourceStart, charEnd - sourceStart,
-				destStart, destEnd - destStart);
+			int result = ::MultiByteToWideChar(mSourceEncoding, 0, sourceStart, int(charEnd - sourceStart),
+				destStart, int(destEnd - destStart));
 			if (result > 0) {
 				destStart += result;
 				sourceStart = charEnd;

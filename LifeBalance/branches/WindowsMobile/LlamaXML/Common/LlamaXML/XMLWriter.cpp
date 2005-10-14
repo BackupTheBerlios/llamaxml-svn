@@ -15,7 +15,7 @@
 namespace LlamaXML {
 
 	const char * XMLWriter::kNewline =
-#if TARGET_OS_WIN32
+#if defined(WIN32)
 		"\r\n";
 #else
 		"\n";
@@ -199,7 +199,7 @@ namespace LlamaXML {
 		while (*content) {
 			const char * token = Scan(content, "<>\"&");
 			if (content < token) {
-				mOutput.WriteData(content, token - content);
+				mOutput.WriteData(content, uint32_t(token - content));
 				content = token;
 			}
 			switch (*content) {
@@ -229,7 +229,7 @@ namespace LlamaXML {
 			char * utf8Start = buffer;
 			char * utf8End = buffer + countof(buffer);
 			mUnicodeToUTF8.Convert(unicodeStart, unicodeEnd, utf8Start, utf8End);
-			mOutput.WriteData(buffer, utf8Start - buffer);
+			mOutput.WriteData(buffer, uint32_t(utf8Start - buffer));
 		}
 	}
 

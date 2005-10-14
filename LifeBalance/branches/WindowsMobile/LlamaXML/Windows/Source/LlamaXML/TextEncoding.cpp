@@ -3,9 +3,9 @@
  * All rights reserved.
  */
 
-#include "TextEncoding.h"
-#include "XMLException.h"
-#include <Windows.h>
+#include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/XMLException.h"
+#include "LlamaXML/PlatformConfig.h"
 
 
 namespace LlamaXML {

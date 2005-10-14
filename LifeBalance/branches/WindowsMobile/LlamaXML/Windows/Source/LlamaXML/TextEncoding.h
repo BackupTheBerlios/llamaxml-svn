@@ -10,7 +10,8 @@
 	#pragma once
 #endif
 
-#include "UnicodeString.h"
+#include "LlamaXML/UnicodeString.h"
+#include "LlamaXML/PlatformConfig.h"
 
 namespace LlamaXML {
 
