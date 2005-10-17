@@ -16,7 +16,7 @@
 
 namespace LlamaXML {
 
-	class StringOutputStream {
+	class StringOutputStream: public OutputStream {
 	public:
 		StringOutputStream();
 		
