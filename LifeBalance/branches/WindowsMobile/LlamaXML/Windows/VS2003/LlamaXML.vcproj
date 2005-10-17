@@ -110,6 +110,12 @@
 				RelativePath="..\Source\LlamaXML\ConvertToUnicode.cpp">
 			</File>
 			<File
+				RelativePath="..\Source\LlamaXML\FileInputStream.cpp">
+			</File>
+			<File
+				RelativePath="..\Source\LlamaXML\FileOutputStream.cpp">
+			</File>
+			<File
 				RelativePath="..\..\Common\LlamaXML\InputStream.cpp">
 			</File>
 			<File
@@ -146,6 +152,12 @@
 			</File>
 			<File
 				RelativePath="..\Source\LlamaXML\ConvertToUnicode.h">
+			</File>
+			<File
+				RelativePath="..\Source\LlamaXML\FileInputStream.h">
+			</File>
+			<File
+				RelativePath="..\Source\LlamaXML\FileOutputStream.h">
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\InputStream.h">
