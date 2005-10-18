@@ -58,8 +58,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 151271377;
-			PBXWorkspaceStateSaveDate = 151271377;
+			PBXPerProjectTemplateStateSaveDate = 151342183;
+			PBXWorkspaceStateSaveDate = 151342183;
 		};
 		sourceControlManager = EDE4BC4008A7EDFB007CB754 /* Source Control */;
 		userBuildSettings = {
@@ -71,10 +71,42 @@
 			EDE4BC3408A7ED90007CB754 /* LlamaXMLTest */,
 		);
 	};
+	EDCCF69409054DE4009F2F0A /* ConvertString.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 764}}";
+			sepNavSelRange = "{394, 93}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+		};
+	};
+	EDCCF69B09054EA7009F2F0A /* ConvertString.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 840}}";
+			sepNavSelRange = "{380, 0}";
+			sepNavVisRect = "{{0, 76}, {711, 764}}";
+			sepNavWindowFrame = "{{287, -22}, {750, 878}}";
+		};
+	};
+	EDD26EE2090437FF001A4BDC /* InputStream.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 840}}";
+			sepNavSelRange = "{0, 243}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+		};
+	};
 	EDD26EE8090437FF001A4BDC /* StringOutputStream.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 764}}";
 			sepNavSelRange = "{327, 0}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+		};
+	};
+	EDD26EE9090437FF001A4BDC /* UnicodeString.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 764}}";
+			sepNavSelRange = "{268, 0}";
 			sepNavVisRect = "{{0, 0}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
@@ -87,11 +119,35 @@
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
+	EDD26EED090437FF001A4BDC /* XMLReader.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 4004}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 2445}, {711, 764}}";
+			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+		};
+	};
 	EDD26EEE090437FF001A4BDC /* XMLWriter.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {607, 7280}}";
 			sepNavSelRange = "{1567, 21}";
 			sepNavVisRect = "{{0, 841}, {607, 281}}";
+			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+		};
+	};
+	EDD26EEF090437FF001A4BDC /* XMLWriter.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 1582}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+		};
+	};
+	EDD26F0409043819001A4BDC /* ConvertToUnicode.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 764}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -101,6 +157,14 @@
 			sepNavSelRange = "{317, 0}";
 			sepNavVisRect = "{{0, 0}, {711, 764}}";
 			sepNavWindowFrame = "{{104, 0}, {750, 878}}";
+		};
+	};
+	EDD26F0C09043819001A4BDC /* TextEncoding.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {711, 1358}}";
+			sepNavSelRange = "{426, 0}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavWindowFrame = "{{197, -5}, {750, 878}}";
 		};
 	};
 	EDE4BC3408A7ED90007CB754 /* LlamaXMLTest */ = {
