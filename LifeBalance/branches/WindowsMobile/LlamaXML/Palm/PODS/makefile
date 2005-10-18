@@ -39,7 +39,7 @@ ESCAPED_ARTIFACT_NAME = $(subst $(SPACE),\ ,$(ARTIFACT_NAME))
 
 # TODO: Update all sources and resources
 
-SOURCES = $(wildcard ../../Common/*.cpp) $(wildcard ../Source/*.cpp)
+SOURCES = $(wildcard ../../Common/LlamaXML/*.cpp) $(wildcard ../Source/LlamaXML/*.cpp)
 RESOURCES = 
 SLD_FILE = 
 
@@ -86,7 +86,7 @@ DEBUG_OR_RELEASE=Release
 # Set the target platform for the build; either Device or Simulator
 # Use Device as a target for emulator builds.
 #
-TARGET_PLATFORM=Simulator
+TARGET_PLATFORM=Device
 
 # Specify the level of optimization that you want:
 # NONE, SOME, FULL, INTRAPROCEDURAL, INTERPROCEDURAL, INLINING.
@@ -141,8 +141,8 @@ ENABLE_ASSERTIONS = TRUE
 # Additionally, you must explicly specify the "-I" prior to each
 # path included in this variable.  Spaces are used to separate
 # each path from each other.
-LOCAL_INCLUDE_PATHS = 
-LOCAL_SIM_INCLUDE_PATHS = 
+LOCAL_INCLUDE_PATHS = -I../../Common -I../../Palm/Source
+LOCAL_SIM_INCLUDE_PATHS = -I../../Common -I../../Palm/Source
 
 # Additional paths to look for #include <header>
 # (Palm OS SDK directories are automatically included)
