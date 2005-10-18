@@ -23,24 +23,21 @@ namespace LlamaXML {
 	}
 
 	void FileInputStream::Restart() {
-		LARGE_INTEGER zero;
-		zero.QuadPart = 0;
-		if (! ::SetFilePointerEx(mFile, zero, NULL, FILE_BEGIN)) {
-			ThrowXMLError(::GetLastError());
+		DWORD result = ::SetFilePointer(mFile, 0, NULL, FILE_BEGIN);
+		if (result == INVALID_FILE_SIZE) {
+			ThrowIfXMLError(::GetLastError());
 		}
 	}
 
 	bool FileInputStream::EndOfFile() {
-		LARGE_INTEGER zero;
-		zero.QuadPart = 0;
-		LARGE_INTEGER fileSize;
-		if (! ::GetFileSizeEx(mFile, &fileSize)) {
-			ThrowXMLError(::GetLastError());
+		DWORD fileSize = ::GetFileSize(mFile, NULL);
+		if (fileSize == INVALID_FILE_SIZE) {
+			ThrowIfXMLError(::GetLastError());
 		}
-		LARGE_INTEGER filePosition;
-		if (! ::SetFilePointerEx(mFile, zero, &filePosition, FILE_CURRENT)) {
-			ThrowXMLError(::GetLastError());
+		DWORD filePosition = ::SetFilePointer(mFile, 0, NULL, FILE_CURRENT);
+		if (filePosition == INVALID_FILE_SIZE) {
+			ThrowIfXMLError(::GetLastError());
 		}
-		return filePosition.QuadPart >= fileSize.QuadPart;
+		return filePosition >= fileSize;
 	}
 }

@@ -6,7 +6,6 @@
 	ProjectGUID="{9ACB7FF6-0ED4-4049-9F7C-CAE702FDF2D3}"
 	RootNamespace="LlamaXML"
 	Keyword="Win32Proj"
-	SignManifests="true"
 	>
 	<Platforms>
 		<Platform
@@ -629,31 +628,51 @@
 			Name="Windows"
 			>
 			<File
-				RelativePath="..\..\Windows\Source\ConvertFromUnicode.cpp"
+				RelativePath="..\..\Windows\Source\LlamaXML\ConvertFromUnicode.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\ConvertFromUnicode.h"
+				RelativePath="..\..\Windows\Source\LlamaXML\ConvertFromUnicode.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\ConvertToUnicode.cpp"
+				RelativePath="..\..\Windows\Source\LlamaXML\ConvertToUnicode.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\ConvertToUnicode.h"
+				RelativePath="..\..\Windows\Source\LlamaXML\ConvertToUnicode.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\LlamaStdInt.h"
+				RelativePath="..\..\Windows\Source\LlamaXML\FileInputStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\TextEncoding.cpp"
+				RelativePath="..\..\Windows\Source\LlamaXML\FileInputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\TextEncoding.h"
+				RelativePath="..\..\Windows\Source\LlamaXML\FileOutputStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\FileOutputStream.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\LlamaStdInt.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\PlatformConfig.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\TextEncoding.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\TextEncoding.h"
 				>
 			</File>
 		</Filter>
@@ -661,67 +680,71 @@
 			Name="Common"
 			>
 			<File
-				RelativePath="..\..\Common\BufferInputStream.cpp"
+				RelativePath="..\..\Common\LlamaXML\BufferInputStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\BufferInputStream.h"
+				RelativePath="..\..\Common\LlamaXML\BufferInputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\InputStream.h"
+				RelativePath="..\..\Common\LlamaXML\InputStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\OutputStream.cpp"
+				RelativePath="..\..\Common\LlamaXML\InputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\OutputStream.h"
+				RelativePath="..\..\Common\LlamaXML\OutputStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\StringInputStream.cpp"
+				RelativePath="..\..\Common\LlamaXML\OutputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\StringInputStream.h"
+				RelativePath="..\..\Common\LlamaXML\StringInputStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\StringOutputStream.cpp"
+				RelativePath="..\..\Common\LlamaXML\StringInputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\StringOutputStream.h"
+				RelativePath="..\..\Common\LlamaXML\StringOutputStream.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\UnicodeString.h"
+				RelativePath="..\..\Common\LlamaXML\StringOutputStream.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\XMLException.cpp"
+				RelativePath="..\..\Common\LlamaXML\UnicodeString.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\XMLException.h"
+				RelativePath="..\..\Common\LlamaXML\XMLException.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\XMLReader.cpp"
+				RelativePath="..\..\Common\LlamaXML\XMLException.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\XMLReader.h"
+				RelativePath="..\..\Common\LlamaXML\XMLReader.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\XMLWriter.cpp"
+				RelativePath="..\..\Common\LlamaXML\XMLReader.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\XMLWriter.h"
+				RelativePath="..\..\Common\LlamaXML\XMLWriter.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Common\LlamaXML\XMLWriter.h"
 				>
 			</File>
 		</Filter>
