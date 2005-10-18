@@ -6,6 +6,7 @@
 #include "LlamaXML/XMLWriter.h"
 #include "LlamaXML/XMLException.h"
 #include <cstring>
+#include <cstdio>
 #include <stddef.h>
 #include <assert.h>
 #include <limits>

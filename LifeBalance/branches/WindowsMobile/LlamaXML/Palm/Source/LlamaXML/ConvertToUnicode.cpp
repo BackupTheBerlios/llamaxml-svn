@@ -3,8 +3,8 @@
  * All rights reserved.
  */
 
-#include "ConvertToUnicode.h"
-#include "ErrorCodeException.h"
+#include "LlamaXML/ConvertToUnicode.h"
+#include "LlamaXML/XMLException.h"
 
 namespace LlamaXML {
 
@@ -20,8 +20,8 @@ namespace LlamaXML {
 		mNewConversion = true;
 	}
 		
-	void ConvertToUnicode::Convert(char * & sourceStart,
-		char * sourceEnd, UnicodeChar * & destStart,
+	void ConvertToUnicode::Convert(const char * & sourceStart,
+		const char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{
 #if PALMOS_SDK_VERSION >= 0x600
@@ -29,8 +29,8 @@ namespace LlamaXML {
 #else
 		typedef uint16_t TxtConvertLength;
 #endif
-		TxtConvertLength sourceBytes = TxtConvertLength(sourceEnd - sourceStart);
-		TxtConvertLength destBytes = TxtConvertLength((destEnd - destStart) * sizeof(UnicodeChar));
+		TxtConvertLength sourceBytes = TxtConvertLength((sourceEnd - sourceStart) * sizeof(*sourceStart));
+		TxtConvertLength destBytes = TxtConvertLength((destEnd - destStart) * sizeof(*destStart));
 		Err err = ::TxtConvertEncoding(mNewConversion, &mState,
 			sourceStart, &sourceBytes, mSourceEncoding.AsPalmCharEncoding(),
 			reinterpret_cast<Char *>(destStart),
@@ -38,10 +38,10 @@ namespace LlamaXML {
 			charEncodingUCS2, 0, 0);
 		if ((err != errNone) && (err != txtErrConvertOverflow) &&
 			(err != txtErrConvertUnderflow)) {
-			ThrowError(err);
+			ThrowXMLError(err);
 		}
-		sourceStart += sourceBytes;
-		destStart += (destBytes / sizeof(UnicodeChar));
+		sourceStart += (sourceBytes / sizeof(*sourceStart));
+		destStart += (destBytes / sizeof(*destStart));
 		mNewConversion = false;
 	}
 }

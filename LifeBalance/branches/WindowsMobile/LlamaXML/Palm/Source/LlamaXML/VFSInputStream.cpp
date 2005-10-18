@@ -3,15 +3,15 @@
  * All rights reserved.
  */
 
-#include "VFSInputStream.h"
-#include "ErrorCodeException.h"
+#include "LlamaXML/VFSInputStream.h"
+#include "LlamaXML/XMLException.h"
 
 namespace LlamaXML {
 
 	VFSInputStream::VFSInputStream(uint16_t volRefNum, const char * pathNameP)
 	: mFileRef(0)
 	{
-		ThrowIfError(::VFSFileOpen(volRefNum, pathNameP, vfsModeRead, &mFileRef));
+		ThrowIfXMLError(::VFSFileOpen(volRefNum, pathNameP, vfsModeRead, &mFileRef));
 	}
 	
 	VFSInputStream::~VFSInputStream() {
@@ -25,13 +25,13 @@ namespace LlamaXML {
 			return numBytesRead;
 		}
 		else {
-			ThrowError(err);
+			ThrowXMLError(err);
 			return 0;	// to suppress compiler warning
 		}
 	}
 	
 	void VFSInputStream::Restart() {
-		ThrowIfError(::VFSFileSeek(mFileRef, vfsOriginBeginning, 0));
+		ThrowIfXMLError(::VFSFileSeek(mFileRef, vfsOriginBeginning, 0));
 	}
 	
 	bool VFSInputStream::EndOfFile() {
@@ -39,7 +39,7 @@ namespace LlamaXML {
 		if (err == errNone) return false;
 		else if (err == vfsErrFileEOF) return true;
 		else {
-			ThrowError(err);
+			ThrowXMLError(err);
 			return true;	// to suppress compiler warning
 		}
 	}

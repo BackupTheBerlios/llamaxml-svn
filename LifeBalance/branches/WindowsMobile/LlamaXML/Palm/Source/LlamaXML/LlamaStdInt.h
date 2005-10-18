@@ -5,11 +5,14 @@
 	#pragma once
 #endif
 
-#include <cstdint>
+#include <stdint.h>
+#include <stdlib.h>
 
 namespace LlamaXML {
-	using std::uint16_t;
-	using std::uint32_t;
+	using ::uint16_t;
+	using ::uint32_t;
+	using ::int32_t;
+	using ::size_t;
 }
 
 #endif

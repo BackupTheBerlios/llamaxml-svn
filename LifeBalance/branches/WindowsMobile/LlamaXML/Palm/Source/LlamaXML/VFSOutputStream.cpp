@@ -3,15 +3,15 @@
  * All rights reserved.
  */
 
-#include "VFSOutputStream.h"
-#include "ErrorCodeException.h"
+#include "LlamaXML/VFSOutputStream.h"
+#include "LlamaXML/XMLException.h"
 
 namespace LlamaXML {
 
 	VFSOutputStream::VFSOutputStream(uint16_t volRefNum, const char * pathNameP)
 	: mFileRef(0)
 	{
-		ThrowIfError(::VFSFileOpen(volRefNum, pathNameP,
+		ThrowIfXMLError(::VFSFileOpen(volRefNum, pathNameP,
 			vfsModeExclusive | vfsModeWrite | vfsModeCreate | vfsModeTruncate,
 			&mFileRef));
 	}
@@ -21,7 +21,7 @@ namespace LlamaXML {
 	}
 	
 	void VFSOutputStream::WriteData(const char * buffer, uint32_t length) {
-		ThrowIfError(::VFSFileWrite(mFileRef, length, buffer, NULL));
+		ThrowIfXMLError(::VFSFileWrite(mFileRef, length, buffer, NULL));
 	}
 	
 }

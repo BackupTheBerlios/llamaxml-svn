@@ -675,7 +675,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -747,21 +747,21 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>UnicodeString.h</PATH>
+                    <PATH>BufferInputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>BufferInputStream.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ToUnicodeConverter.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ToUnicodeConverter.cpp</PATH>
+                    <PATH>InputStream.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
@@ -769,6 +769,20 @@
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
                     <PATH>InputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringInputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringInputStream.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
@@ -787,34 +801,6 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringInputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>BufferInputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>BufferInputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringInputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -832,22 +818,32 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>UnicodeString.h</PATH>
+                        <PATH>BufferInputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ToUnicodeConverter.h</PATH>
+                        <PATH>BufferInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ToUnicodeConverter.cpp</PATH>
+                        <PATH>InputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>InputStream.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringInputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -858,26 +854,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>VFSInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>BufferInputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>BufferInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -1505,7 +1481,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -1570,6 +1546,34 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
+                    <PATH>OutputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>OutputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringOutputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringOutputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
                     <PATH>XMLWriter.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
@@ -1589,34 +1593,6 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>OutputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>OutputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringOutputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringOutputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -1625,6 +1601,26 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>XMLWriter.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>OutputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>OutputStream.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringOutputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringOutputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -1640,26 +1636,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>VFSOutputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>OutputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>OutputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringOutputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringOutputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -2287,7 +2263,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -2352,10 +2328,17 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TextEncoding.cpp</PATH>
+                    <PATH>XMLException.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>XMLException.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
@@ -2366,14 +2349,49 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ErrorCodeException.cpp</PATH>
+                    <PATH>ConvertToUnicode.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ErrorCodeException.h</PATH>
+                    <PATH>ConvertToUnicode.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>LlamaStdInt.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>TextEncoding.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>PlatformConfig.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertFromUnicode.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertFromUnicode.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
@@ -2390,7 +2408,12 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TextEncoding.cpp</PATH>
+                        <PATH>XMLException.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>XMLException.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -2400,12 +2423,37 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ErrorCodeException.cpp</PATH>
+                        <PATH>ConvertToUnicode.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ErrorCodeException.h</PATH>
+                        <PATH>ConvertToUnicode.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>LlamaStdInt.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>TextEncoding.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>PlatformConfig.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertFromUnicode.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertFromUnicode.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -2804,7 +2852,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>384</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -3515,7 +3563,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -3587,21 +3635,21 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>UnicodeString.h</PATH>
+                    <PATH>BufferInputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>BufferInputStream.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ToUnicodeConverter.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ToUnicodeConverter.cpp</PATH>
+                    <PATH>InputStream.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
@@ -3609,6 +3657,20 @@
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
                     <PATH>InputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringInputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringInputStream.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
@@ -3627,34 +3689,6 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringInputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>BufferInputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>BufferInputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringInputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -3672,22 +3706,32 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>UnicodeString.h</PATH>
+                        <PATH>BufferInputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ToUnicodeConverter.h</PATH>
+                        <PATH>BufferInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ToUnicodeConverter.cpp</PATH>
+                        <PATH>InputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>InputStream.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringInputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -3698,26 +3742,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>VFSInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>BufferInputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>BufferInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -4345,7 +4369,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -4410,6 +4434,34 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
+                    <PATH>OutputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>OutputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringOutputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringOutputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
                     <PATH>XMLWriter.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
@@ -4429,34 +4481,6 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>OutputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>OutputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringOutputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringOutputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -4465,6 +4489,26 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>XMLWriter.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>OutputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>OutputStream.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringOutputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringOutputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -4480,26 +4524,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>VFSOutputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>OutputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>OutputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringOutputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringOutputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -5127,7 +5151,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -5192,10 +5216,17 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TextEncoding.cpp</PATH>
+                    <PATH>XMLException.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>XMLException.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
@@ -5206,14 +5237,49 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ErrorCodeException.cpp</PATH>
+                    <PATH>ConvertToUnicode.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ErrorCodeException.h</PATH>
+                    <PATH>ConvertToUnicode.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>LlamaStdInt.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>TextEncoding.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>PlatformConfig.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertFromUnicode.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertFromUnicode.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
@@ -5230,7 +5296,12 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TextEncoding.cpp</PATH>
+                        <PATH>XMLException.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>XMLException.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -5240,12 +5311,37 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ErrorCodeException.cpp</PATH>
+                        <PATH>ConvertToUnicode.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ErrorCodeException.h</PATH>
+                        <PATH>ConvertToUnicode.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>LlamaStdInt.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>TextEncoding.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>PlatformConfig.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertFromUnicode.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertFromUnicode.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -5873,7 +5969,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -5945,21 +6041,21 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>UnicodeString.h</PATH>
+                    <PATH>BufferInputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>BufferInputStream.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ToUnicodeConverter.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ToUnicodeConverter.cpp</PATH>
+                    <PATH>InputStream.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
@@ -5967,6 +6063,20 @@
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
                     <PATH>InputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringInputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringInputStream.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
@@ -5985,34 +6095,6 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringInputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>BufferInputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>BufferInputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringInputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -6030,22 +6112,32 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>UnicodeString.h</PATH>
+                        <PATH>BufferInputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ToUnicodeConverter.h</PATH>
+                        <PATH>BufferInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ToUnicodeConverter.cpp</PATH>
+                        <PATH>InputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>InputStream.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringInputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -6056,26 +6148,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>VFSInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>BufferInputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>BufferInputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringInputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -6703,7 +6775,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -6768,6 +6840,34 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
+                    <PATH>OutputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>OutputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringOutputStream.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>StringOutputStream.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
                     <PATH>XMLWriter.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
@@ -6787,34 +6887,6 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>OutputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>OutputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringOutputStream.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StringOutputStream.cpp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -6823,6 +6895,26 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>XMLWriter.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>OutputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>OutputStream.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringOutputStream.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>StringOutputStream.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -6838,26 +6930,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>VFSOutputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>OutputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>OutputStream.cpp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringOutputStream.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StringOutputStream.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -7485,7 +7557,7 @@
                 <SETTING><NAME>MWProject_68K_rsrcflags</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_a4</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_minsize</NAME><VALUE>0</VALUE></SETTING>
-                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE></VALUE></SETTING>
+                <SETTING><NAME>MWProject_68K_rsrcsegtype</NAME><VALUE>    </VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_cfm68kcodegen</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_stacksize</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_thedebugger</NAME><VALUE>0</VALUE></SETTING>
@@ -7550,10 +7622,17 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TextEncoding.cpp</PATH>
+                    <PATH>XMLException.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>XMLException.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
@@ -7564,14 +7643,49 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ErrorCodeException.cpp</PATH>
+                    <PATH>ConvertToUnicode.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>ErrorCodeException.h</PATH>
+                    <PATH>ConvertToUnicode.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>LlamaStdInt.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>TextEncoding.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>PlatformConfig.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertFromUnicode.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertFromUnicode.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
@@ -7588,7 +7702,12 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TextEncoding.cpp</PATH>
+                        <PATH>XMLException.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>XMLException.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -7598,12 +7717,37 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ErrorCodeException.cpp</PATH>
+                        <PATH>ConvertToUnicode.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>ErrorCodeException.h</PATH>
+                        <PATH>ConvertToUnicode.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>LlamaStdInt.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>TextEncoding.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>PlatformConfig.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertFromUnicode.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertFromUnicode.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -7629,19 +7773,19 @@
             <FILEREF>
                 <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
+                <PATH>BufferInputStream.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Reader Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
                 <PATH>BufferInputStream.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
                 <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>BufferInputStream.cpp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ErrorCodeException.cpp</PATH>
+                <PATH>InputStream.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -7653,19 +7797,13 @@
             <FILEREF>
                 <TARGETNAME>Writer Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>OutputStream.h</PATH>
+                <PATH>OutputStream.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
                 <TARGETNAME>Writer Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>OutputStream.cpp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Reader Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>StringInputStream.h</PATH>
+                <PATH>OutputStream.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -7675,9 +7813,9 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
-                <TARGETNAME>Writer Standard</TARGETNAME>
+                <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>StringOutputStream.h</PATH>
+                <PATH>StringInputStream.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -7687,15 +7825,15 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
-                <TARGETNAME>Reader Standard</TARGETNAME>
+                <TARGETNAME>Writer Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>UnicodeString.h</PATH>
+                <PATH>StringOutputStream.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
-                <TARGETNAME>Reader Standard</TARGETNAME>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>XMLReader.h</PATH>
+                <PATH>XMLException.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -7705,9 +7843,9 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
-                <TARGETNAME>Writer Standard</TARGETNAME>
+                <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>XMLWriter.h</PATH>
+                <PATH>XMLReader.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -7716,8 +7854,26 @@
                 <PATH>XMLWriter.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Writer Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>XMLWriter.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
         </GROUP>
         <GROUP><NAME>Palm</NAME>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertFromUnicode.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertToUnicode.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
@@ -7727,13 +7883,7 @@
             <FILEREF>
                 <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>ToUnicodeConverter.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Reader Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ToUnicodeConverter.cpp</PATH>
+                <PATH>VFSInputStream.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -7743,21 +7893,15 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
-                <TARGETNAME>Reader Standard</TARGETNAME>
+                <TARGETNAME>Writer Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>VFSInputStream.cpp</PATH>
+                <PATH>VFSOutputStream.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
                 <TARGETNAME>Writer Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
                 <PATH>VFSOutputStream.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Writer Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>VFSOutputStream.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
         </GROUP>

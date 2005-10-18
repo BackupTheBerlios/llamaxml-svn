@@ -31,8 +31,8 @@ namespace LlamaXML {
 
 		void Reset(TextEncoding sourceEncoding);
 		
-		void Convert(char * & sourceStart,
-			char * sourceEnd, UnicodeChar * & destStart,
+		void Convert(const char * & sourceStart,
+			const char * sourceEnd, UnicodeChar * & destStart,
 			UnicodeChar * destEnd);
 		
 		TextEncoding GetSourceEncoding() const
