@@ -6,6 +6,7 @@
 	ProjectGUID="{9ACB7FF6-0ED4-4049-9F7C-CAE702FDF2D3}"
 	RootNamespace="LlamaXML"
 	Keyword="Win32Proj"
+	SignManifests="true"
 	>
 	<Platforms>
 		<Platform
@@ -685,6 +686,14 @@
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\BufferInputStream.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Common\LlamaXML\ConvertString.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Common\LlamaXML\ConvertString.h"
 				>
 			</File>
 			<File
