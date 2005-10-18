@@ -2396,6 +2396,20 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertString.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertString.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -2454,6 +2468,16 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>ConvertFromUnicode.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertString.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertString.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -5284,6 +5308,20 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertString.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertString.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -5342,6 +5380,16 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>ConvertFromUnicode.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertString.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertString.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -7690,6 +7738,20 @@
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertString.cpp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS>Debug</FILEFLAGS>
+                </FILE>
+                <FILE>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>ConvertString.h</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                    <FILEKIND>Text</FILEKIND>
+                    <FILEFLAGS></FILEFLAGS>
+                </FILE>
             </FILELIST>
             <SEGMENTLIST>
                 <SEGMENT>
@@ -7750,6 +7812,16 @@
                         <PATH>ConvertFromUnicode.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertString.cpp</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
+                    <FILEREF>
+                        <PATHTYPE>Name</PATHTYPE>
+                        <PATH>ConvertString.h</PATH>
+                        <PATHFORMAT>Windows</PATHFORMAT>
+                    </FILEREF>
                 </SEGMENT>
             </SEGMENTLIST>
         </TARGET>
@@ -7780,6 +7852,18 @@
                 <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
                 <PATH>BufferInputStream.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertString.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertString.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
