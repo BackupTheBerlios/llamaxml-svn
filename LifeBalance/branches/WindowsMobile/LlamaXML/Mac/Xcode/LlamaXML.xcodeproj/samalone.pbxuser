@@ -58,8 +58,21 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 151342183;
-			PBXWorkspaceStateSaveDate = 151342183;
+			PBXPerProjectTemplateStateSaveDate = 151427207;
+			PBXWorkspaceStateSaveDate = 151427207;
+		};
+		perUserProjectItems = {
+			ED3421980906DE8E00996B95 /* PBXBookmark */ = ED3421980906DE8E00996B95 /* PBXBookmark */;
+			ED34219D0906F3DD00996B95 /* PBXTextBookmark */ = ED34219D0906F3DD00996B95 /* PBXTextBookmark */;
+			ED34219E0906F3DD00996B95 /* PBXTextBookmark */ = ED34219E0906F3DD00996B95 /* PBXTextBookmark */;
+			ED34219F0906F3DD00996B95 /* PBXTextBookmark */ = ED34219F0906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A00906F3DD00996B95 /* PBXTextBookmark */ = ED3421A00906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A10906F3DD00996B95 /* PBXTextBookmark */ = ED3421A10906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A20906F3DD00996B95 /* PBXTextBookmark */ = ED3421A20906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A30906F3DD00996B95 /* PBXTextBookmark */ = ED3421A30906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A40906F3DD00996B95 /* PBXTextBookmark */ = ED3421A40906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A50906F3DD00996B95 /* PBXTextBookmark */ = ED3421A50906F3DD00996B95 /* PBXTextBookmark */;
+			ED3421A80906F3DD00996B95 /* PBXTextBookmark */ = ED3421A80906F3DD00996B95 /* PBXTextBookmark */;
 		};
 		sourceControlManager = EDE4BC4008A7EDFB007CB754 /* Source Control */;
 		userBuildSettings = {
@@ -70,6 +83,110 @@
 		executables = (
 			EDE4BC3408A7ED90007CB754 /* LlamaXMLTest */,
 		);
+	};
+	ED3421980906DE8E00996B95 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = EDD26EEF090437FF001A4BDC /* XMLWriter.h */;
+	};
+	ED34219D0906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */;
+		name = "XMLReader::ReadElementString";
+		rLen = 28;
+		rLoc = 7204;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 8447;
+	};
+	ED34219E0906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
+		name = "XMLReader.h: 37";
+		rLen = 0;
+		rLoc = 966;
+		rType = 0;
+		vrLen = 1296;
+		vrLoc = 1492;
+	};
+	ED34219F0906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
+		name = "XMLReader.h: 37";
+		rLen = 0;
+		rLoc = 966;
+		rType = 0;
+		vrLen = 1243;
+		vrLoc = 1624;
+	};
+	ED3421A00906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */;
+		name = "XMLReader::MoveToContent";
+		rLen = 24;
+		rLoc = 4501;
+		rType = 0;
+		vrLen = 1512;
+		vrLoc = 1444;
+	};
+	ED3421A10906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
+		name = "XMLReader.h: 37";
+		rLen = 0;
+		rLoc = 966;
+		rType = 0;
+		vrLen = 1377;
+		vrLoc = 2698;
+	};
+	ED3421A20906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */;
+		name = "XMLReader::MoveToContent";
+		rLen = 24;
+		rLoc = 4501;
+		rType = 0;
+		vrLen = 1793;
+		vrLoc = 3606;
+	};
+	ED3421A30906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
+		name = "XMLReader.h: 37";
+		rLen = 0;
+		rLoc = 966;
+		rType = 0;
+		vrLen = 1296;
+		vrLoc = 1492;
+	};
+	ED3421A40906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */;
+		name = "XMLReader::ReadElementString";
+		rLen = 28;
+		rLoc = 7204;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 8447;
+	};
+	ED3421A50906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
+		name = MoveToSubElement;
+		rLen = 16;
+		rLoc = 2228;
+		rType = 0;
+		vrLen = 1254;
+		vrLoc = 1492;
+	};
+	ED3421A80906F3DD00996B95 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDD26EEF090437FF001A4BDC /* XMLWriter.h */;
+		name = "XMLWriter.h: 68";
+		rLen = 0;
+		rLoc = 1747;
+		rType = 0;
+		vrLen = 1521;
+		vrLoc = 336;
 	};
 	EDCCF69409054DE4009F2F0A /* ConvertString.h */ = {
 		uiCtxt = {
@@ -114,16 +231,16 @@
 	EDD26EEC090437FF001A4BDC /* XMLReader.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 19824}}";
-			sepNavSelRange = "{1911, 23}";
-			sepNavVisRect = "{{0, 819}, {711, 764}}";
+			sepNavSelRange = "{7204, 28}";
+			sepNavVisRect = "{{0, 4780}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
 	EDD26EED090437FF001A4BDC /* XMLReader.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 4004}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 2445}, {711, 764}}";
+			sepNavSelRange = "{2228, 16}";
+			sepNavVisRect = "{{0, 952}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -138,9 +255,9 @@
 	EDD26EEF090437FF001A4BDC /* XMLWriter.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 1582}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 0}, {711, 764}}";
-			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
+			sepNavSelRange = "{1747, 0}";
+			sepNavVisRect = "{{0, 246}, {711, 764}}";
+			sepNavWindowFrame = "{{257, -8}, {750, 878}}";
 		};
 	};
 	EDD26F0409043819001A4BDC /* ConvertToUnicode.h */ = {
