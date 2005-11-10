@@ -51,6 +51,9 @@ namespace LlamaXML {
 		else if (::StrCaselessCompare(buffer.c_str(), "GB2312") == 0) {
 			return TextEncoding(charEncodingPalmGB);
 		}
+		else if (::StrCaselessCompare(buffer.c_str(), "ISO-8859-1") == 0) {
+			return TextEncoding(charEncodingISO8859_1);
+		}
 		else {
 			uint32_t romVersion = 0;
 			if ((::FtrGet(sysFtrCreator, sysFtrNumROMVersion, &romVersion) == 0)

@@ -52,7 +52,8 @@ namespace LlamaXML {
 
 	class XMLReader {
 	public:
-		XMLReader(InputStream & input);
+		XMLReader(InputStream & input,
+			TextEncoding initialEncoding = TextEncoding::UTF8());
 		~XMLReader();
 
 		enum NodeType {

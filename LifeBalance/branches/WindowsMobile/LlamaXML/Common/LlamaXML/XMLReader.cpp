@@ -54,7 +54,7 @@ namespace LlamaXML {
 	}
 
 
-	XMLReader::XMLReader(InputStream & input)
+	XMLReader::XMLReader(InputStream & input, TextEncoding initialEncoding)
 	: mWhitespaceHandling(kWhitespaceHandlingAll),
 	  mInput(input),
 	  mInputBuffer(new char[kInputBufferCount]),
@@ -64,7 +64,7 @@ namespace LlamaXML {
 	  mOutputStart(mOutputBuffer),
 	  mOutputEnd(mOutputBuffer),
 	  mNodeType(kNone),
-	  mConverter(TextEncoding::UTF8())
+	  mConverter(initialEncoding)
 	{
 	}
 	
