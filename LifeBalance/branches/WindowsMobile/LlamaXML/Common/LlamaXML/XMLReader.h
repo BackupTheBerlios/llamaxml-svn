@@ -86,6 +86,7 @@ namespace LlamaXML {
 		NodeType MoveToContent();
 		void Skip();
 		UnicodeString ReadString();
+		std::string ReadString(TextEncoding encoding);
 		
 		bool IsStartElement();
 		bool IsStartElement(const char * name);
@@ -104,9 +105,14 @@ namespace LlamaXML {
 		UnicodeString ReadElementString(const char * name);
 		UnicodeString ReadElementString(const char * localName, const char * namespaceURI);
 
+		std::string ReadElementString(TextEncoding encoding);
+		std::string ReadElementString(const char * name, TextEncoding encoding);
+		std::string ReadElementString(const char * localName, const char * namespaceURI,
+		    TextEncoding encoding);
+
 		bool EndOfFile() const;
 
-		const NodeType & GetNodeType() const
+		NodeType GetNodeType() const
 		{
 			return mNodeType;
 		}
@@ -166,6 +172,11 @@ namespace LlamaXML {
 		UnicodeString GetAttribute(size_t i) const;
 		UnicodeString GetAttribute(const char * name) const;
 		UnicodeString GetAttribute(const char * localName, const char * namespaceURI) const;
+
+		std::string GetAttribute(size_t i, TextEncoding encoding) const;
+		std::string GetAttribute(const char * name, TextEncoding encoding) const;
+		std::string GetAttribute(const char * localName, const char * namespaceURI,
+		    TextEncoding encoding) const;
 
 		static bool IsBaseChar(UnicodeChar c);
 		static bool IsIdeographic(UnicodeChar c);

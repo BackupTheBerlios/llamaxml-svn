@@ -5,6 +5,7 @@
 
 #include "LlamaXML/XMLReader.h"
 #include "LlamaXML/XMLException.h"
+#include "LlamaXML/ConvertString.h"
 #include <stddef.h>
 
 #define countof(x) (sizeof(x) / sizeof(*x))
@@ -281,6 +282,11 @@ namespace LlamaXML {
 	}
 	
 	
+	std::string XMLReader::ReadString(TextEncoding encoding) {
+	    return FromUnicode(ReadString(), encoding);
+	}
+	
+	
     UnicodeString XMLReader::ReadElementString() {
         if (! IsStartElement()) {
             ThrowXMLError(0);
@@ -302,6 +308,22 @@ namespace LlamaXML {
             ThrowXMLError(0);
         }
         return ReadString();
+	}
+
+	
+    std::string XMLReader::ReadElementString(TextEncoding encoding) {
+        return FromUnicode(ReadElementString(), encoding);
+    }
+    
+    
+	std::string XMLReader::ReadElementString(const char * name, TextEncoding encoding) {
+	    return FromUnicode(ReadElementString(name), encoding);
+	}
+	
+	
+	std::string XMLReader::ReadElementString(const char * localName, const char * namespaceURI,
+	        TextEncoding encoding) {
+	    return FromUnicode(ReadElementString(localName, namespaceURI), encoding);
 	}
 
 	
@@ -943,6 +965,25 @@ namespace LlamaXML {
 			if (Equals(i->mLocalName, localName) && Equals(i->mNamespaceURI, namespaceURI)) return i->mValue;
 		}
 		return UnicodeString();
+	}
+
+
+	std::string XMLReader::GetAttribute(size_t i, TextEncoding encoding) const
+	{
+	    return FromUnicode(GetAttribute(i), encoding);
+	}
+
+	
+	std::string XMLReader::GetAttribute(const char * name, TextEncoding encoding) const
+	{
+	    return FromUnicode(GetAttribute(name), encoding);
+	}
+
+
+	std::string XMLReader::GetAttribute(const char * localName, const char * namespaceURI,
+	    TextEncoding encoding) const
+	{
+	    return FromUnicode(GetAttribute(localName, namespaceURI), encoding);
 	}
 
 
