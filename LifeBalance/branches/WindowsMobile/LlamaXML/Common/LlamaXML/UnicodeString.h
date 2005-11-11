@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef UNICODESTRING_H
-#define UNICODESTRING_H
+#ifndef LLAMAXML_UNICODESTRING_H
+#define LLAMAXML_UNICODESTRING_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once

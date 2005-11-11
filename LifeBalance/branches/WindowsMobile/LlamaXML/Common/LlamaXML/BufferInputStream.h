@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef BUFFERINPUTSTREAM_H
-#define BUFFERINPUTSTREAM_H
+#ifndef LLAMAXML_BUFFERINPUTSTREAM_H
+#define LLAMAXML_BUFFERINPUTSTREAM_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once

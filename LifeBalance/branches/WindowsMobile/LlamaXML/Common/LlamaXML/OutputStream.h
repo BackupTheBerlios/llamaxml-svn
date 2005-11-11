@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef OUTPUTSTREAM_H
-#define OUTPUTSTREAM_H
+#ifndef LLAMAXML_OUTPUTSTREAM_H
+#define LLAMAXML_OUTPUTSTREAM_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once

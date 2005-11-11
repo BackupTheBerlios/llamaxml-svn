@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef XMLREADER_H
-#define XMLREADER_H
+#ifndef LLAMAXML_XMLREADER_H
+#define LLAMAXML_XMLREADER_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once

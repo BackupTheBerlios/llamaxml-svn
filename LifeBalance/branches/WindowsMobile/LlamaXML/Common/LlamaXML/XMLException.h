@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef XMLEXCEPTION_H
-#define XMLEXCEPTION_H
+#ifndef LLAMAXML_XMLEXCEPTION_H
+#define LLAMAXML_XMLEXCEPTION_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once

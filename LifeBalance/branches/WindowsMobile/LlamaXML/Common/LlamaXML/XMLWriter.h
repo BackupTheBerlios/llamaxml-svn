@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef XMLWRITER_H
-#define XMLWRITER_H
+#ifndef LLAMAXML_XMLWRITER_H
+#define LLAMAXML_XMLWRITER_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once
