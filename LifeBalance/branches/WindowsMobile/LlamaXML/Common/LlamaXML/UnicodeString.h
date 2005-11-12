@@ -52,6 +52,9 @@ namespace LlamaXML {
 		}
 	*/	
 
+	/**
+		\internal
+	*/
 	template <int N>
 	struct UnicodeTypeInfo {
 		typedef uint16_t UnicodeChar;

@@ -1,11 +1,11 @@
-# Doxyfile 1.4.4
+# Doxyfile 1.4.5
 
 #---------------------------------------------------------------------------
 # Project related configuration options
 #---------------------------------------------------------------------------
 PROJECT_NAME           = LlamaXML
 PROJECT_NUMBER         = 1.0
-OUTPUT_DIRECTORY       = C:/Projects-XML/LlamaXML/Documentation
+OUTPUT_DIRECTORY       = .
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = English
 USE_WINDOWS_ENCODING   = YES
@@ -25,19 +25,20 @@ ABBREVIATE_BRIEF       = "The $name class" \
 ALWAYS_DETAILED_SEC    = NO
 INLINE_INHERITED_MEMB  = NO
 FULL_PATH_NAMES        = YES
-STRIP_FROM_PATH        = "C:/Documents and Settings/Stuart A. Malone.GANESHA/"
+STRIP_FROM_PATH        = 
 STRIP_FROM_INC_PATH    = 
 SHORT_NAMES            = NO
 JAVADOC_AUTOBRIEF      = NO
 MULTILINE_CPP_IS_BRIEF = NO
-DETAILS_AT_TOP         = NO
+DETAILS_AT_TOP         = YES
 INHERIT_DOCS           = YES
-DISTRIBUTE_GROUP_DOC   = NO
 SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 8
 ALIASES                = 
 OPTIMIZE_OUTPUT_FOR_C  = NO
 OPTIMIZE_OUTPUT_JAVA   = NO
+BUILTIN_STL_SUPPORT    = YES
+DISTRIBUTE_GROUP_DOC   = YES
 SUBGROUPING            = YES
 #---------------------------------------------------------------------------
 # Build related configuration options
@@ -53,8 +54,8 @@ HIDE_FRIEND_COMPOUNDS  = NO
 HIDE_IN_BODY_DOCS      = NO
 INTERNAL_DOCS          = NO
 CASE_SENSE_NAMES       = NO
-HIDE_SCOPE_NAMES       = NO
-SHOW_INCLUDE_FILES     = YES
+HIDE_SCOPE_NAMES       = YES
+SHOW_INCLUDE_FILES     = NO
 INLINE_INFO            = YES
 SORT_MEMBER_DOCS       = YES
 SORT_BRIEF_DOCS        = NO
@@ -81,9 +82,11 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = C:/Projects-XML/LlamaXML
-FILE_PATTERNS          = *.cpp \
-                         *.h \
+INPUT                  = ../Common \
+                         ../Palm/Source \
+                         ../Windows/Source \
+                         ../Mac/Source
+FILE_PATTERNS          = *.h \
                          *.dox
 RECURSIVE              = YES
 EXCLUDE                = 

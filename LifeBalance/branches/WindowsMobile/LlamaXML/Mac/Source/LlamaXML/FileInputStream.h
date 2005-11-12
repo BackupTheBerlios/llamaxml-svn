@@ -37,36 +37,23 @@
 
 
 namespace LlamaXML {
+
+	/// \brief An InputStream from a file in the Macintosh filesystem.
     
     class FileInputStream: public InputStream {
     public:
+		/// Constructs a FileInputStream from a Macintosh FSRef object.
+		/// Throws an XMLException if the file cannot be opened.
         FileInputStream(const FSRef * fileRef);
+		
+		/// Constructs a FileInputStream from a Posix file path.
+		/// Throws an XMLException if the file cannot be opened.
         FileInputStream(const char * posixPath);
+		
 	    virtual ~FileInputStream();
 	    
-		/**
-			Fills the buffer with up to length chars, and returns
-			the number of chars placed in the buffer.
-		*/
 		virtual uint32_t ReadUpTo(char * buffer, uint32_t length);
-		
-		/**
-			Repositions the stream to the beginning of the input.
-			This function is called at most once by XMLReader, and
-			only when the reader is in the first buffer of text.
-			
-			(Implementer's note: This function could probably be
-			eliminated by more clever programming in the XMLReader
-			class.  This would make it easier to implement when data
-			is coming from a source that cannot be backed up, like a
-			network socket. 
-		*/
 		virtual void Restart();
-
-		/**
-			Returns true if the stream is currently positioned at the
-			end of input.
-		*/
 		virtual bool EndOfFile();
 	
 	private:

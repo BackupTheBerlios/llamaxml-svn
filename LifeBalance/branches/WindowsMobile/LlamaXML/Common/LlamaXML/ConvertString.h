@@ -38,16 +38,22 @@
 
 namespace LlamaXML {
 	
+	/// Returns the number of UnicodeChars in s, not including the trailing NULL. (Like std::wcslen)
 	size_t UnicodeStringLength(const UnicodeChar * s);
 	
+    //@{
+	/// Converts 8-bit text in the specified sourceEncoding to Unicode. */
 	UnicodeString ToUnicode(const char * start, const char * end, TextEncoding sourceEncoding);
 	UnicodeString ToUnicode(const char * s, TextEncoding sourceEncoding);
 	UnicodeString ToUnicode(const std::string & s, TextEncoding sourceEncoding);
-	
+	//@}
+
+    //@{
+	/// Converts Unicode text to the specified 8-bit destinationEncoding.
 	std::string FromUnicode(const UnicodeChar * start, const UnicodeChar * end, TextEncoding destinationEncoding);
 	std::string FromUnicode(const UnicodeChar * s, TextEncoding destinationEncoding);
 	std::string FromUnicode(const UnicodeString & s, TextEncoding destinationEncoding);
-
+	//@}
 }
 
 #endif

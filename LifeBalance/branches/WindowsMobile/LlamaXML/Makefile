@@ -1,2 +1,6 @@
+SHELL=/bin/zsh
+
 zip:
-	cd ..; rm LlamaXML.zip; /usr/bin/find LlamaXML -name '.svn' -prune -o -name 'LlamaXML_Data' -prune -o -name '*.d' -prune -o -name '*.o' -prune -o -name '*~' -prune -o -name '.DS_Store' -prune -o -name 'build' -prune -o -name 'LlamaXML Data' -prune -o -name 'Debug' -prune -o -name '*.lib' -prune -o -name '*.mcp' -prune -o -name 'LlamaXMLTest Data' -prune -o -name 'helloworld_d*' -prune -o -print | zip LlamaXML.zip -@
+	rm -f LlamaXML.zip
+	cd ..; zip -r LlamaXML/LlamaXML.zip LlamaXML/**/*.(h|cpp|txt|html|xml|pbxproj|sln|vcproj|mcp|png|gif|css) LlamaXML/Palm/PODS/.*project LlamaXML/Palm/PODS/makefile*
+

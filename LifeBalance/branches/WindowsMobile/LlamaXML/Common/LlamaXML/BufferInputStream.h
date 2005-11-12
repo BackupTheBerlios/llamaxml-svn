@@ -37,8 +37,19 @@
 
 namespace LlamaXML {
 
+	/// \brief An InputStream to a fixed buffer of data.
+
+	/// Provides an InputStream to a fixed buffer of user-provided data.
+	/// The buffer is not copied, so it must continue to exist for the lifetime
+	/// of the BufferInputStream.
+
 	class BufferInputStream: public InputStream {
 	public:
+		/// Creates a BufferInputStream from a pointer to a buffer of data,
+		/// and the length of that data in bytes.  You may pass either 8-bit
+		/// or Unicode data in the buffer, but the length must always be in
+		/// bytes.  Note that the buffer is not copied, so it must continue 
+		/// to exist for the lifetime of the BufferInputStream.
 		BufferInputStream(const void * buffer, uint32_t length);
 		
 		virtual uint32_t ReadUpTo(char * buffer, uint32_t length);
@@ -50,7 +61,6 @@ namespace LlamaXML {
 		uint32_t		mLength;
 		uint32_t		mOffset;
 	};
-	
 }
 
 #endif
