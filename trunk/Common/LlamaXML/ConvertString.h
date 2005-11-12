@@ -36,6 +36,10 @@
 #include "LlamaXML/LlamaStdInt.h"
 #include <string>
 
+/*! \file ConvertString.h
+    \brief Utility functions for converting to and from Unicode text.
+*/
+
 namespace LlamaXML {
 	
 	/// Returns the number of UnicodeChars in s, not including the trailing NULL. (Like std::wcslen)

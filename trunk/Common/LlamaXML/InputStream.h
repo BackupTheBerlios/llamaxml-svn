@@ -36,7 +36,7 @@
 namespace LlamaXML {
 
 	/**
-		Abstract base class for a source of XML text.
+		\brief Abstract base class for the input to an XMLReader.
 		
 		You can't use this class directly.  Use one of the provided
 		subclasses like StringInputStream or BufferInputStream instead.

@@ -58,16 +58,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 153435096;
-			PBXWorkspaceStateSaveDate = 153435096;
-		};
-		perUserProjectItems = {
-			EDAE5B1009254B2F0075113B /* PBXBookmark */ = EDAE5B1009254B2F0075113B /* PBXBookmark */;
-			EDAE5B1509255F180075113B /* PBXTextBookmark */ = EDAE5B1509255F180075113B /* PBXTextBookmark */;
-			EDAE5B1609255F180075113B /* PBXTextBookmark */ = EDAE5B1609255F180075113B /* PBXTextBookmark */;
-			EDAE5B1709255F180075113B /* PBXTextBookmark */ = EDAE5B1709255F180075113B /* PBXTextBookmark */;
-			EDAE5B1809255F180075113B /* PBXTextBookmark */ = EDAE5B1809255F180075113B /* PBXTextBookmark */;
-			EDAE5B1B09255F180075113B /* PBXTextBookmark */ = EDAE5B1B09255F180075113B /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 153516445;
+			PBXWorkspaceStateSaveDate = 153516445;
 		};
 		sourceControlManager = EDE4BC4008A7EDFB007CB754 /* Source Control */;
 		userBuildSettings = {
@@ -79,65 +71,19 @@
 			EDE4BC3408A7ED90007CB754 /* LlamaXMLTest */,
 		);
 	};
-	EDAE5B1009254B2F0075113B /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
-	};
-	EDAE5B1509255F180075113B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
-		name = "XMLReader.h: 27";
-		rLen = 0;
-		rLoc = 1048;
-		rType = 0;
-		vrLen = 1396;
-		vrLoc = 2471;
-	};
-	EDAE5B1609255F180075113B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */;
-		name = "XMLReader.cpp: 27";
-		rLen = 0;
-		rLoc = 1048;
-		rType = 0;
-		vrLen = 1636;
-		vrLoc = 0;
-	};
-	EDAE5B1709255F180075113B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
-		name = "XMLReader.h: 27";
-		rLen = 0;
-		rLoc = 1048;
-		rType = 0;
-		vrLen = 1396;
-		vrLoc = 2471;
-	};
-	EDAE5B1809255F180075113B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */;
-		name = "XMLReader.cpp: 27";
-		rLen = 0;
-		rLoc = 1048;
-		rType = 0;
-		vrLen = 1636;
-		vrLoc = 0;
-	};
-	EDAE5B1B09255F180075113B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EDD26EED090437FF001A4BDC /* XMLReader.h */;
-		name = "XMLReader.h: 27";
-		rLen = 0;
-		rLoc = 1048;
-		rType = 0;
-		vrLen = 1877;
-		vrLoc = 3;
+	ED0586980926913700788C78 /* Version.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {655, 759}}";
+			sepNavSelRange = "{1308, 0}";
+			sepNavVisRect = "{{0, 0}, {655, 759}}";
+			sepNavWindowFrame = "{{15, 0}, {694, 873}}";
+		};
 	};
 	EDCCF69409054DE4009F2F0A /* ConvertString.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 840}}";
-			sepNavSelRange = "{1410, 0}";
-			sepNavVisRect = "{{0, 62}, {711, 764}}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 896}}";
+			sepNavSelRange = "{1290, 99}";
+			sepNavVisRect = "{{0, 20}, {711, 764}}";
 			sepNavWindowFrame = "{{463, 0}, {750, 878}}";
 		};
 	};
@@ -176,8 +122,8 @@
 	EDD26EE2090437FF001A4BDC /* InputStream.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 1134}}";
-			sepNavSelRange = "{5, 0}";
-			sepNavVisRect = "{{0, 370}, {711, 764}}";
+			sepNavSelRange = "{0, 1220}";
+			sepNavVisRect = "{{0, 0}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -191,9 +137,9 @@
 	};
 	EDD26EE4090437FF001A4BDC /* OutputStream.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 764}}";
-			sepNavSelRange = "{5, 0}";
-			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 854}}";
+			sepNavSelRange = "{1781, 0}";
+			sepNavVisRect = "{{0, 90}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -231,9 +177,9 @@
 	};
 	EDD26EE9090437FF001A4BDC /* UnicodeString.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 1064}}";
-			sepNavSelRange = "{1671, 0}";
-			sepNavVisRect = "{{0, 258}, {711, 764}}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 1246}}";
+			sepNavSelRange = "{1721, 0}";
+			sepNavVisRect = "{{0, 482}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -247,9 +193,9 @@
 	};
 	EDD26EEB090437FF001A4BDC /* XMLException.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 1064}}";
-			sepNavSelRange = "{1048, 0}";
-			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 1260}}";
+			sepNavSelRange = "{1958, 0}";
+			sepNavVisRect = "{{0, 434}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -327,9 +273,9 @@
 	};
 	EDD26F0609043819001A4BDC /* FileInputStream.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 924}}";
-			sepNavSelRange = "{1559, 0}";
-			sepNavVisRect = "{{0, 84}, {711, 764}}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 1008}}";
+			sepNavSelRange = "{1353, 0}";
+			sepNavVisRect = "{{0, 230}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
@@ -369,14 +315,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 9996}}";
 			sepNavSelRange = "{1048, 0}";
-			sepNavVisRect = "{{0, 0}, {711, 764}}";
+			sepNavVisRect = "{{0, 1366}, {711, 764}}";
 			sepNavWindowFrame = "{{15, -5}, {750, 878}}";
 		};
 	};
 	EDD26F0C09043819001A4BDC /* TextEncoding.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 1722}}";
-			sepNavSelRange = "{1048, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 1988}}";
+			sepNavSelRange = "{1340, 0}";
 			sepNavVisRect = "{{0, 0}, {711, 764}}";
 			sepNavWindowFrame = "{{197, -5}, {750, 878}}";
 		};

@@ -37,19 +37,33 @@
 
 namespace LlamaXML {
 
+	/// \brief Base class for all exceptions thrown by the LlamaXML library.
+	///
+	/// Normally, client code does not create XMLExceptions, it just catches them.
+
 	class XMLException: public std::exception
 	{
 	public:
 		XMLException(int32_t err, const char * file = 0, long line = 0) throw();
 		
+		/// Returns the operating system error code (if any) that caused the exception.
+		
 		int32_t ErrorCode() const {
 			return mErrorCode;
 		}
 		
+		/// Returns the source file the exception was thrown from.
+		
+		/// \deprecated This function may be removed in future versions of the library
+		/// in order to reduce the size of the library.
 		const char * File() const {
 			return mFile;
 		}
 		
+		/// Returns the line number of the source file the exception was thrown from.
+		
+		/// \deprecated This function may be removed in future versions of the library
+		/// in order to reduce the size of the library.
 		long Line() const {
 			return mLine;
 		}

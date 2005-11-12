@@ -36,14 +36,23 @@
 
 namespace LlamaXML {
 
+	/// Abstract base class for the output of an XMLWriter.
+	
+	/// You do not use this class directly.  Instead, create one of the subclasses
+	/// of this class (like StringOutputStream or FileOutputStream).  You can also
+	/// subclass this class yourself to write XML data to other places.
+
 	class OutputStream {
 	public:
 	    virtual ~OutputStream();
 	    
+		/// Writes \a length bytes of data from the \a buffer to the OutputStream.
 		virtual void WriteData(const char * buffer, uint32_t length) = 0;
 	};
 
 }
+
+/// Write the string \a s to the output stream.
 
 LlamaXML::OutputStream & operator << (LlamaXML::OutputStream & stream,
 	const char * s);

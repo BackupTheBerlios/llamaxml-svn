@@ -35,6 +35,11 @@
 #include <string>
 #include "LlamaXML/LlamaStdInt.h"
 
+/*! \file UnicodeString.h
+    \brief Type definitions for UnicodeChar and UnicodeString.
+*/
+
+
 namespace LlamaXML {
 
 	/*
@@ -52,9 +57,7 @@ namespace LlamaXML {
 		}
 	*/	
 
-	/**
-		\internal
-	*/
+	/// \cond INTERNAL
 	template <int N>
 	struct UnicodeTypeInfo {
 		typedef uint16_t UnicodeChar;
@@ -66,8 +69,18 @@ namespace LlamaXML {
 		typedef wchar_t UnicodeChar;
 		typedef std::wstring UnicodeString;
 	};
+	/// \endcond
 	
+	/// A 16-bit Unicode character.
+	
+	/// On platforms where wchar_t is 16-bits, this is defined as wchar_t.
+	/// On other platforms, this is defined as uint16_t.
 	typedef UnicodeTypeInfo<sizeof(wchar_t)>::UnicodeChar UnicodeChar;
+	
+	/// A string of Unicode characters.
+	
+	/// On platforms where wchar_t is 16-bits, this is defined as std::wstring.
+	/// On other platforms, this is defined as std::basic_string<uint16_t>.
 	typedef UnicodeTypeInfo<sizeof(wchar_t)>::UnicodeString UnicodeString;
 	
 }

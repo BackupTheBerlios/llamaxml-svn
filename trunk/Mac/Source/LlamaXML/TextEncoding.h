@@ -31,20 +31,36 @@
 
 namespace LlamaXML {
 
+	/// Specifies a character encoding for conversions to or from Unicode.
+	
+	/// TextEncoding objects are small objects that are normally passed by
+	/// value rather than by reference.
+	/// To create a TextEncoding object, call one of the static factory functions
+	/// rather than calling the constructor directly.
+
 	class TextEncoding {
 	public:
+		/// Creates an undefined TextEncoding object.
+
+		/// Be sure to assign a valid TextEncoding object to this object
+		/// before passing it to any other parts of the library.
 		TextEncoding();
 		
-		// Returns true if conversion to/from Unicode is available on this system.
+		/// Returns true if conversion to/from Unicode is available on this system.
 		bool IsAvailable() const;
 		
 		// LlamaPlatform::String Name() const;
 		
+		/// Returns true if the two objects refer to the same encoding.
 		bool operator == (const TextEncoding & other) const;
+		
+		/// Returnts true if the two objects refer to different encodings.
 		bool operator != (const TextEncoding & other) const;
 		
+		/// Returns the Macintosh TextEncoding for the encoding. (Mac OS X only)
 		operator ::TextEncoding() const;
 		
+		/// Returns the Macintosh TextEncoding for the encoding. (Mac OS X only)
 		::TextEncoding AsMacTextEncoding() const;
 		
 		static TextEncoding System();
@@ -66,9 +82,12 @@ namespace LlamaXML {
 		static TextEncoding UTF32();
 		static TextEncoding UTF32BE();
 		static TextEncoding UTF32LE();
+		
+		/// Returns the TextEncoding corresponding to the specified Mac TextEncoding. (Mac OS X only)
 		static TextEncoding Macintosh(::TextEncoding encoding);
 		// static TextEncoding Palm(UInt8 encoding);
 
+		/// Returns the TextEncoding identified by the XML encoding name.
 		static TextEncoding WebCharset(const UnicodeChar * name);
 	
 	private:

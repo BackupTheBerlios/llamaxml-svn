@@ -10,14 +10,15 @@
 
 	<body>
 		<div class="content">
-		<csobj occur="54" w="578" h="132" t="Component" csref="../htdocs.data/Components/directory.html">
+		<csobj occur="54" w="578" h="147" t="Component" csref="../htdocs.data/Components/directory.html">
 				<div class="directory">
 					<ul>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="Quickstart.html">Quickstart Guide</a></li>
-						<li>API Reference</li>
+						<li><a href="api/annotated.html">API Reference</a></li>
 						<li>BerliOS tools
 							<ul>
+								<li><a href="https://developer.berlios.de/svn/?group_id=5274">SVN repository</a></li>
 								<li><a href="https://developer.berlios.de/forum/?group_id=5274">Forums</a></li>
 								<li><a href="https://developer.berlios.de/bugs/?group_id=5274">Bug database</a></li>
 							</ul>

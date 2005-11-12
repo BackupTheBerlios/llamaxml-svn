@@ -24,48 +24,17 @@
  * information.
  */
 
-#ifndef FILEOUTPUTSTREAM_H
-#define FILEOUTPUTSTREAM_H
+#ifndef LLAMAXML_VERSION_H
+#define LLAMAXML_VERSION_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once
 #endif
 
-
-#include "LlamaXML/InputStream.h"
-#include "LlamaXML/PlatformConfig.h"
-
-
 namespace LlamaXML {
 
-	/// \brief An InputStream from a file in the filesystem.  (Mac OS X, Windows and Windows Mobile only)
-    
-    class FileInputStream: public InputStream {
-    public:
-		/// Constructs a FileInputStream from a Macintosh FSRef object. (Mac OS X only)
-		/// Throws an XMLException if the file cannot be opened.
-        FileInputStream(const FSRef * fileRef);
-		
-		/// Constructs a FileInputStream from a Posix file path. (Mac OS X only)
-		/// Throws an XMLException if the file cannot be opened.
-        FileInputStream(const char * posixPath);
-		
-#if DOXYGEN
-		/// Constructs a FileInputStream from a Unicode path. (Windows and Windows Mobile only)
-		/// Throws an XMLException if the file cannot be opened.
-		FileInputStream(const wchar_t * path);
-#endif
-		
-	    virtual ~FileInputStream();
-	    
-		virtual uint32_t ReadUpTo(char * buffer, uint32_t length);
-		virtual void Restart();
-		virtual bool EndOfFile();
-	
-	private:
-	    SInt16 mRefnum;
-    };
+	static const int kMajorVersionNumber = 1;
+	static const int kMinorVersionNumber = 0;
+	static const int kReleaseVersionNumber = 0;
 
 }
-
-#endif
