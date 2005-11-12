@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitesettings SYSTEM "sitesettings.dtd">
+<!--Adobe GoLive settings file-->
+<sitesettings section="externaltab" version="1.0">
+	<attributes>
+		<attribute name="dataVersion" value="1"/>
+		<list name="entries">
+			<item>
+				<attribute name="folderType" value="7"/>
+				<attribute name="unfolded" value="yes"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/"/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/about.php"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-about.php"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/images/berliOS_logo.png"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-berliOS_logo.png"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/berlios.css"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-berlios.css"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/images/blank.gif"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-blank.gif"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/bslogo.php"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-bslogo.php"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/contact.php"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-contact.php"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.berlios.de/index.php.en"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-index.php.en"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/images/logo_fokus.png"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-logo_fokus.png"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/partners.php"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios-partners.php"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://developer.berlios.de/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/berlios1"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.fokus.fraunhofer.de/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/fraunhofer"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+		</list>
+	</attributes>
+</sitesettings>
