@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD76F6A0486A84900D96B5E /* LlamaXML.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* LlamaXML.1 */; };
+		ED0586990926913700788C78 /* Version.h in Headers */ = {isa = PBXBuildFile; fileRef = ED0586980926913700788C78 /* Version.h */; };
+		EDCCF69509054DE4009F2F0A /* ConvertString.h in Headers */ = {isa = PBXBuildFile; fileRef = EDCCF69409054DE4009F2F0A /* ConvertString.h */; };
+		EDCCF69C09054EA7009F2F0A /* ConvertString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDCCF69B09054EA7009F2F0A /* ConvertString.cpp */; };
+		EDD26EF0090437FF001A4BDC /* BufferInputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EDF090437FF001A4BDC /* BufferInputStream.cpp */; };
+		EDD26EF1090437FF001A4BDC /* BufferInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EE0090437FF001A4BDC /* BufferInputStream.h */; };
+		EDD26EF2090437FF001A4BDC /* InputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EE1090437FF001A4BDC /* InputStream.cpp */; };
+		EDD26EF3090437FF001A4BDC /* InputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EE2090437FF001A4BDC /* InputStream.h */; };
+		EDD26EF4090437FF001A4BDC /* OutputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EE3090437FF001A4BDC /* OutputStream.cpp */; };
+		EDD26EF5090437FF001A4BDC /* OutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EE4090437FF001A4BDC /* OutputStream.h */; };
+		EDD26EF6090437FF001A4BDC /* StringInputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EE5090437FF001A4BDC /* StringInputStream.cpp */; };
+		EDD26EF7090437FF001A4BDC /* StringInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EE6090437FF001A4BDC /* StringInputStream.h */; };
+		EDD26EF8090437FF001A4BDC /* StringOutputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EE7090437FF001A4BDC /* StringOutputStream.cpp */; };
+		EDD26EF9090437FF001A4BDC /* StringOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EE8090437FF001A4BDC /* StringOutputStream.h */; };
+		EDD26EFA090437FF001A4BDC /* UnicodeString.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EE9090437FF001A4BDC /* UnicodeString.h */; };
+		EDD26EFB090437FF001A4BDC /* XMLException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EEA090437FF001A4BDC /* XMLException.cpp */; };
+		EDD26EFC090437FF001A4BDC /* XMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EEB090437FF001A4BDC /* XMLException.h */; };
+		EDD26EFD090437FF001A4BDC /* XMLReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EEC090437FF001A4BDC /* XMLReader.cpp */; };
+		EDD26EFE090437FF001A4BDC /* XMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EED090437FF001A4BDC /* XMLReader.h */; };
+		EDD26EFF090437FF001A4BDC /* XMLWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26EEE090437FF001A4BDC /* XMLWriter.cpp */; };
+		EDD26F00090437FF001A4BDC /* XMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26EEF090437FF001A4BDC /* XMLWriter.h */; };
+		EDD26F0D09043819001A4BDC /* ConvertFromUnicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26F0109043819001A4BDC /* ConvertFromUnicode.cpp */; };
+		EDD26F0E09043819001A4BDC /* ConvertFromUnicode.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0209043819001A4BDC /* ConvertFromUnicode.h */; };
+		EDD26F0F09043819001A4BDC /* ConvertToUnicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26F0309043819001A4BDC /* ConvertToUnicode.cpp */; };
+		EDD26F1009043819001A4BDC /* ConvertToUnicode.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0409043819001A4BDC /* ConvertToUnicode.h */; };
+		EDD26F1109043819001A4BDC /* FileInputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26F0509043819001A4BDC /* FileInputStream.cpp */; };
+		EDD26F1209043819001A4BDC /* FileInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0609043819001A4BDC /* FileInputStream.h */; };
+		EDD26F1309043819001A4BDC /* FileOutputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26F0709043819001A4BDC /* FileOutputStream.cpp */; };
+		EDD26F1409043819001A4BDC /* FileOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0809043819001A4BDC /* FileOutputStream.h */; };
+		EDD26F1509043819001A4BDC /* LlamaStdInt.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0909043819001A4BDC /* LlamaStdInt.h */; };
+		EDD26F1609043819001A4BDC /* PlatformConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0A09043819001A4BDC /* PlatformConfig.h */; };
+		EDD26F1709043819001A4BDC /* TextEncoding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDD26F0B09043819001A4BDC /* TextEncoding.cpp */; };
+		EDD26F1809043819001A4BDC /* TextEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD26F0C09043819001A4BDC /* TextEncoding.h */; };
+		EDE4BC4908A7EE3E007CB754 /* libLlamaXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4BC4608A7EE14007CB754 /* libLlamaXML.a */; };
+		EDE4BC7808A7EEFC007CB754 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDE4BC7708A7EEFC007CB754 /* Test.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		014CEA460018CE2711CA2923 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		014CEA470018CE2711CA2923 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		EDE4BC4708A7EE27007CB754 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDE4BC4508A7EE14007CB754;
+			remoteInfo = LlamaXML;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E /* LlamaXML.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8DD76F6C0486A84900D96B5E /* LlamaXMLTest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = LlamaXMLTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859E8B029090EE04C91782 /* LlamaXML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LlamaXML.1; sourceTree = "<group>"; };
+		ED0586980926913700788C78 /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Version.h; path = ../../Common/LlamaXML/Version.h; sourceTree = SOURCE_ROOT; };
+		EDCCF69409054DE4009F2F0A /* ConvertString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConvertString.h; path = ../../Common/LlamaXML/ConvertString.h; sourceTree = SOURCE_ROOT; };
+		EDCCF69B09054EA7009F2F0A /* ConvertString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConvertString.cpp; path = ../../Common/LlamaXML/ConvertString.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EDF090437FF001A4BDC /* BufferInputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = BufferInputStream.cpp; path = ../../Common/LlamaXML/BufferInputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EE0090437FF001A4BDC /* BufferInputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = BufferInputStream.h; path = ../../Common/LlamaXML/BufferInputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26EE1090437FF001A4BDC /* InputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = InputStream.cpp; path = ../../Common/LlamaXML/InputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EE2090437FF001A4BDC /* InputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = InputStream.h; path = ../../Common/LlamaXML/InputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26EE3090437FF001A4BDC /* OutputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = OutputStream.cpp; path = ../../Common/LlamaXML/OutputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EE4090437FF001A4BDC /* OutputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = OutputStream.h; path = ../../Common/LlamaXML/OutputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26EE5090437FF001A4BDC /* StringInputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = StringInputStream.cpp; path = ../../Common/LlamaXML/StringInputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EE6090437FF001A4BDC /* StringInputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = StringInputStream.h; path = ../../Common/LlamaXML/StringInputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26EE7090437FF001A4BDC /* StringOutputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = StringOutputStream.cpp; path = ../../Common/LlamaXML/StringOutputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EE8090437FF001A4BDC /* StringOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = StringOutputStream.h; path = ../../Common/LlamaXML/StringOutputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26EE9090437FF001A4BDC /* UnicodeString.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = UnicodeString.h; path = ../../Common/LlamaXML/UnicodeString.h; sourceTree = SOURCE_ROOT; };
+		EDD26EEA090437FF001A4BDC /* XMLException.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = XMLException.cpp; path = ../../Common/LlamaXML/XMLException.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EEB090437FF001A4BDC /* XMLException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = XMLException.h; path = ../../Common/LlamaXML/XMLException.h; sourceTree = SOURCE_ROOT; };
+		EDD26EEC090437FF001A4BDC /* XMLReader.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = XMLReader.cpp; path = ../../Common/LlamaXML/XMLReader.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EED090437FF001A4BDC /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = ../../Common/LlamaXML/XMLReader.h; sourceTree = SOURCE_ROOT; };
+		EDD26EEE090437FF001A4BDC /* XMLWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = XMLWriter.cpp; path = ../../Common/LlamaXML/XMLWriter.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26EEF090437FF001A4BDC /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = XMLWriter.h; path = ../../Common/LlamaXML/XMLWriter.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0109043819001A4BDC /* ConvertFromUnicode.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = ConvertFromUnicode.cpp; path = ../Source/LlamaXML/ConvertFromUnicode.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26F0209043819001A4BDC /* ConvertFromUnicode.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ConvertFromUnicode.h; path = ../Source/LlamaXML/ConvertFromUnicode.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0309043819001A4BDC /* ConvertToUnicode.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = ConvertToUnicode.cpp; path = ../Source/LlamaXML/ConvertToUnicode.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26F0409043819001A4BDC /* ConvertToUnicode.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ConvertToUnicode.h; path = ../Source/LlamaXML/ConvertToUnicode.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0509043819001A4BDC /* FileInputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FileInputStream.cpp; path = ../Source/LlamaXML/FileInputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26F0609043819001A4BDC /* FileInputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FileInputStream.h; path = ../Source/LlamaXML/FileInputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0709043819001A4BDC /* FileOutputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FileOutputStream.cpp; path = ../Source/LlamaXML/FileOutputStream.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26F0809043819001A4BDC /* FileOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FileOutputStream.h; path = ../Source/LlamaXML/FileOutputStream.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0909043819001A4BDC /* LlamaStdInt.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = LlamaStdInt.h; path = ../Source/LlamaXML/LlamaStdInt.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0A09043819001A4BDC /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = PlatformConfig.h; path = ../Source/LlamaXML/PlatformConfig.h; sourceTree = SOURCE_ROOT; };
+		EDD26F0B09043819001A4BDC /* TextEncoding.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = TextEncoding.cpp; path = ../Source/LlamaXML/TextEncoding.cpp; sourceTree = SOURCE_ROOT; };
+		EDD26F0C09043819001A4BDC /* TextEncoding.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TextEncoding.h; path = ../Source/LlamaXML/TextEncoding.h; sourceTree = SOURCE_ROOT; };
+		EDE4BC4608A7EE14007CB754 /* libLlamaXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLlamaXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE4BC7708A7EEFC007CB754 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4BC4908A7EE3E007CB754 /* libLlamaXML.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4BC4408A7EE14007CB754 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* LlamaXML */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4BC4F08A7EE65007CB754 /* Common */,
+				EDE4BC7008A7EE94007CB754 /* Mac */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				EDE4BC7708A7EEFC007CB754 /* Test.cpp */,
+			);
+			name = LlamaXML;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* LlamaXMLTest */,
+				EDE4BC4608A7EE14007CB754 /* libLlamaXML.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859E8B029090EE04C91782 /* LlamaXML.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		EDE4BC4F08A7EE65007CB754 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EDCCF69B09054EA7009F2F0A /* ConvertString.cpp */,
+				EDCCF69409054DE4009F2F0A /* ConvertString.h */,
+				EDD26EDF090437FF001A4BDC /* BufferInputStream.cpp */,
+				EDD26EE0090437FF001A4BDC /* BufferInputStream.h */,
+				EDD26EE1090437FF001A4BDC /* InputStream.cpp */,
+				EDD26EE2090437FF001A4BDC /* InputStream.h */,
+				ED0586980926913700788C78 /* Version.h */,
+				EDD26EE3090437FF001A4BDC /* OutputStream.cpp */,
+				EDD26EE4090437FF001A4BDC /* OutputStream.h */,
+				EDD26EE5090437FF001A4BDC /* StringInputStream.cpp */,
+				EDD26EE6090437FF001A4BDC /* StringInputStream.h */,
+				EDD26EE7090437FF001A4BDC /* StringOutputStream.cpp */,
+				EDD26EE8090437FF001A4BDC /* StringOutputStream.h */,
+				EDD26EE9090437FF001A4BDC /* UnicodeString.h */,
+				EDD26EEA090437FF001A4BDC /* XMLException.cpp */,
+				EDD26EEB090437FF001A4BDC /* XMLException.h */,
+				EDD26EEC090437FF001A4BDC /* XMLReader.cpp */,
+				EDD26EED090437FF001A4BDC /* XMLReader.h */,
+				EDD26EEE090437FF001A4BDC /* XMLWriter.cpp */,
+				EDD26EEF090437FF001A4BDC /* XMLWriter.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		EDE4BC7008A7EE94007CB754 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				EDD26F0109043819001A4BDC /* ConvertFromUnicode.cpp */,
+				EDD26F0209043819001A4BDC /* ConvertFromUnicode.h */,
+				EDD26F0309043819001A4BDC /* ConvertToUnicode.cpp */,
+				EDD26F0409043819001A4BDC /* ConvertToUnicode.h */,
+				EDD26F0509043819001A4BDC /* FileInputStream.cpp */,
+				EDD26F0609043819001A4BDC /* FileInputStream.h */,
+				EDD26F0709043819001A4BDC /* FileOutputStream.cpp */,
+				EDD26F0809043819001A4BDC /* FileOutputStream.h */,
+				EDD26F0909043819001A4BDC /* LlamaStdInt.h */,
+				EDD26F0A09043819001A4BDC /* PlatformConfig.h */,
+				EDD26F0B09043819001A4BDC /* TextEncoding.cpp */,
+				EDD26F0C09043819001A4BDC /* TextEncoding.h */,
+			);
+			name = Mac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EDE4BC4208A7EE14007CB754 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD26EF1090437FF001A4BDC /* BufferInputStream.h in Headers */,
+				EDD26EF3090437FF001A4BDC /* InputStream.h in Headers */,
+				EDD26EF5090437FF001A4BDC /* OutputStream.h in Headers */,
+				EDD26EF7090437FF001A4BDC /* StringInputStream.h in Headers */,
+				EDD26EF9090437FF001A4BDC /* StringOutputStream.h in Headers */,
+				EDD26EFA090437FF001A4BDC /* UnicodeString.h in Headers */,
+				EDD26EFC090437FF001A4BDC /* XMLException.h in Headers */,
+				EDD26EFE090437FF001A4BDC /* XMLReader.h in Headers */,
+				EDD26F00090437FF001A4BDC /* XMLWriter.h in Headers */,
+				EDD26F0E09043819001A4BDC /* ConvertFromUnicode.h in Headers */,
+				EDD26F1009043819001A4BDC /* ConvertToUnicode.h in Headers */,
+				EDD26F1209043819001A4BDC /* FileInputStream.h in Headers */,
+				EDD26F1409043819001A4BDC /* FileOutputStream.h in Headers */,
+				EDD26F1509043819001A4BDC /* LlamaStdInt.h in Headers */,
+				EDD26F1609043819001A4BDC /* PlatformConfig.h in Headers */,
+				EDD26F1809043819001A4BDC /* TextEncoding.h in Headers */,
+				EDCCF69509054DE4009F2F0A /* ConvertString.h in Headers */,
+				ED0586990926913700788C78 /* Version.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* LlamaXMLTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDE4BC3808A7EDFB007CB754 /* Build configuration list for PBXNativeTarget "LlamaXMLTest" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXML;
+			};
+			dependencies = (
+				EDE4BC4808A7EE27007CB754 /* PBXTargetDependency */,
+			);
+			name = LlamaXMLTest;
+			productInstallPath = "$(HOME)/bin";
+			productName = LlamaXML;
+			productReference = 8DD76F6C0486A84900D96B5E /* LlamaXMLTest */;
+			productType = "com.apple.product-type.tool";
+		};
+		EDE4BC4508A7EE14007CB754 /* LlamaXML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDE4BC4A08A7EE5C007CB754 /* Build configuration list for PBXNativeTarget "LlamaXML" */;
+			buildPhases = (
+				EDE4BC4208A7EE14007CB754 /* Headers */,
+				EDE4BC4308A7EE14007CB754 /* Sources */,
+				EDE4BC4408A7EE14007CB754 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_STYLE = STATIC;
+				OPTIMIZATION_CFLAGS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXML;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			dependencies = (
+			);
+			name = LlamaXML;
+			productName = LlamaXML;
+			productReference = EDE4BC4608A7EE14007CB754 /* libLlamaXML.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = EDE4BC3C08A7EDFB007CB754 /* Build configuration list for PBXProject "LlamaXML" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA460018CE2711CA2923 /* Debug */,
+				014CEA470018CE2711CA2923 /* Release */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* LlamaXML */;
+			projectDirPath = "";
+			targets = (
+				EDE4BC4508A7EE14007CB754 /* LlamaXML */,
+				8DD76F620486A84900D96B5E /* LlamaXMLTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4BC7808A7EEFC007CB754 /* Test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4BC4308A7EE14007CB754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDD26EF0090437FF001A4BDC /* BufferInputStream.cpp in Sources */,
+				EDD26EF2090437FF001A4BDC /* InputStream.cpp in Sources */,
+				EDD26EF4090437FF001A4BDC /* OutputStream.cpp in Sources */,
+				EDD26EF6090437FF001A4BDC /* StringInputStream.cpp in Sources */,
+				EDD26EF8090437FF001A4BDC /* StringOutputStream.cpp in Sources */,
+				EDD26EFB090437FF001A4BDC /* XMLException.cpp in Sources */,
+				EDD26EFD090437FF001A4BDC /* XMLReader.cpp in Sources */,
+				EDD26EFF090437FF001A4BDC /* XMLWriter.cpp in Sources */,
+				EDD26F0D09043819001A4BDC /* ConvertFromUnicode.cpp in Sources */,
+				EDD26F0F09043819001A4BDC /* ConvertToUnicode.cpp in Sources */,
+				EDD26F1109043819001A4BDC /* FileInputStream.cpp in Sources */,
+				EDD26F1309043819001A4BDC /* FileOutputStream.cpp in Sources */,
+				EDD26F1709043819001A4BDC /* TextEncoding.cpp in Sources */,
+				EDCCF69C09054EA7009F2F0A /* ConvertString.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDE4BC4808A7EE27007CB754 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDE4BC4508A7EE14007CB754 /* LlamaXML */;
+			targetProxy = EDE4BC4708A7EE27007CB754 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EDE4BC3908A7EDFB007CB754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXMLTest;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		EDE4BC3A08A7EDFB007CB754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXMLTest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		EDE4BC3B08A7EDFB007CB754 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(HOME)/bin";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXMLTest;
+			};
+			name = Default;
+		};
+		EDE4BC3D08A7EDFB007CB754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../Common,
+				);
+			};
+			name = Debug;
+		};
+		EDE4BC3E08A7EDFB007CB754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../Common,
+				);
+			};
+			name = Release;
+		};
+		EDE4BC3F08A7EDFB007CB754 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../Common,
+				);
+			};
+			name = Default;
+		};
+		EDE4BC4B08A7EE5C007CB754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_STYLE = STATIC;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXML;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		EDE4BC4C08A7EE5C007CB754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_STYLE = STATIC;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXML;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		EDE4BC4D08A7EE5C007CB754 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_STYLE = STATIC;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = LlamaXML;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDE4BC3808A7EDFB007CB754 /* Build configuration list for PBXNativeTarget "LlamaXMLTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDE4BC3908A7EDFB007CB754 /* Debug */,
+				EDE4BC3A08A7EDFB007CB754 /* Release */,
+				EDE4BC3B08A7EDFB007CB754 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		EDE4BC3C08A7EDFB007CB754 /* Build configuration list for PBXProject "LlamaXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDE4BC3D08A7EDFB007CB754 /* Debug */,
+				EDE4BC3E08A7EDFB007CB754 /* Release */,
+				EDE4BC3F08A7EDFB007CB754 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		EDE4BC4A08A7EE5C007CB754 /* Build configuration list for PBXNativeTarget "LlamaXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDE4BC4B08A7EE5C007CB754 /* Debug */,
+				EDE4BC4C08A7EE5C007CB754 /* Release */,
+				EDE4BC4D08A7EE5C007CB754 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

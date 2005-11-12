@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitesettings SYSTEM "sitesettings.dtd">
+<!--Adobe GoLive settings file-->
+<sitesettings section="colortab" version="1.0">
+	<attributes>
+		<attribute name="dataVersion" value="1"/>
+		<list name="entries">
+			<item>
+				<attribute name="unfolded" value="yes"/>
+				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/"/>
+			</item>
+			<item>
+				<attribute name="rgb" value="#7b7b7b"/>
+				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/untitled%2520color"/>
+			</item>
+			<item>
+				<attribute name="rgb" value="#ffcc33"/>
+				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/untitled%2520color1"/>
+			</item>
+			<item>
+				<attribute name="rgb" value="#ffffff"/>
+				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/white"/>
+			</item>
+		</list>
+	</attributes>
+</sitesettings>

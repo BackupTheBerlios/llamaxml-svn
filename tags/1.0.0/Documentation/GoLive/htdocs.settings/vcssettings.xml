@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitesettings SYSTEM "sitesettings.dtd">
+<!--Adobe GoLive settings file-->
+<sitesettings section="vcs" version="1.0">
+	<attributes>
+		<attribute name="vcsComputerName" value="dalba"/>
+		<attribute name="vcsSavePassword" value="yes"/>
+		<attribute name="version" value="5"/>
+	</attributes>
+</sitesettings>
