@@ -39,4 +39,4 @@ TD.featurebox { font-size: 12px; }
 .directory { background-color: #ddd; width: 150px; float: right; margin: 0 0 20px 20px; padding: 10px; border: dotted 1px black; }
 .directory > UL { margin: 0; padding: 0; }
 .directory UL { list-style-type: none; }
-.content { width: 600px; margin-right: auto; margin-left: auto; }
+.content { width: 80%; margin-right: auto; margin-left: auto; }
