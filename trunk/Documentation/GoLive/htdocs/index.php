@@ -10,14 +10,16 @@
 
 	<body>
 		<div class="content">
-		<csobj occur="54" w="578" h="147" t="Component" csref="../htdocs.data/Components/directory.html">
+		<csobj occur="54" w="578" h="177" t="Component" csref="../htdocs.data/Components/directory.html">
 				<div class="directory">
 					<ul>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="Quickstart.html">Quickstart Guide</a></li>
 						<li><a href="api/annotated.html">API Reference</a></li>
-						<li>BerliOS tools
+						<li>BerliOS tools:
 							<ul>
+								<li><a href="https://developer.berlios.de/projects/llamaxml/">Project summary</a></li>
+								<li><a href="https://developer.berlios.de/project/filelist.php?group_id=5274">Downloads</a></li>
 								<li><a href="https://developer.berlios.de/svn/?group_id=5274">SVN repository</a></li>
 								<li><a href="https://developer.berlios.de/forum/?group_id=5274">Forums</a></li>
 								<li><a href="https://developer.berlios.de/bugs/?group_id=5274">Bug database</a></li>
@@ -31,8 +33,8 @@
 			<h2>LlamaXML — compact XML parsing library</h2>
 			<p>LlamaXML is a C++ XML parsing and formatting library that is small enough to be used on handheld devices like PDAs and smartphones, while still supporting larger desktop and server systems. The library currently runs on Palm OS Garnet, Palm OS Cobalt, Windows Mobile, Windows and Mac OS X, and is easy to port to new platforms. The entire library compiles to only 45 KB of code under Codewarrior for Palm OS, and can be even smaller if only some of its features are used. The library is also frugal with runtime memory, using a single-pass streaming algorithm that only stores the current parsing stack in memory, allowing very large XML documents to be parsed with very little overhead.</p>
 			<p>The LlamaXML library supports XML namespaces and automatic encoding conversion. It does not support validation, XML schemas, DTDs, or external entities. If you need these features, consider using <a href="http://xmlsoft.org/">libxml2</a> or <a href="http://xml.apache.org/xerces-c/">Xerces</a>.</p>
-			<p>LlamaXML is distributed under a dual licensing system in order to support both open source and commercial developers. Open source developers may use LlamaXML under the Gnu General Public License. Commercial developers can purchase a commercial license to use LlamaXML in their own projects without having to distribute their own source code.</p>
-			<p>The project is hosted by <a href="http://developer.berlios.de"><img src="http://developer.berlios.de/bslogo.php?group_id=0&amp;type=1" alt="BerliOS Logo" height="32" width="124" align="absmiddle" border="0" /></a></p>
+			<p>LlamaXML is distributed by <a href="http://www.llamagraphics.com/">Llamagraphics, Inc.</a> under a dual licensing system in order to support both open source and commercial developers. Open source developers may use LlamaXML under the Gnu General Public License. Commercial developers can purchase a <a href="http://www.llamagraphics.com/LlamaXML/">commercial license</a> to use LlamaXML in their own projects without having to distribute their own source code.</p>
+			<p>The project is hosted by <a href="http://developer.berlios.de"><img src="http://developer.berlios.de/bslogo.php?group_id=0&amp;type=1" alt="BerliOS Logo" height="32" width="124" align="middle" border="0" /></a></p>
 		
 		
 		<p><a href="http://validator.w3.org/check?uri=referer"><img
