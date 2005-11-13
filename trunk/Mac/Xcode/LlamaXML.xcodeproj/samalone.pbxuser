@@ -58,8 +58,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 153516445;
-			PBXWorkspaceStateSaveDate = 153516445;
+			PBXPerProjectTemplateStateSaveDate = 153585290;
+			PBXWorkspaceStateSaveDate = 153585290;
 		};
 		sourceControlManager = EDE4BC4008A7EDFB007CB754 /* Source Control */;
 		userBuildSettings = {
@@ -202,16 +202,16 @@
 	EDD26EEC090437FF001A4BDC /* XMLReader.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {711, 20692}}";
-			sepNavSelRange = "{1048, 0}";
-			sepNavVisRect = "{{0, 0}, {711, 764}}";
-			sepNavWindowFrame = "{{481, 0}, {750, 878}}";
+			sepNavSelRange = "{7240, 0}";
+			sepNavVisRect = "{{0, 3223}, {711, 764}}";
+			sepNavWindowFrame = "{{28, 0}, {750, 878}}";
 		};
 	};
 	EDD26EED090437FF001A4BDC /* XMLReader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 4466}}";
-			sepNavSelRange = "{1048, 0}";
-			sepNavVisRect = "{{0, 20}, {711, 764}}";
+			sepNavIntBoundsRect = "{{0, 0}, {711, 9310}}";
+			sepNavSelRange = "{3678, 0}";
+			sepNavVisRect = "{{0, 5342}, {711, 764}}";
 			sepNavWindowFrame = "{{28, 0}, {750, 878}}";
 		};
 	};
