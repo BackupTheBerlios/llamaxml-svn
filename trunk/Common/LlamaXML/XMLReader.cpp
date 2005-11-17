@@ -1057,7 +1057,7 @@ namespace LlamaXML {
 	}
 
 
-#if LLAMA_DEBUG
+#if LLAMA_DEBUG && 0
 
 	class StringInputStream: public InputStream {
 	public:
@@ -1100,6 +1100,8 @@ namespace LlamaXML {
 		else ThrowXMLError(E_FAIL);
 #elif TARGET_OS_PALM
 		else ThrowXMLError(vfsErrFileEOF);
+#elif TARGET_OS_MAC
+		else ThrowXMLError(errEndOfDocument);
 #else
 	#error Unknown platform for EOF error
 #endif

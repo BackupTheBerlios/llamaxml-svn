@@ -32,13 +32,12 @@
 #endif
 
 
-#include <string>
+#include "LlamaXML/StringWorkaround.h"
 #include "LlamaXML/LlamaStdInt.h"
 
 /*! \file UnicodeString.h
     \brief Type definitions for UnicodeChar and UnicodeString.
 */
-
 
 namespace LlamaXML {
 
