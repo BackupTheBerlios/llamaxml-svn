@@ -16,7 +16,7 @@
 						<li><a href="index.php">Home</a></li>
 						<li><a href="Quickstart.html">Quickstart Guide</a></li>
 						<li><a href="api/annotated.html">API Reference</a></li>
-						<li><a href="http://homepage.mac.com/samalone/.Public/LlamaXML-source-1.0.0.zip">Download version 1.0.0</a></li>
+						<!-- <li><a href="http://homepage.mac.com/samalone/.Public/LlamaXML-source-1.0.0.zip">Download version 1.0.0</a></li> -->
 						<li>BerliOS tools:
 							<ul>
 								<li><a href="http://developer.berlios.de/projects/llamaxml/">Project summary</a></li>
