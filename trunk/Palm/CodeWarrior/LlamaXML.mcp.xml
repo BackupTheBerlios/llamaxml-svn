@@ -7861,12 +7861,6 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertString.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
                 <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
                 <PATH>InputStream.cpp</PATH>
