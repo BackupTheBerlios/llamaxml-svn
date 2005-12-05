@@ -34,7 +34,7 @@
 #include "LlamaXML/LlamaStdInt.h"
 #include <string>
 
-#if __GNUC__ < 4
+#if defined(__GNUC__) && (__GNUC__ < 4)
 
 namespace std {
 	template<>
