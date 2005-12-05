@@ -103,6 +103,8 @@ namespace LlamaXML {
 		TextEncoding(TextEncodingBase base1, TextEncodingVariant variant1,
 			TextEncodingFormat format1, TextEncodingBase base2, TextEncodingVariant variant2,
 			TextEncodingFormat format2);
+		
+		static bool EqualIgnoringCase(const UnicodeChar * a, const char * b);
 	
 	private:
 		::TextEncoding	mEncoding;

@@ -44,7 +44,8 @@ namespace LlamaXML {
 	class XMLException: public std::exception
 	{
 	public:
-		XMLException(int32_t err, const char * file = 0, long line = 0) throw();
+		XMLException(int32_t err, const char * file, long line) throw();
+		XMLException(int32_t err, const char * what) throw();
 		
 		/// Returns the operating system error code (if any) that caused the exception.
 		
@@ -67,14 +68,18 @@ namespace LlamaXML {
 		long Line() const {
 			return mLine;
 		}
+		
+		const char * what() const throw();
 
 	private:
 		int32_t					mErrorCode;
 		const char *			mFile;
 		long					mLine;
+		const char *			mWhat;
 	};
 
 	void ThrowXMLException(int32_t err, const char * file, long line);
+	void ThrowXMLException(int32_t err, const char * what);
 }
 
 #define ThrowXMLError(x) LlamaXML::ThrowXMLException(x, __FILE__, __LINE__)

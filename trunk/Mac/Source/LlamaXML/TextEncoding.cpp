@@ -101,7 +101,7 @@
 namespace LlamaXML {
 
 	TextEncoding::TextEncoding()
-	: mEncoding(0)
+	: mEncoding(::CreateTextEncoding(kTextEncodingUnknown, kTextEncodingDefaultVariant, kTextEncodingDefaultFormat))
 	{
 	}
 	
@@ -221,8 +221,6 @@ namespace LlamaXML {
 	TextEncoding TextEncoding::WindowsShiftJIS()
 	{
 		return Fallback(
-			TextEncoding(kTextEncodingDOSJapanese, kDOSJapaneseStandardVariant,
-				kTextEncodingDefaultFormat),
 			TextEncoding(kTextEncodingShiftJIS, kShiftJIS_DOSVariant,
 				kTextEncodingDefaultFormat),
 			ShiftJIS());
@@ -317,16 +315,37 @@ namespace LlamaXML {
 	}
 	
 	
-	TextEncoding TextEncoding::WebCharset(const UnicodeChar * name) {
-		// Quick conversion from Unicode to ASCII
-		Str255 pascalName;
-		pascalName[0] = 0;
-		while (*name && (pascalName[0] < 255)) {
-			pascalName[++pascalName[0]] = uint8_t(*name++);
+	bool TextEncoding::EqualIgnoringCase(const UnicodeChar * a, const char * b) {
+		while (*a && *b) {
+			if (*a > 127) return false;
+			if (tolower(char(*a++)) != tolower(char(*b++))) return false;
 		}
-		::TextEncoding macEncoding;
-		ThrowIfXMLError(::TECGetTextEncodingFromInternetName(&macEncoding, pascalName));
-		return TextEncoding(macEncoding);
+		return (*a == 0) && (*b == 0);
+	}
+	
+	
+	TextEncoding TextEncoding::WebCharset(const UnicodeChar * name) {
+		if (EqualIgnoringCase(name, "ISO-8859-1")) {
+			// For some reason, Apple thinks that "ISO-8859-1"" refers to kTextEncodingWindowsLatin1
+			// rather than kTextEncodingISOLatin1.
+			return ISOLatin1();
+		}
+		else if (EqualIgnoringCase(name, "Shift_JIS")) {
+			// For some reason, Apple thinks that "Shift_JIS" refers to kShiftJIS_DOSVariant
+			// rather than kShiftJIS_BasicVariant.
+			return ShiftJIS();
+		}
+		else {
+			// Quick conversion from Unicode to ASCII
+			Str255 pascalName;
+			pascalName[0] = 0;
+			while (*name && (pascalName[0] < 255)) {
+				pascalName[++pascalName[0]] = uint8_t(*name++);
+			}
+			::TextEncoding macEncoding;
+			ThrowIfXMLError(::TECGetTextEncodingFromInternetName(&macEncoding, pascalName));
+			return TextEncoding(macEncoding);
+		}
 	}
 	
 	

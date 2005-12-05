@@ -24,6 +24,39 @@
  * information.
  */
 
-int main(int argc, const char * argv[]) {
-	return 0;
-}
+#ifndef LLAMAXML_TESTER_H
+#define LLAMAXML_TESTER_H
+
+#if (! __GNUC__) || __APPLE__
+#pragma once
+#endif
+
+#include "LlamaXML/XMLException.h"
+
+class Tester {
+public:
+	Tester();
+	~Tester();
+	
+	typedef void TestFunction(Tester & tester);
+	
+	void Test(TestFunction * testFunction);
+	
+	void Assert(bool success, const char * file, int line);
+	void Assert(bool success, const char * message);
+	
+	void Failure(const char * file, int line, std::exception & e);
+	void Failure(const char * file, int line, LlamaXML::XMLException & e);
+	
+	void WriteResults();
+	
+	void WriteLine(const char * msg);
+	
+private:
+	int		mSuccessCount;
+	int		mFailureCount;
+};
+
+#define TestAssert(x) try { tester.Assert(x, __FILE__, __LINE__); } catch (LlamaXML::XMLException & e) { tester.Failure(__FILE__, __LINE__, e); } catch (std::exception & e) { tester.Failure(__FILE__, __LINE__, e); }
+
+#endif
