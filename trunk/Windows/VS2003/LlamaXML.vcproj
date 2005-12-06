@@ -104,6 +104,9 @@
 				RelativePath="..\..\Common\LlamaXML\BufferInputStream.cpp">
 			</File>
 			<File
+				RelativePath="..\Source\LlamaXML\Component.cpp">
+			</File>
+			<File
 				RelativePath="..\Source\LlamaXML\ConvertFromUnicode.cpp">
 			</File>
 			<File
@@ -123,6 +126,9 @@
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\OutputStream.cpp">
+			</File>
+			<File
+				RelativePath="..\Source\LlamaXML\StdIO.cpp">
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\StringInputStream.cpp">
@@ -151,6 +157,9 @@
 				RelativePath="..\..\Common\LlamaXML\BufferInputStream.h">
 			</File>
 			<File
+				RelativePath="..\Source\LlamaXML\Component.h">
+			</File>
+			<File
 				RelativePath="..\Source\LlamaXML\ConvertFromUnicode.h">
 			</File>
 			<File
@@ -176,6 +185,9 @@
 			</File>
 			<File
 				RelativePath="..\Source\LlamaXML\PlatformConfig.h">
+			</File>
+			<File
+				RelativePath="..\Source\LlamaXML\StdIO.h">
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\StringInputStream.h">

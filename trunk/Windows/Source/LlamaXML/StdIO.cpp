@@ -26,6 +26,7 @@
 
 #include "LlamaXML/StdIO.h"
 #include <stdarg.h>
+#include <stdio.h>
 
 namespace LlamaXML {
 	int snprintf(char *buffer, size_t count, const char *format, ...) {
