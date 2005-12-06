@@ -2,12 +2,12 @@
 
 # This value is unescaped.  Either quote the value or escape special characters when you use it.
 ifeq ($(TOOLS_DIR), )
-   TOOLS_DIR = C:/Program Files/PalmSource/Palm OS Developer Suite/PalmOSTools/
+   TOOLS_DIR = D:/Program Files/PalmSource/Palm OS Developer Suite/PalmOSTools/
 endif
 
 # This value is unescaped.  Either quote the value or escape special characters when you use it.
 ifeq ($(SDK_LOCATION), )
-   SDK_LOCATION = C:/Program Files/PalmSource/Palm OS Developer Suite/sdk-6.1/
+   SDK_LOCATION = D:/Program Files/PalmSource/Palm OS Developer Suite/sdk-6.1/
 endif
 
 ifeq ($(SDK_VERSION), )

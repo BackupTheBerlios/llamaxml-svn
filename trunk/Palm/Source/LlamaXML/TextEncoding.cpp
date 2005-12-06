@@ -32,7 +32,11 @@
 
 namespace LlamaXML {
 
+#if PALMOS_SDK_VERSION >= 0x600
+	typedef size_t TextSize;
+#else
 	typedef UInt16 TextSize;
+#endif
 	
 	TextEncoding TextEncoding::WindowsLatin1() {
 		TextEncoding encoding = TextEncoding(charEncodingCP1252);
