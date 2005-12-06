@@ -35,6 +35,8 @@ namespace LlamaXML {
 
 	static const int kMajorVersionNumber = 1;
 	static const int kMinorVersionNumber = 0;
-	static const int kReleaseVersionNumber = 0;
+	static const int kReleaseVersionNumber = 1;
 
 }
+
+#endif
