@@ -64,13 +64,21 @@ namespace LlamaXML {
 			return mEncoding != other.mEncoding;
 		}
 		
+		bool IsAvailable() const;
+		
 		static TextEncoding System();
 		static TextEncoding Application();
 		
 		static TextEncoding Palm(CharEncodingType encoding);
 		static TextEncoding UTF8();
+		static TextEncoding UTF16();
 		static TextEncoding UTF16LE();
 		static TextEncoding UTF16BE();
+		static TextEncoding PalmLatin1();
+		static TextEncoding WindowsLatin1();
+		static TextEncoding ISOLatin1();
+		static TextEncoding ShiftJIS();
+		static TextEncoding UCS2();
 		
 		static TextEncoding WebCharset(const UnicodeChar * name);
 	
@@ -83,7 +91,7 @@ namespace LlamaXML {
 	
 	
 	inline TextEncoding::TextEncoding()
-	: mEncoding(charEncodingPalmLatin)
+	: mEncoding(charEncodingUnknown)
 	{
 	}
 	
@@ -112,6 +120,12 @@ namespace LlamaXML {
 	}
 	
 	
+	inline TextEncoding TextEncoding::UTF16()
+	{
+		return TextEncoding(charEncodingUTF16);
+	}
+	
+	
 	inline TextEncoding TextEncoding::UTF16LE()
 	{
 		return TextEncoding(charEncodingUTF16LE);
@@ -121,6 +135,21 @@ namespace LlamaXML {
 	inline TextEncoding TextEncoding::UTF16BE()
 	{
 		return TextEncoding(charEncodingUTF16BE);
+	}
+	
+	
+	inline TextEncoding TextEncoding::PalmLatin1() {
+		return TextEncoding(charEncodingPalmLatin);
+	}
+	
+	
+	inline TextEncoding TextEncoding::ShiftJIS() {
+		return TextEncoding(charEncodingShiftJIS);
+	}
+	
+	
+	inline TextEncoding TextEncoding::UCS2() {
+		return TextEncoding(charEncodingUCS2);
 	}
 }
 

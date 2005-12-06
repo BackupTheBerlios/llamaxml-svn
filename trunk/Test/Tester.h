@@ -59,6 +59,9 @@ public:
 	static Tester * GetCurrentTester() {
 		return sCurrentTester;
 	}
+
+private:
+	static void Message(const char * msg);
 	
 private:
 	static Tester *		sCurrentTester;

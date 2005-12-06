@@ -24,12 +24,31 @@
  * information.
  */
 
-#include "TextEncoding.h"
+#include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/XMLException.h"
 #include <string>
 #include <PalmOS.h>
 
 
 namespace LlamaXML {
+
+	typedef UInt16 TextSize;
+	
+	TextEncoding TextEncoding::WindowsLatin1() {
+		TextEncoding encoding = TextEncoding(charEncodingCP1252);
+		if (encoding.IsAvailable()) return encoding;
+		return TextEncoding(charEncodingPalmLatin);
+	}
+	
+	
+	TextEncoding TextEncoding::ISOLatin1() {
+		TextEncoding encoding = TextEncoding(charEncodingISO8859_1);
+		if (encoding.IsAvailable()) return encoding;
+		encoding = TextEncoding(charEncodingCP1252);
+		if (encoding.IsAvailable()) return encoding;
+		return TextEncoding(charEncodingPalmLatin);
+	}
+	
 	
 	TextEncoding TextEncoding::System()
 	{
@@ -58,10 +77,10 @@ namespace LlamaXML {
 		}
 		
 		if (::StrCaselessCompare(buffer.c_str(), "Windows-1252") == 0) {
-			return TextEncoding(charEncodingPalmLatin);
+			return WindowsLatin1();
 		}
 		else if (::StrCaselessCompare(buffer.c_str(), "Shift_JIS") == 0) {
-			return TextEncoding(charEncodingPalmSJIS);
+			return ShiftJIS();
 		}
 		else if (::StrCaselessCompare(buffer.c_str(), "Windows-932") == 0) {
 			return TextEncoding(charEncodingPalmSJIS);
@@ -73,18 +92,38 @@ namespace LlamaXML {
 			return TextEncoding(charEncodingPalmGB);
 		}
 		else if (::StrCaselessCompare(buffer.c_str(), "ISO-8859-1") == 0) {
-			return TextEncoding(charEncodingISO8859_1);
+			return ISOLatin1();
+		}
+		else if (::StrCaselessCompare(buffer.c_str(), "UTF-16") == 0) {
+			return UTF16();
 		}
 		else {
+			CharEncodingType encoding = charEncodingUnknown;
 			uint32_t romVersion = 0;
 			if ((::FtrGet(sysFtrCreator, sysFtrNumROMVersion, &romVersion) == 0)
 				&& (romVersion >=  sysMakeROMVersion(4,0,0,sysROMStageRelease,0))) {
-				return TextEncoding(::TxtNameToEncoding(buffer.c_str()));
+				encoding = ::TxtNameToEncoding(buffer.c_str());
 			}
-			else {
-				return TextEncoding(charEncodingUnknown);
+			if (encoding == charEncodingUnknown) {
+				throw XMLException(txtErrUnknownEncoding, "unknown encoding");
 			}
+			return TextEncoding(encoding);
 		}
+	}
+	
+	
+	bool TextEncoding::IsAvailable() const {
+		// I don't know of any way to tell if a particular encoding is supported or not
+		// other than to try using it.
+		TxtConvertStateType state;
+		TextSize srcBytes = 1;
+		char buffer[8];
+		TextSize dstBytes = sizeof(buffer);
+		Err result = ::TxtConvertEncoding(true, &state,
+			" ", &srcBytes, charEncodingPalmLatin,
+			buffer, &dstBytes, mEncoding,
+			NULL, 0);
+		return result == errNone;
 	}
 	
 }

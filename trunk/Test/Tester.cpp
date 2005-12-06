@@ -104,11 +104,20 @@ void Tester::WriteResults() {
 	WriteLine(buffer);
 }
 
+void Tester::Message(const char * msg) {
+#if defined(PALMOS_SDK_VERSION)
+	::DbgMessage(msg);
+#else
+	fputs(stderr, msg);
+#endif
+}
+
 void Tester::WriteLine(int level, const char * msg) {
 	for (int i = 0; i < level; ++i) {
-		fprintf(stderr, "    ");
+		Message("    ");
 	}
-	fprintf(stderr, "%s\n", msg);
+	Message(msg);
+	Message("\n");
 }
 
 void Tester::WriteLine(const char * msg) {
