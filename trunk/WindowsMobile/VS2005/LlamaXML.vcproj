@@ -672,15 +672,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\LlamaStdIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Windows\Source\LlamaXML\LlamaStdIO.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\Windows\Source\LlamaXML\PlatformConfig.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\StdIO.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\StdIO.h"
 				>
 			</File>
 			<File

@@ -2412,14 +2412,14 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StdIO.h</PATH>
+                    <PATH>LlamaStdIO.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StdIO.cpp</PATH>
+                    <PATH>LlamaStdIO.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
@@ -2496,12 +2496,12 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StdIO.h</PATH>
+                        <PATH>LlamaStdIO.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StdIO.cpp</PATH>
+                        <PATH>LlamaStdIO.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -5348,14 +5348,14 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StdIO.h</PATH>
+                    <PATH>LlamaStdIO.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StdIO.cpp</PATH>
+                    <PATH>LlamaStdIO.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
@@ -5432,12 +5432,12 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StdIO.h</PATH>
+                        <PATH>LlamaStdIO.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StdIO.cpp</PATH>
+                        <PATH>LlamaStdIO.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -7802,14 +7802,14 @@
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StdIO.h</PATH>
+                    <PATH>LlamaStdIO.h</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS></FILEFLAGS>
                 </FILE>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>StdIO.cpp</PATH>
+                    <PATH>LlamaStdIO.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
                     <FILEFLAGS>Debug</FILEFLAGS>
@@ -7886,12 +7886,12 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StdIO.h</PATH>
+                        <PATH>LlamaStdIO.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>StdIO.cpp</PATH>
+                        <PATH>LlamaStdIO.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                 </SEGMENT>
@@ -8027,13 +8027,13 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>StdIO.cpp</PATH>
+                <PATH>LlamaStdIO.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>StdIO.h</PATH>
+                <PATH>LlamaStdIO.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>

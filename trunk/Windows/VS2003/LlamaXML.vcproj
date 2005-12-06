@@ -125,10 +125,10 @@
 				RelativePath="..\..\Common\LlamaXML\InputStream.cpp">
 			</File>
 			<File
-				RelativePath="..\..\Common\LlamaXML\OutputStream.cpp">
+				RelativePath="..\Source\LlamaXML\LlamaStdIO.cpp">
 			</File>
 			<File
-				RelativePath="..\Source\LlamaXML\StdIO.cpp">
+				RelativePath="..\..\Common\LlamaXML\OutputStream.cpp">
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\StringInputStream.cpp">
@@ -181,13 +181,13 @@
 				RelativePath="..\Source\LlamaXML\LlamaStdInt.h">
 			</File>
 			<File
+				RelativePath="..\Source\LlamaXML\LlamaStdIO.h">
+			</File>
+			<File
 				RelativePath="..\..\Common\LlamaXML\OutputStream.h">
 			</File>
 			<File
 				RelativePath="..\Source\LlamaXML\PlatformConfig.h">
-			</File>
-			<File
-				RelativePath="..\Source\LlamaXML\StdIO.h">
 			</File>
 			<File
 				RelativePath="..\..\Common\LlamaXML\StringInputStream.h">

@@ -743,34 +743,6 @@
             <FILELIST>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TestLlamaXML_Rsc.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TestLlamaXML_Rsc.rcp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>readme.txt</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TestLlamaXML.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
                     <PATH>TestLlamaXML.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
@@ -928,26 +900,6 @@
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
                         <PATH>MSL_C++_PalmOS_2i_DbgA4A5.lib</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TestLlamaXML_Rsc.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TestLlamaXML_Rsc.rcp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>readme.txt</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TestLlamaXML.h</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
                     <FILEREF>
@@ -1748,34 +1700,6 @@
             <FILELIST>
                 <FILE>
                     <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TestLlamaXML_Rsc.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TestLlamaXML_Rsc.rcp</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS>Debug</FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>readme.txt</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
-                    <PATH>TestLlamaXML.h</PATH>
-                    <PATHFORMAT>Windows</PATHFORMAT>
-                    <FILEKIND>Text</FILEKIND>
-                    <FILEFLAGS></FILEFLAGS>
-                </FILE>
-                <FILE>
-                    <PATHTYPE>Name</PATHTYPE>
                     <PATH>TestLlamaXML.cpp</PATH>
                     <PATHFORMAT>Windows</PATHFORMAT>
                     <FILEKIND>Text</FILEKIND>
@@ -1937,26 +1861,6 @@
                     </FILEREF>
                     <FILEREF>
                         <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TestLlamaXML_Rsc.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TestLlamaXML_Rsc.rcp</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>readme.txt</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
-                        <PATH>TestLlamaXML.h</PATH>
-                        <PATHFORMAT>Windows</PATHFORMAT>
-                    </FILEREF>
-                    <FILEREF>
-                        <PATHTYPE>Name</PATHTYPE>
                         <PATH>TestLlamaXML.cpp</PATH>
                         <PATHFORMAT>Windows</PATHFORMAT>
                     </FILEREF>
@@ -2083,29 +1987,46 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
         </GROUP>
-        <GROUP><NAME>Headers</NAME>
-            <FILEREF>
-                <TARGETNAME>Debug</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>TestLlamaXML_Rsc.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Debug</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>TestLlamaXML.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-        </GROUP>
-        <GROUP><NAME>Resources</NAME>
-            <FILEREF>
-                <TARGETNAME>Debug</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>TestLlamaXML_Rsc.rcp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-        </GROUP>
         <GROUP><NAME>Libraries</NAME>
+            <FILEREF>
+                <TARGETNAME>Debug</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>LlamaXML.mcp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Debug</TARGETNAME>
+                <PATHTYPE>FileRelative</PATHTYPE>
+                <PATH>Obj\LlamaXMLUtilities Expanded.lib</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+                <ROOTFILEREF>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>LlamaXML.mcp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                </ROOTFILEREF>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Debug</TARGETNAME>
+                <PATHTYPE>FileRelative</PATHTYPE>
+                <PATH>Obj\LlamaXMLWriter Expanded.lib</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+                <ROOTFILEREF>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>LlamaXML.mcp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                </ROOTFILEREF>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Debug</TARGETNAME>
+                <PATHTYPE>FileRelative</PATHTYPE>
+                <PATH>Obj\LlamaXMLReader Expanded.lib</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+                <ROOTFILEREF>
+                    <PATHTYPE>Name</PATHTYPE>
+                    <PATH>LlamaXML.mcp</PATH>
+                    <PATHFORMAT>Windows</PATHFORMAT>
+                </ROOTFILEREF>
+            </FILEREF>
             <GROUP><NAME>Debug</NAME>
                 <FILEREF>
                     <TARGETNAME>Debug</TARGETNAME>
@@ -2141,51 +2062,6 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
         </GROUP>
-        <FILEREF>
-            <TARGETNAME>Debug</TARGETNAME>
-            <PATHTYPE>Name</PATHTYPE>
-            <PATH>readme.txt</PATH>
-            <PATHFORMAT>Windows</PATHFORMAT>
-        </FILEREF>
-        <FILEREF>
-            <TARGETNAME>Debug</TARGETNAME>
-            <PATHTYPE>Name</PATHTYPE>
-            <PATH>LlamaXML.mcp</PATH>
-            <PATHFORMAT>Windows</PATHFORMAT>
-        </FILEREF>
-        <FILEREF>
-            <TARGETNAME>Debug</TARGETNAME>
-            <PATHTYPE>FileRelative</PATHTYPE>
-            <PATH>Obj\LlamaXMLUtilities Expanded.lib</PATH>
-            <PATHFORMAT>Windows</PATHFORMAT>
-            <ROOTFILEREF>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaXML.mcp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </ROOTFILEREF>
-        </FILEREF>
-        <FILEREF>
-            <TARGETNAME>Debug</TARGETNAME>
-            <PATHTYPE>FileRelative</PATHTYPE>
-            <PATH>Obj\LlamaXMLWriter Expanded.lib</PATH>
-            <PATHFORMAT>Windows</PATHFORMAT>
-            <ROOTFILEREF>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaXML.mcp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </ROOTFILEREF>
-        </FILEREF>
-        <FILEREF>
-            <TARGETNAME>Debug</TARGETNAME>
-            <PATHTYPE>FileRelative</PATHTYPE>
-            <PATH>Obj\LlamaXMLReader Expanded.lib</PATH>
-            <PATHFORMAT>Windows</PATHFORMAT>
-            <ROOTFILEREF>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaXML.mcp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </ROOTFILEREF>
-        </FILEREF>
         <FILEREF>
             <TARGETNAME>Debug</TARGETNAME>
             <PATHTYPE>Name</PATHTYPE>
