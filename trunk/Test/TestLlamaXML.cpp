@@ -13,7 +13,7 @@
 int main(int argc, const char * argv[]) {
 	Tester tester;
 	
-	tester.Test(TestTextEncoding);
+	tester.Test(TestTextEncoding, "TextEncoding");
 	
 	tester.WriteResults();
 	

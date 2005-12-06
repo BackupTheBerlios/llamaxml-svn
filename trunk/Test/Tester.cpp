@@ -25,7 +25,7 @@
  */
 
 #include "Tester.h"
-#include "LlamaXML/StdIO.h"
+#include "LlamaXML/LlamaStdIO.h"
 #include <stdio.h>
 
 Tester * Tester::sCurrentTester = 0;
@@ -108,7 +108,7 @@ void Tester::Message(const char * msg) {
 #if defined(PALMOS_SDK_VERSION)
 	::DbgMessage(msg);
 #else
-	fputs(stderr, msg);
+	fputs(msg, stderr);
 #endif
 }
 

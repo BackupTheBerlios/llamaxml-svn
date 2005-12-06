@@ -24,7 +24,7 @@
  * information.
  */
 
-#include "LlamaXML/StdIO.h"
+#include "LlamaXML/LlamaStdIO.h"
 #include <stdarg.h>
 #include <stdio.h>
 
@@ -32,7 +32,11 @@ namespace LlamaXML {
 	int snprintf(char *buffer, size_t count, const char *format, ...) {
 		va_list args;
 		va_start(args, format);
-		int result = _vsnprintf(buffer, count - 1, format, args);
+#if PALMOS_SDK_VERSION < 0x0600
+		int result = ::StrVPrintF(buffer, format, args);
+#else
+		int result = vsnprintf(buffer, count - 1, format, args);
+#endif
 		buffer[count - 1] = 0;
 		return result;
 	}

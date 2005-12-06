@@ -24,51 +24,16 @@
  * information.
  */
 
-#include "LlamaXML/XMLException.h"
 #include "LlamaXML/LlamaStdIO.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 namespace LlamaXML {
-
-	XMLException::XMLException(int32_t err, const char * file, long line) throw()
-	: mErrorCode(err),
-	  mFile(file),
-	  mLine(line),
-	  mWhat(0)
-	{
+	int snprintf(char *buffer, size_t count, const char *format, ...) {
+		va_list args;
+		va_start(args, format);
+		int result = vsnprintf(buffer, count - 1, format, args);
+		buffer[count - 1] = 0;
+		return result;
 	}
-	
-
-	XMLException::XMLException(int32_t err, const char * what) throw()
-	: mErrorCode(err),
-	  mFile(0),
-	  mLine(0),
-	  mWhat(what)
-	{
-	}
-	
-	
-	const char * XMLException::what() const throw() {
-		static char buffer[256];
-		if (mWhat) {
-			snprintf(buffer, sizeof(buffer), "XMLException error %ld, %s", mErrorCode, mWhat);
-		}
-		else {
-			snprintf(buffer, sizeof(buffer), "XMLException error %ld, file %s, line %d",
-				mErrorCode, mFile, mLine);
-		}
-		return buffer;
-	}
-
-
-	void ThrowXMLException(int32_t err, const char * file, long line)
-	{
-		throw XMLException(err, file, line);
-	}
-
-
-	void ThrowXMLException(int32_t err, const char * what)
-	{
-		throw XMLException(err, what);
-	}
-
 }

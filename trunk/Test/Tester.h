@@ -31,6 +31,7 @@
 #pragma once
 #endif
 
+#include "LlamaXML/PlatformConfig.h"
 #include "LlamaXML/XMLException.h"
 #include "LlamaXML/UnicodeString.h"
 

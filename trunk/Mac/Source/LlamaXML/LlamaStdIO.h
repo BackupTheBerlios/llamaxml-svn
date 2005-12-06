@@ -24,51 +24,17 @@
  * information.
  */
 
-#include "LlamaXML/XMLException.h"
-#include "LlamaXML/LlamaStdIO.h"
+#ifndef LLAMAXML_STDIO_H
+#define LLAMAXML_STDIO_H
+
+#if (! __GNUC__) || __APPLE__
+	#pragma once
+#endif
+
+#include "PlatformConfig.h"
 
 namespace LlamaXML {
-
-	XMLException::XMLException(int32_t err, const char * file, long line) throw()
-	: mErrorCode(err),
-	  mFile(file),
-	  mLine(line),
-	  mWhat(0)
-	{
-	}
-	
-
-	XMLException::XMLException(int32_t err, const char * what) throw()
-	: mErrorCode(err),
-	  mFile(0),
-	  mLine(0),
-	  mWhat(what)
-	{
-	}
-	
-	
-	const char * XMLException::what() const throw() {
-		static char buffer[256];
-		if (mWhat) {
-			snprintf(buffer, sizeof(buffer), "XMLException error %ld, %s", mErrorCode, mWhat);
-		}
-		else {
-			snprintf(buffer, sizeof(buffer), "XMLException error %ld, file %s, line %d",
-				mErrorCode, mFile, mLine);
-		}
-		return buffer;
-	}
-
-
-	void ThrowXMLException(int32_t err, const char * file, long line)
-	{
-		throw XMLException(err, file, line);
-	}
-
-
-	void ThrowXMLException(int32_t err, const char * what)
-	{
-		throw XMLException(err, what);
-	}
-
+	int snprintf(char *buffer, size_t count, const char *format, ...);
 }
+
+#endif
