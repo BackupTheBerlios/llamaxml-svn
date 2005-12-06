@@ -24,44 +24,16 @@
  * information.
  */
 
-#ifndef LLAMAXML_CONVERTFROMUNICODE_H
-#define LLAMAXML_CONVERTFROMUNICODE_H
-
-#if (! __GNUC__) || __APPLE__
-	#pragma once
-#endif
-
-
-#include "LlamaXML/UnicodeString.h"
-#include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/Component.h"
+#include <shlguid.h>
+#include <shobjidl.h>
+#include <Mlang.h>
 
 namespace LlamaXML {
 
-	/**
-		\brief An internal class used by XMLReader to convert text in other
-		encodings to Unicode.  You should not need to use this class
-		directly.
-		
-		This class has different implementations on different platforms.
-	*/
-
-	class ConvertFromUnicode {
-	public:
-		ConvertFromUnicode(TextEncoding destinationEncoding);
-		~ConvertFromUnicode();
-		
-		void Convert(const UnicodeChar * & sourceStart, const UnicodeChar * sourceEnd,
-			char * & destStart, char * destEnd);
-		
-		TextEncoding GetDestinationEncoding() const
-		{
-			return mDestinationEncoding;
-		}
-
-	private:
-		TextEncoding			mDestinationEncoding;
-	};
-
+	//const IID & Component<IShellLinkA>::kInterfaceID		= IID_IShellLinkA;
+	//const IID & Component<IShellLinkW>::kInterfaceID		= IID_IShellLinkW;
+	//const IID & Component<IStream>::kInterfaceID			= IID_IStream;
+	//const IID & Component<IPersistStream>::kInterfaceID		= IID_IPersistStream;
+	const IID & Component<IMultiLanguage2>::kInterfaceID		= IID_IMultiLanguage2;
 }
-
-#endif

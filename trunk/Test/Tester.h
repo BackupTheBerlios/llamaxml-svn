@@ -32,6 +32,7 @@
 #endif
 
 #include "LlamaXML/XMLException.h"
+#include "LlamaXML/UnicodeString.h"
 
 class Tester {
 public:
@@ -40,22 +41,72 @@ public:
 	
 	typedef void TestFunction(Tester & tester);
 	
-	void Test(TestFunction * testFunction);
+	void Test(TestFunction * testFunction, const char * name);
 	
 	void Assert(bool success, const char * file, int line);
 	void Assert(bool success, const char * message);
 	
+	void Success();
+	void Failure(const char * msg);
 	void Failure(const char * file, int line, std::exception & e);
 	void Failure(const char * file, int line, LlamaXML::XMLException & e);
 	
 	void WriteResults();
 	
+	void WriteLine(int level, const char * msg);
 	void WriteLine(const char * msg);
+
+	static Tester * GetCurrentTester() {
+		return sCurrentTester;
+	}
 	
 private:
-	int		mSuccessCount;
-	int		mFailureCount;
+	static Tester *		sCurrentTester;
+
+	Tester *	mParentTester;
+	int			mSuccessCount;
+	int			mFailureCount;
 };
+
+class TestBlock {
+public:
+	TestBlock();
+	TestBlock(const char * msg);
+	~TestBlock();
+
+	int GetLevel() const {
+		return mLevel;
+	}
+
+	const char * GetMessage() const {
+		return mMessage.c_str();
+	}
+
+	void AppendMessage(const char * msg) {
+		mMessage += msg;
+	}
+
+	void Display();
+
+	static TestBlock * GetCurrentTestBlock() {
+		return sCurrentTestBlock;
+	}
+
+private:
+	static TestBlock *	sCurrentTestBlock;
+
+	std::string			mMessage;
+	int					mLevel;
+	bool				mDisplayed;
+	TestBlock *			mParentTestBlock;
+};
+
+inline TestBlock & operator << (TestBlock & block, const char * msg) {
+	block.AppendMessage(msg);
+	return block;
+}
+
+TestBlock & operator << (TestBlock & block, int n);
 
 #define TestAssert(x) try { tester.Assert(x, __FILE__, __LINE__); } catch (LlamaXML::XMLException & e) { tester.Failure(__FILE__, __LINE__, e); } catch (std::exception & e) { tester.Failure(__FILE__, __LINE__, e); }
 

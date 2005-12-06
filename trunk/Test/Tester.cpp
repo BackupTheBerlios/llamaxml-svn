@@ -25,70 +25,145 @@
  */
 
 #include "Tester.h"
+#include "LlamaXML/StdIO.h"
 #include <stdio.h>
 
+Tester * Tester::sCurrentTester = 0;
+
 Tester::Tester()
-: mSuccessCount(0),
+: mParentTester(sCurrentTester),
+  mSuccessCount(0),
   mFailureCount(0)
 {
+	sCurrentTester = this;
 }
 
 Tester::~Tester()
 {
+	sCurrentTester = mParentTester;
 }
 
-void Tester::Test(TestFunction * testFunction) {
+void Tester::Test(TestFunction * testFunction, const char * name) {
+	TestBlock block(name);
 	(*testFunction)(*this);
 }
 
 void Tester::Assert(bool success, const char * file, int line) {
 	if (success) {
-		++mSuccessCount;
+		Success();
 	}
 	else {
-		++mFailureCount;
 		char buffer[1024];
-		snprintf(buffer, sizeof(buffer), "Test failure file %s line %d", file, line);
-		WriteLine(buffer);
+		LlamaXML::snprintf(buffer, sizeof(buffer), "file %s line %d", file, line);
+		Failure(buffer);
 	}
 }
 
 void Tester::Assert(bool success, const char * message) {
 	if (success) {
-		++mSuccessCount;
+		Success();
 	}
 	else {
-		++mFailureCount;
-		char buffer[1024];
-		snprintf(buffer, sizeof(buffer), "Test failure: %s", message);
-		WriteLine(buffer);
+		Failure(message);
 	}
+}
+
+void Tester::Success() {
+	++mSuccessCount;
+}
+
+void Tester::Failure(const char * msg) {
+	++mFailureCount;
+	TestBlock * block = TestBlock::GetCurrentTestBlock();
+	if (block) block->Display();
+	char buffer[1024];
+	LlamaXML::snprintf(buffer, sizeof(buffer), "Test failure: %s",
+		msg);
+	WriteLine(buffer);
 }
 
 void Tester::Failure(const char * file, int line, std::exception & e) {
-	++mFailureCount;
 	char buffer[1024];
-	snprintf(buffer, sizeof(buffer), "Test failure: exception \"%s\" caught at file %s line %d",
+	LlamaXML::snprintf(buffer, sizeof(buffer), "exception \"%s\" caught at file %s line %d",
 		e.what(), file, line);
-	WriteLine(buffer);
+	Failure(buffer);
 }
 
 void Tester::Failure(const char * file, int line, LlamaXML::XMLException & e) {
-	++mFailureCount;
 	char buffer[1024];
-	snprintf(buffer, sizeof(buffer), "Test failure: %s caught at file %s line %d",
+	LlamaXML::snprintf(buffer, sizeof(buffer), "%s caught at file %s line %d",
 		e.what(), file, line);
-	WriteLine(buffer);
+	Failure(buffer);
 }
 
 void Tester::WriteResults() {
 	char buffer[1024];
-	snprintf(buffer, sizeof(buffer), "%d tests passed", mSuccessCount);
+	LlamaXML::snprintf(buffer, sizeof(buffer), "%d tests passed", mSuccessCount);
 	WriteLine(buffer);
-	snprintf(buffer, sizeof(buffer), "%d tests failed", mFailureCount);
+	LlamaXML::snprintf(buffer, sizeof(buffer), "%d tests failed", mFailureCount);
 	WriteLine(buffer);
 }
 
-void Tester::WriteLine(const char * msg) {
+void Tester::WriteLine(int level, const char * msg) {
+	for (int i = 0; i < level; ++i) {
+		fprintf(stderr, "    ");
+	}
 	fprintf(stderr, "%s\n", msg);
+}
+
+void Tester::WriteLine(const char * msg) {
+	TestBlock * block = TestBlock::GetCurrentTestBlock();
+	WriteLine(block ? block->GetLevel() : 0, msg);
+}
+
+
+TestBlock * TestBlock::sCurrentTestBlock = 0;
+
+
+TestBlock::TestBlock()
+: mParentTestBlock(sCurrentTestBlock),
+  mLevel(1),
+  mDisplayed(false)
+{
+	if (mParentTestBlock) {
+		mLevel = mParentTestBlock->GetLevel() + 1;
+	}
+	sCurrentTestBlock = this;
+}
+
+
+TestBlock::TestBlock(const char * msg)
+: mParentTestBlock(sCurrentTestBlock),
+  mLevel(1),
+  mMessage(msg),
+  mDisplayed(false)
+{
+	if (mParentTestBlock) {
+		mLevel = mParentTestBlock->GetLevel() + 1;
+	}
+	sCurrentTestBlock = this;
+}
+
+
+TestBlock::~TestBlock() {
+	sCurrentTestBlock = mParentTestBlock;
+}
+
+
+void TestBlock::Display() {
+	if (mParentTestBlock) {
+		mParentTestBlock->Display();
+	}
+	if (! mDisplayed) {
+		mDisplayed = true;
+		Tester::GetCurrentTester()->WriteLine(mLevel - 1, mMessage.c_str());
+	}
+}
+
+
+TestBlock & operator << (TestBlock & block, int n) {
+	char buffer[32];
+	LlamaXML::snprintf(buffer, sizeof(buffer), "%d", n);
+	block << buffer;
+	return block;
 }

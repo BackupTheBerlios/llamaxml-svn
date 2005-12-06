@@ -25,6 +25,7 @@
  */
 
 #include "LlamaXML/XMLException.h"
+#include "LlamaXML/StdIO.h"
 
 namespace LlamaXML {
 

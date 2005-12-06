@@ -27,32 +27,83 @@
 #include "LlamaXML/TextEncoding.h"
 #include "LlamaXML/XMLException.h"
 #include "LlamaXML/PlatformConfig.h"
+#include "LlamaXML/Component.h"
+#include <Mlang.h>
 
 
 namespace LlamaXML {
 
 	TextEncoding::TextEncoding()
-	: mCodePage(0)
+	: mCodePage(UINT(-1))
 	{
 	}
 
+	TextEncoding TextEncoding::Application() {
+		return TextEncoding(::GetACP());
+	}
+
+	TextEncoding TextEncoding::System() {
+		return TextEncoding(::GetACP());
+	}
+
+	static const UnicodeChar * sDesiredName;
+	static UINT sMatchingCodePage;
+
+	static BOOL CALLBACK EnumCodePagesProc(LPTSTR lpCodePageString) {
+		UINT cp = 0;
+		while (*lpCodePageString) {
+			cp = (10 * cp) + (*lpCodePageString++ - L'0');
+		}
+		CPINFO info;
+		BOOL found = ::GetCPInfo(cp, &info);
+		return TRUE;
+	}
+
+
 	TextEncoding TextEncoding::WebCharset(const UnicodeChar * name)
 	{
-#if 0
-		LlamaPlatform::Component<IMultiLanguage2> multiLanguage(CLSID_CMultiLanguage);
-		LlamaPlatform::Component<IEnumCodePage> enumCodePage;
+		// This method of converting encoding names to code pages
+		// supported on all Windows machines with IE 5.0 or later installed,
+		// and on some Windows CE devices.  However, we can't depend on it,
+		// so fall back to hard-coded names if using IMultiLanguage2 fails.
+		try {
+			Component<IMultiLanguage2> multiLanguage(CLSID_CMultiLanguage);
+			Component<IEnumCodePage> enumCodePage;
 
-		ThrowIfXMLError(multiLanguage->EnumCodePages(0, LOCALE_INVARIANT, enumCodePage.Adopt()));
+			ThrowIfXMLError(multiLanguage->EnumCodePages(0, LOCALE_INVARIANT, enumCodePage.Adopt()));
 
-		MIMECPINFO cpInfo;
-		ULONG cpCount;
-		while (enumCodePage->Next(1, &cpInfo, &cpCount) == S_OK) {
-			if (::_wcsicmp(cpInfo.wszWebCharset, name) == 0) {
-				return TextEncoding(cpInfo.uiCodePage);
+			MIMECPINFO cpInfo;
+			ULONG cpCount;
+			while (enumCodePage->Next(1, &cpInfo, &cpCount) == S_OK) {
+				if (::_wcsicmp(cpInfo.wszWebCharset, name) == 0) {
+					return TextEncoding(cpInfo.uiCodePage);
+				}
 			}
 		}
-#endif
-		return TextEncoding();
+		catch (...) {
+		}
+
+		if (_wcsicmp(name, L"UTF-8") == 0) {
+			return UTF8();
+		}
+		else if (_wcsicmp(name, L"UTF-16") == 0) {
+			return UTF16();
+		}
+		else if (_wcsicmp(name, L"ISO-10646-UCS-2") == 0) {
+			return UCS2();
+		}
+		else if (_wcsicmp(name, L"ISO-8859-1") == 0) {
+			return ISOLatin1();
+		}
+		else if (_wcsicmp(name, L"Shift_JIS") == 0) {
+			return ShiftJIS();
+		}
+		else if (_wcsicmp(name, L"Windows-1252") == 0) {
+			return WindowsLatin1();
+		}
+		else {
+			throw XMLException(0, "Unknown encoding");
+		}
 	}
 	
 #if 0
@@ -117,9 +168,7 @@ namespace LlamaXML {
 	
 	bool TextEncoding::IsAvailable() const
 	{
-		// Attempt to convert to the encoding.  Zero return value indicates failure.
-		int retval = ::WideCharToMultiByte(mCodePage, 0, L"a", 1, NULL, 0, NULL, NULL);
-		return (retval != 0);
+		return ::IsValidCodePage(mCodePage) == TRUE;
 	}
 	
 	
@@ -131,9 +180,14 @@ namespace LlamaXML {
 	
 	TextEncoding TextEncoding::ISOLatin1()
 	{
-		return TextEncoding(1252);
+		if (::IsValidCodePage(28591)) {
+			return TextEncoding(28591);
+		}
+		else {
+			return TextEncoding(1252);
+		}
 	}
-	
+
 	
 	TextEncoding TextEncoding::PalmLatin1()
 	{

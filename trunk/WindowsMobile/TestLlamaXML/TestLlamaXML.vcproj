@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="LlamaXML"
-	ProjectGUID="{9ACB7FF6-0ED4-4049-9F7C-CAE702FDF2D3}"
-	RootNamespace="LlamaXML"
+	Name="TestLlamaXML"
+	ProjectGUID="{5347ABA6-0B32-412B-8533-348DE6DE55FF}"
+	RootNamespace="TestLlamaXML"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -15,10 +15,10 @@
 			Name="Smartphone 2003 (ARMV4)"
 		/>
 		<Platform
-			Name="Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
+			Name="Windows Mobile 5.0 Smartphone SDK (ARMV4I)"
 		/>
 		<Platform
-			Name="Windows Mobile 5.0 Smartphone SDK (ARMV4I)"
+			Name="Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
 		/>
 	</Platforms>
 	<ToolFiles>
@@ -26,9 +26,9 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Pocket PC 2003 (ARMV4)"
-			OutputDirectory="$(PlatformName)\Debug"
-			IntermediateDirectory="$(PlatformName)\Debug"
-			ConfigurationType="4"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -50,8 +50,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);_DEBUG;DEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;DEBUG;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
@@ -63,7 +63,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(IntDir)"
 			/>
@@ -71,9 +71,15 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM"
-				OutputFile="$(OutDir)/LlamaXML.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM /ARMPADCODE"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="2"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				EntryPointSymbol="mainWCRTStartup"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -101,9 +107,9 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Smartphone 2003 (ARMV4)"
-			OutputDirectory="$(PlatformName)\Debug"
-			IntermediateDirectory="$(PlatformName)\Debug"
-			ConfigurationType="4"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -125,8 +131,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);_DEBUG;DEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;DEBUG;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
@@ -138,7 +144,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(IntDir)"
 			/>
@@ -146,84 +152,15 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM"
-				OutputFile="$(OutDir)/LlamaXML.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCCodeSignTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-			<DeploymentTool
-				ForceDirty="-1"
-				RemoteDirectory=""
-				RegisterOutput="0"
-				AdditionalFiles=""
-			/>
-			<DebuggerTool
-			/>
-		</Configuration>
-		<Configuration
-			Name="Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
-			OutputDirectory="$(PlatformName)\Debug"
-			IntermediateDirectory="$(PlatformName)\Debug"
-			ConfigurationType="4"
-			CharacterSet="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				ExecutionBucket="7"
-				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);_DEBUG;DEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
-				MinimalRebuild="true"
-				RuntimeLibrary="1"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
-				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,5.01 /machine:THUMB"
-				OutputFile="$(OutDir)/LlamaXML.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM /ARMPADCODE"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="2"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				EntryPointSymbol="mainWCRTStartup"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -251,9 +188,9 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Windows Mobile 5.0 Smartphone SDK (ARMV4I)"
-			OutputDirectory="$(PlatformName)\Debug"
-			IntermediateDirectory="$(PlatformName)\Debug"
-			ConfigurationType="4"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -275,8 +212,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);_DEBUG;DEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;DEBUG;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				MinimalRebuild="true"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
@@ -288,7 +225,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(IntDir)"
 			/>
@@ -296,9 +233,96 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,5.01 /machine:THUMB"
-				OutputFile="$(OutDir)/LlamaXML.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,5.01"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="2"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				EntryPointSymbol="mainWCRTStartup"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCCodeSignTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+			<DeploymentTool
+				ForceDirty="-1"
+				RemoteDirectory=""
+				RegisterOutput="0"
+				AdditionalFiles=""
+			/>
+			<DebuggerTool
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				ExecutionBucket="7"
+				Optimization="0"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;DEBUG;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				MinimalRebuild="true"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,5.01"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="2"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				EntryPointSymbol="mainWCRTStartup"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -326,9 +350,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Pocket PC 2003 (ARMV4)"
-			OutputDirectory="$(PlatformName)\Release"
-			IntermediateDirectory="$(PlatformName)\Release"
-			ConfigurationType="4"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -350,8 +374,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="2"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);NDEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -362,7 +386,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(IntDir)"
 			/>
@@ -370,9 +394,17 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM"
-				OutputFile="$(OutDir)/LlamaXML.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM /ARMPADCODE"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="1"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				EntryPointSymbol="mainWCRTStartup"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -400,9 +432,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Smartphone 2003 (ARMV4)"
-			OutputDirectory="$(PlatformName)\Release"
-			IntermediateDirectory="$(PlatformName)\Release"
-			ConfigurationType="4"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -424,8 +456,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="2"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);NDEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -436,7 +468,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(IntDir)"
 			/>
@@ -444,83 +476,17 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM"
-				OutputFile="$(OutDir)/LlamaXML.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCCodeSignTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-			<DeploymentTool
-				ForceDirty="-1"
-				RemoteDirectory=""
-				RegisterOutput="0"
-				AdditionalFiles=""
-			/>
-			<DebuggerTool
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
-			OutputDirectory="$(PlatformName)\Release"
-			IntermediateDirectory="$(PlatformName)\Release"
-			ConfigurationType="4"
-			CharacterSet="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				ExecutionBucket="7"
-				Optimization="2"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);NDEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
-				RuntimeLibrary="0"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
-				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,5.01 /machine:THUMB"
-				OutputFile="$(OutDir)/LlamaXML.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,4.20 /machine:ARM /ARMPADCODE"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="1"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				EntryPointSymbol="mainWCRTStartup"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -548,9 +514,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Windows Mobile 5.0 Smartphone SDK (ARMV4I)"
-			OutputDirectory="$(PlatformName)\Release"
-			IntermediateDirectory="$(PlatformName)\Release"
-			ConfigurationType="4"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -572,8 +538,8 @@
 				Name="VCCLCompilerTool"
 				ExecutionBucket="7"
 				Optimization="2"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)..\..\Windows\Source&quot;;&quot;$(ProjectDir)..\..\Common&quot;"
-				PreprocessorDefinitions="_WIN32_WCE=$(CEVER);UNDER_CE=$(CEVER);WINCE;$(PLATFORMDEFINES);NDEBUG;_LIB;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -584,7 +550,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG;_UNICODE;UNICODE;_WIN32_WCE;UNDER_CE"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
 				Culture="1033"
 				AdditionalIncludeDirectories="$(IntDir)"
 			/>
@@ -592,9 +558,99 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=" /subsystem:windowsce,5.01 /machine:THUMB"
-				OutputFile="$(OutDir)/LlamaXML.lib"
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,5.01"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="1"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				EntryPointSymbol="mainWCRTStartup"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCCodeSignTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+			<DeploymentTool
+				ForceDirty="-1"
+				RemoteDirectory=""
+				RegisterOutput="0"
+				AdditionalFiles=""
+			/>
+			<DebuggerTool
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I)"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				ExecutionBucket="7"
+				Optimization="2"
+				AdditionalIncludeDirectories="..\..\Windows\Source;..\..\Common;..\..\Test"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);WINCE;_CONSOLE;$(ARCHFAM);$(_ARCHFAM_);_UNICODE;UNICODE"
+				RuntimeLibrary="0"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES)"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,5.01"
+				OutputFile="$(OutDir)/TestLlamaXML.exe"
+				LinkIncremental="1"
+				DelayLoadDLLs="$(NOINHERIT)"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/TestLlamaXML.pdb"
+				SubSystem="0"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				EntryPointSymbol="mainWCRTStartup"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -625,153 +681,41 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Windows"
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\Component.cpp"
+				RelativePath="..\..\Test\Tester.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\Component.h"
+				RelativePath=".\TestLlamaXML.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\ConvertFromUnicode.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\ConvertFromUnicode.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\ConvertToUnicode.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\ConvertToUnicode.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\FileInputStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\FileInputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\FileOutputStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\FileOutputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\LlamaStdInt.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\PlatformConfig.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\StdIO.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\StdIO.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\TextEncoding.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Windows\Source\LlamaXML\TextEncoding.h"
+				RelativePath="..\..\Test\TestTextEncoding.cpp"
 				>
 			</File>
 		</Filter>
 		<Filter
-			Name="Common"
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\..\Common\LlamaXML\BufferInputStream.cpp"
+				RelativePath="..\..\Test\Tester.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Common\LlamaXML\BufferInputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\ConvertString.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\ConvertString.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\InputStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\InputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\OutputStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\OutputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\StringInputStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\StringInputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\StringOutputStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\StringOutputStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\UnicodeString.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\XMLException.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\XMLException.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\XMLReader.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\XMLReader.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\XMLWriter.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\Common\LlamaXML\XMLWriter.h"
+				RelativePath="..\..\Test\TestTextEncoding.h"
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath=".\ReadMe.txt"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

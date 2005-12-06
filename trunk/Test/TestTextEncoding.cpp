@@ -44,10 +44,15 @@ void TestTextEncoding(Tester & tester) {
 	// Make sure that each of these encodings is equal to itself, and not equal
 	// to any other encoding.
 	vector<TextEncoding> encodings;
+	vector<const char *> names;
 	encodings.push_back(TextEncoding());
+	names.push_back("undefined");
 	encodings.push_back(TextEncoding::ISOLatin1());
+	names.push_back("ISOLatin1");
 	encodings.push_back(TextEncoding::UTF8());
+	names.push_back("UTF8");
 	encodings.push_back(TextEncoding::UTF16());
+	names.push_back("UTF16");
 	
 	// Because the only difference between UCS-2 and UTF-16 is the handling of surrogate pairs,
 	// and because not all platforms support this difference, we allow UTF-16 and UCS-2 to map
@@ -60,13 +65,16 @@ void TestTextEncoding(Tester & tester) {
 	// be distinct from any other encoding.
 	if (TextEncoding::ShiftJIS().IsAvailable()) {
 		encodings.push_back(TextEncoding::ShiftJIS());
+		names.push_back("ShiftJIS");
 	}
-	if (TextEncoding::WindowsLatin1().IsAvailable()) {
-		encodings.push_back(TextEncoding::WindowsLatin1());
-	}
+	// I am no longer requiring that WindowsLatin1 be distinct from 
+	// ISOLatin1.  Windows Mobile does not include ISOLatin1, and Mac
+	// maps "ISO-8859-1" to WindowsLatin1 by default.
 	
 	for (size_t i = 0; i < encodings.size(); ++i) {
 		for (size_t j = 0; j < encodings.size(); ++j) {
+			TestBlock block;
+			block << "Comparing " << names[i] << " to " << names[j];
 			if (i == j) {
 				TestAssert(encodings[i] == encodings[j]);
 				TestAssert(! (encodings[i] != encodings[j]));
@@ -93,5 +101,19 @@ void TestTextEncoding(Tester & tester) {
 	if (TextEncoding::ShiftJIS().IsAvailable()) {
 		TestAssert(GetTextEncoding("Shift_JIS") == TextEncoding::ShiftJIS());
 		TestAssert(GetTextEncoding("shift_jis") == TextEncoding::ShiftJIS());
+	}
+	if (TextEncoding::WindowsLatin1().IsAvailable()) {
+		TestAssert(GetTextEncoding("Windows-1252") == TextEncoding::WindowsLatin1());
+		TestAssert(GetTextEncoding("windows-1252") == TextEncoding::WindowsLatin1());
+	}
+
+	// Make sure that trying to lookup an invalid encoding name throws an
+	// exception.
+	try {
+		GetTextEncoding("invalid");
+		tester.Failure("TextEncoding::WebCharset(\"invalid\") should have thrown an exception");
+	}
+	catch (...) {
+		tester.Success();
 	}
 }
