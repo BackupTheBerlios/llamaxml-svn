@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="generator" content="Adobe GoLive" />
+		<title>LlamaXML Quickstart Guide</title>
+		<link href="berlios.css" rel="stylesheet" type="text/css" media="all" />
+		<style type="text/css" media="screen"><!--
+h2 { margin-top: 3ex; }
+--></style>
+	</head>
+
+	<body>
+	<div class="content">
+			<csobj occur="31" w="588" h="178" t="Component" csref="../htdocs.data/Components/directory.html">
+				<div class="directory">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="Quickstart.html">Quickstart Guide</a></li>
+						<li><a href="api/annotated.html">API Reference</a></li>
+						<!-- <li><a href="http://homepage.mac.com/samalone/.Public/LlamaXML-source-1.0.0.zip">Download version 1.0.0</a></li> -->
+						<li>BerliOS tools:
+							<ul>
+								<li><a href="http://developer.berlios.de/projects/llamaxml/">Project summary</a></li>
+								<li><a href="http://developer.berlios.de/project/filelist.php?group_id=5274">Downloads</a></li>
+								<li><a href="http://developer.berlios.de/svn/?group_id=5274">SVN repository</a></li>
+								<li><a href="http://developer.berlios.de/forum/?group_id=5274">Forums</a></li>
+								<li><a href="http://developer.berlios.de/bugs/?group_id=5274">Bug database</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</csobj>
+			<h1>LlamaXML Quickstart Guide</h1>
+			<p>LlamaXML is a C++ XML parsing and formatting library that is small enough to be used on handheld devices like PDAs and smartphones, while still supporting larger desktop and server systems. The library currently runs on Palm OS Garnet, Palm OS Cobalt, Windows Mobile, Windows and Mac OS X, and is easy to port to new platforms. The entire library compiles to only 45 KB of code under Codewarrior for Palm OS, and can be even smaller if only some of its features are used. The library is also frugal with runtime memory, using a single-pass streaming algorithm that only stores the current parsing stack in memory, allowing very large XML documents to be parsed with very little overhead.</p>
+		<p>The main library interface is modeled after the <a href="http://msdn.microsoft.com/library/en-us/cpref/html/frlrfsystemxmlxmlreaderclasstopic.asp">XmlReader</a> and <a href="http://msdn.microsoft.com/library/en-us/cpref/html/frlrfsystemxmlxmlwriterclasstopic.asp">XmlWriter</a> classes that Microsoft developed for the .NET Framework, which have also been re-created by the <a href="http://www.dotgnu.org/">DotGNU project</a>. The main difference between LlamaXML and these other frameworks is that LlamaXML is written using standard C++ and the C++ Standard Library, while the others are written using C#  and the .NET Framework. Other libraries such as <a href="http://xmlsoft.org/">libxml2</a> and <a href="http://xml.apache.org/xerces-c/">Xerces</a> implement similar interfaces in C++ but build these interfaces on top of other parsers, resulting in larger libraries with higher overhead. To the best of our knowledge, LlamaXML is the only XML library that implements the efficient XmlReader/XmlWriter interface directly in C++.</p>
+		<p>The LlamaXML library supports XML namespaces and automatic encoding conversion. It does not support validation, XML schemas, DTDs, or external entities. If you need these features, consider using <a href="http://xmlsoft.org/">libxml2</a> or <a href="http://xml.apache.org/xerces-c/">Xerces</a>.</p>
+		<h2>Using the library</h2>
+		<p>To use the library, you need to add two directories to the user header search path of your project. The first is the platform-specific source directory, and the second is the portable source directory:</p>
+		<table border="1" cellspacing="2" cellpadding="0" align="center">
+			<tr>
+				<th>Platform</th>
+				<th>Header search paths</th>
+			</tr>
+			<tr>
+				<td>Palm OS</td>
+				<td><code>LlamaXML/Palm/Source<br />
+						LlamaXML/Common</code></td>
+			</tr>
+			<tr>
+				<td>Windows<br />
+					Windows Mobile</td>
+				<td><code>LlamaXML/Windows/Source<br />
+						LlamaXML/Common</code></td>
+			</tr>
+			<tr>
+				<td>Mac OS X</td>
+				<td><code>LlamaXML/Mac/Source<br />
+						LlamaXML/Common</code></td>
+			</tr>
+		</table>
+		<p>In your code, you can then include the LlamaXML classes that you need. (Right now, there is no master header file that includes all of the classes.) For parsing, this typically means including the XMLReader class and one of the InputStream subclasses:</p>
+		<blockquote>
+			<pre>#include &quot;LlamaXML/XMLReader.h&quot;
+#include &quot;LlamaXML/StringInputStream.h&quot;</pre>
+		</blockquote>
+		<p>For output, this typically means including the XMLWriter class and one of the OutputStream subclasses:</p>
+		<blockquote>
+			<pre>#include &quot;LlamaXML/XMLWriter.h&quot;
+#include &quot;LlamaXML/StringOutputStream.h&quot;</pre>
+		</blockquote>
+		<p>All classes are in the LlamaXML namespace, so you will either need to refer to them by their fully-qualified names (i.e. LlamaXML::XMLReader), or add the appropriate &quot;using&quot; statements to your code:</p>
+		<blockquote>
+			<pre>using LlamaXML::XMLReader;
+using LlamaXML::StringInputStream;</pre>
+		</blockquote>
+		<p>To compile the LlamaXML library itself, you can either build one of the provided platform-specific projects and link with the resulting static library, or include the LlamaXML source files directly in your project. (Because of the versioning issues that arise when interfacing to a C++ dymanic library, dynamic libraries are not provided.) There are some advantages to adding the source files directly to your project:</p>
+		<ol>
+			<li>You can control exactly which classes are included, keeping the library small.</li>
+			<li>You are assured that LlamaXML is compiled using the same compiler settings as the rest of your code.</li>
+			<li>In CodeWarrior for Palm OS, you can more easily control the code segmentation in a multi-segment project.</li>
+		</ol>
+		<p>The LlamaXML library responds to errors by throwing a LlamaXML::XMLException, which is a subclass of std::exception. You should make sure that your code catches these exceptions.</p>
+		<p>See the <a href="#platformSpecificNotes">Platform-specific notes</a> for information on the supported compilers and special features for each platform.</p>
+		<h2>Using XMLWriter</h2>
+		<p>To use the XMLWriter class, first construct the appropriate OutputStream subclass for the location where the resulting XML text should be stored. There is a platform-independent StringOutputStream class that stores the result in a std::string, and there are various platform-specific subclasses for outputting to files, Palm OS VFS filesystems, etc. (See the <a href="#platformSpecificNotes">Platform-specific notes</a> for details.)</p>
+		<p>Once you have constructed an OutputStream, create an XMLReader based on that stream and an application text encoding. The application text encoding specifies what encoding you will be providing 8-bit text in. Any 8-bit (char *) text written to the XMLReader will be automatically converted from that encoding to UTF-8. You can also write Unicode text.</p>
+		<p>For example, to write the following XML:</p>
+		<blockquote>
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;foo bar=&quot;baz&quot;&gt;quux&lt;/foo&gt;</pre>
+		</blockquote>
+		<p>You can use the following code:</p>
+		<blockquote>
+			<pre>LlamaXML::StringOutputStream result;
+LlamaXML::XMLWriter writer(result, LlamaXML::TextEncoding::UTF8());
+
+writer.StartDocument(&quot;1.0&quot;, &quot;UTF-8&quot;, &quot;yes&quot;);
+writer.StartElement(&quot;foo&quot;);
+writer.StartAttribute(&quot;bar&quot;);
+writer.WriteString(&quot;baz&quot;);
+writer.EndAttribute();
+writer.EndElement();
+writer.EndDocument();</pre>
+		</blockquote>
+		<p>For convenience there is also a WriteAttribute routine that allows you to write out an element attribute in a single call:</p>
+		<blockquote>
+			<pre>writer.WriteAttribute(&quot;bar&quot;, &quot;baz&quot;);</pre>
+		</blockquote>
+		<p>There is also a WriteElement routine that allows you to write out an element with no attributes and a simple text value:</p>
+		<blockquote>
+			<pre>writer.WriteElement(&quot;foo&quot;, &quot;quux&quot;);</pre>
+		</blockquote>
+		<p>This produces the output:</p>
+		<blockquote>
+			<pre>&lt;foo&gt;quux&lt;/foo&gt;</pre>
+		</blockquote>
+		<p>To output an element or attribute using an XML namespace, use the special multi-argument versions of StartElement and StartAttribute. The first time that you use the namespace, you must specify both the namespace prefix and the namespace URI. Any elements or attributes embedded in that element can simply specify the namespace prefix:</p>
+		<blockquote>
+			<pre>writer.StartElement(&quot;xcal&quot;, &quot;vevent&quot;,
+  &quot;http://www.ietf.org/internet-drafts/draft-ietf-calsch-many-xcal-01.txt&quot;);
+writer.StartElement(&quot;xcal&quot;, &quot;dtstart&quot;);
+writer.WriteString(&quot;20051019&quot;);
+writer.EndElement();
+writer.EndElement();</pre>
+		</blockquote>
+		<p>This will output:</p>
+		<blockquote>
+			<pre>&lt;xcal:vevent xmlns:xcal=&quot;http://www.ietf.org/internet-drafts/draft-ietf-calsch-many-xcal-01.txt&quot;&gt;
+&lt;xcal:dtstart&gt;20051019&lt;/xcal:dtstart&gt;
+&lt;/xcal:vevent&gt;</pre>
+		</blockquote>
+		<p>XMLWriter also supports the &quot;&lt;&lt;&quot; operator as an alternative to WriteString. In addition to being more compact, this syntax allows you to output non-text data:</p>
+		<blockquote>
+			<pre>int a = 2, b = 3;
+writer.StartElement(&quot;math&quot;);
+writer &lt;&lt; a &lt;&lt; &quot; + &quot; &lt;&lt; b &lt;&lt; &quot; = &quot; &lt;&lt; (a + b);
+writer.EndElement();</pre>
+		</blockquote>
+		<p>Generates the output:</p>
+		<blockquote>
+			<pre>&lt;math&gt;2 + 3 = 5&lt;/math&gt;</pre>
+		</blockquote>
+		<p>You can overload the &lt;&lt; operator to add support for additional types. To provide an output operator for MyClass, define a function like this:</p>
+		<blockquote>
+			<pre>LlamaXML::XMLWriter &amp; operator &lt;&lt; (LlamaXML::XMLWriter &amp; writer,
+                                   const MyClass &amp; data) {
+  // ...your output code here...
+  return writer;
+}</pre>
+		</blockquote>
+		<p>Once you have defined an output operator for a new data type, you can also use the WriteElement and WriteAttribute functions to output that data type.</p>
+		<h2>Using XMLReader</h2>
+		<p>Creating an XMLReader object is similar to creating an XMLWriter object. First, construct the appropriate InputStream subclass for the kind of data you will be reading, then create the XMLReader:</p>
+		<blockquote>
+			<pre>LlamaXML::StringInputStream stream(&quot;&lt;foo&gt;bar&lt;/foo&gt;&quot;);
+LlamaXML::XMLReader reader(stream);</pre>
+		</blockquote>
+		<p>The XMLReader class has two levels of interface which can be mixed and matched according to your needs. Although the higher-level interface is easier to use, it's a good idea to know how the lower-level interface works so that you can understand how the parser handles different kinds of input. This is especially important if you want your application to be flexible in the kinds of XML documents that it will accept. If you do <strong>not</strong> want your application to be flexible (that is, if you want it to reject XML documents that do not conform to a predefined schema), then you may be able to use just the high-level interface and catch any XMLExceptions that may be thrown.</p>
+		<h3>The low-level interface</h3>
+		<p>At any given time, the XMLReader object is &quot;pointing&quot; to a single node in the parse tree for the XML document. When the XMLReader is first created, this pointer is positioned &quot;before&quot; the first node of the document, which gives you an opportunity to change any settings in the XMLReader object before the first node is parsed. The Read() function moves the pointer to the next node in the parse tree and returns true if the read was successful (i.e. if the parser has not reached the end of input). The GetNodeType() function returns an enum specifying the type of the current node in the parse tree, and various other &quot;Get&quot; functions return other information about the current node. Not all &quot;Get&quot; functions return valid data at all times. For instance, an element node does not have a value, so calling GetValue() on an element node returns an undefined value. Similarly, a text node does not have a name, so calling GetName() on a text node is undefined. Your code should check the node type before calling the other &quot;Get&quot; functions.</p>
+		<p>Given these rules, parsing an arbitrary XML document using the low-level interface looks something like this:</p>
+		<blockquote>
+			<pre>while (reader.Read()) {
+  switch (reader.GetNodeType()) {
+    case XMLReader::kElement:
+      // call GetName(), GetLocalName(), GetNamespaceURI() and GetAttribute()
+      break;
+    case XMLReader::kEndElement:
+      // call GetName(), GetLocalName() and GetNamespaceURI()
+      break;
+    case XMLReader::kText:
+      // call GetValue()
+      break;
+  }
+}</pre>
+		</blockquote>
+		<p>Note that attributes are considered parts of element nodes, rather than being separate nodes on their own. (The Microsoft XmlReader class provides a MoveToAttribute function that allows you to treat attribute nodes as separate nodes, but LlamaXML does not support this.)</p>
+		<p>By default, whitespace between tags is returned as separate whitespace nodes by the low-level interface. If you would like Read() to skip over whitespace nodes, you can call SetWhitespaceHandling(kWhitespaceHandlingNone). SetWhitespaceHandling(kWhitespaceHandlingAll) returns the parser to the default behavior. You can change whitespace handling at any time.</p>
+		<h3>The high-level interface</h3>
+		<p>Alternatively, you can use the high-level interface to parse an XML file. The high-level routines are simply wrappers around the low-level interface that provide an easier way to get at the XML content when you know exactly what kind of node you are expecting.</p>
+		<p>Much of the high-level interface is built around the MoveToContent() function, which examines the current node type and calls Read() if is not an element, end element, or text node. Because the MoveToContent() function skips over XML declarations, comments, processing instructions and whitespace, the high-level interface makes it easy to parse an XML file without worrying about these nodes. However, if you want to read these nodes you must use the low-level interface.</p>
+		<p>The high-level parsing routines generally parallel the XMLWriter output routines. ReadStartElement() parallels StartElement(), ReadEndElement() parallels EndElement(), and ReadString() parallels WriteString(). For example, consider the input file:</p>
+		<blockquote>
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;foo bar=&quot;baz&quot;&gt;quux&lt;/foo&gt;</pre>
+		</blockquote>
+		<p>You could parse this file using the high-level interface like this:</p>
+		<blockquote>
+			<pre>reader.ReadStartElement(&quot;foo&quot;);
+UnicodeString bar = reader.GetAttribute(&quot;bar&quot;);
+UnicodeString foo = reader.ReadString();
+reader.ReadEndElement();</pre>
+		</blockquote>
+		<p>Be careful, however, to allow for legitimate variation in the input. For instance, if the &quot;foo&quot; element above is allowed to be empty, you may need to write something more like this:</p>
+		<blockquote>
+			<pre>reader.ReadStartElement(&quot;foo&quot;);
+UnicodeString bar = reader.GetAttribute(&quot;bar&quot;);
+if (! reader.IsEmptyElement()) {
+  UnicodeString foo = reader.ReadString();
+  reader.ReadEndElement();
+}</pre>
+		</blockquote>
+		<p>There are other high-level XMLReader functions that are helpful in particular situations. The ReadElementString() function reads both the start tag for an element and its textual content, leaving the reader positioned just after the content (usually the end tag). The Skip() function advances the reader just beyond the end of the current element, skipping over any content within the element. In addition, LlamaXML provides two functions that simplify the parsing of arbitrary sub-elements within an element: IsNotEmptyElementRead() and MoveToSubElement(), which can be used like this:</p>
+		<blockquote>
+			<pre>if (reader.IsNotEmptyElementRead()) {
+  while (reader.MoveToSubElement()) {
+    if (reader.IsStartElement(&quot;foo&quot;)) {
+      // process &quot;&lt;foo&gt;&quot;
+    }
+    else if (reader.IsStartElement(&quot;bar&quot;)) {
+      // process &quot;&lt;bar&gt;&quot;
+    }
+    else reader.Skip();
+  }
+}</pre>
+		</blockquote>
+		<h3>Encoding conversion</h3>
+		<p>Because XML is essentially a Unicode-based document format, all strings returned by XMLReader are UnicodeStrings. If wchar_t is a two-byte character on your platform, then UnicodeString is simply a typedef for std::wstring. Otherwise, UnicodeString is a typedef for std::basic_string&lt;uint16_t&gt;.</p>
+		<p>If your application does not use Unicode internally, the file LlamaXML/ConvertString.h contains a FromUnicode function that you can use to convert UnicodeStrings to other encodings.  In addition, the XMLReader class includes the static functions Equals() and StartsWith() that allow you to compare UnicodeStrings directly to 8-bit ASCII strings.</p>
+		<h2><a id="platformSpecificNotes" name="platformSpecificNotes"></a>Platform-specific notes</h2>
+		<h3>Palm OS</h3>
+		<p>Under Palm OS, the LlamaXML library provides VFSInputStream and VFSOutputStream classes for reading and writing to flash memory storage. Project files to build static libraries are provided for Codewarrior for Palm OS 9.3 and Palm OS Developer Suite 1.2.1 (PODS).</p>
+		<p>The Codewarrior project file is provided in .xml format and must be imported using the &quot;Import Project...&quot; command. In order to deal with the 64 KB limit on the size of code resources, this project builds separate Reader, Writer, and Utility libraries that can be linked into different code segments of your project. There are also variations for standard, extended, and extended mode with A5-based jumptables, depending on the settings in your project. Be sure to check your project settings and link with the appropriate libraries.</p>
+		<p>The PODS project provides a Cobalt/Protein version of the LlamaXML library. It does not include its own Eclipse workspace. To open the project, open an existing Eclipse workspace and use the Import... command to import an existing project from the LlamaXML/Palm/PODS folder into your workspace. The &quot;Common&quot; and &quot;Palm&quot; folders in the project are linked resources that rely on a path variable to work properly. To create this path variable, go to Window &gt; Preferences &gt; Workbench &gt; Linked Resources and create a path variable called &quot;LlamaXML&quot; that points to the top-level LlamaXML directory.</p>
+		<h3>Windows Mobile</h3>
+		<p>All of the platform-specific source files for Windows Mobile are shared with Win32 and are stored in the LlamaXML/Windows/Source directory. The same FileInputStream and FileOutputStream classes are provided as for the desktop version of Windows.</p>
+		<p>The Windows Mobile project for LlamaXML is based on Visual Studio .NET 2005 beta 2. It includes both Debug and Release builds for PocketPC 2003, Smartphone 2003, PocketPC 2005 and Smartphone 2005.</p>
+		<h3>Macintosh</h3>
+		<p>The Macintosh version of LlamaXML provides FileInputStream and FileOutputStream classes that take either FSRef objects or Posix paths. Project files are provided for both CodeWarrior 9.5 and Xcode 2.1/2.2.</p>
+		<h3>Windows</h3>
+		<p>The Windows version of LlamaXML provides FileInputStream and FileOutputStream classes that take Unicode path names. A project file is provided for Visual Studio .NET 2003.</p>
+		<p></p></div>
+	</body>
+
+</html>
