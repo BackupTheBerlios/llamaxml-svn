@@ -14,7 +14,7 @@ h2 { margin-top: 3ex; }
 
 	<body>
 	<div class="content">
-			<csobj occur="31" w="600" h="132" t="Component" csref="../htdocs.data/Components/directory.html">
+			<csobj occur="31" w="588" h="178" t="Component" csref="../htdocs.data/Components/directory.html">
 				<div class="directory">
 					<ul>
 						<li><a href="index.php">Home</a></li>
@@ -89,7 +89,7 @@ using LlamaXML::StringInputStream;</pre>
 		<p>Once you have constructed an OutputStream, create an XMLReader based on that stream and an application text encoding. The application text encoding specifies what encoding you will be providing 8-bit text in. Any 8-bit (char *) text written to the XMLReader will be automatically converted from that encoding to UTF-8. You can also write Unicode text.</p>
 		<p>For example, to write the following XML:</p>
 		<blockquote>
-			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF8&quot; standalone=&quot;yes&quot;?&gt;
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;foo bar=&quot;baz&quot;&gt;quux&lt;/foo&gt;</pre>
 		</blockquote>
 		<p>You can use the following code:</p>
@@ -97,7 +97,7 @@ using LlamaXML::StringInputStream;</pre>
 			<pre>LlamaXML::StringOutputStream result;
 LlamaXML::XMLWriter writer(result, LlamaXML::TextEncoding::UTF8());
 
-writer.StartDocument(&quot;1.0&quot;, &quot;UTF8&quot;, &quot;yes&quot;);
+writer.StartDocument(&quot;1.0&quot;, &quot;UTF-8&quot;, &quot;yes&quot;);
 writer.StartElement(&quot;foo&quot;);
 writer.StartAttribute(&quot;bar&quot;);
 writer.WriteString(&quot;baz&quot;);
@@ -184,7 +184,7 @@ LlamaXML::XMLReader reader(stream);</pre>
 		<p>Much of the high-level interface is built around the MoveToContent() function, which examines the current node type and calls Read() if is not an element, end element, or text node. Because the MoveToContent() function skips over XML declarations, comments, processing instructions and whitespace, the high-level interface makes it easy to parse an XML file without worrying about these nodes. However, if you want to read these nodes you must use the low-level interface.</p>
 		<p>The high-level parsing routines generally parallel the XMLWriter output routines. ReadStartElement() parallels StartElement(), ReadEndElement() parallels EndElement(), and ReadString() parallels WriteString(). For example, consider the input file:</p>
 		<blockquote>
-			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF8&quot; standalone=&quot;yes&quot;?&gt;
+			<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;foo bar=&quot;baz&quot;&gt;quux&lt;/foo&gt;</pre>
 		</blockquote>
 		<p>You could parse this file using the high-level interface like this:</p>
