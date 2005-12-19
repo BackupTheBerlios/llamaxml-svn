@@ -26,6 +26,7 @@
 
 #include "LlamaXML/TextEncoding.h"
 #include "LlamaXML/XMLException.h"
+#include <ctype.h>
 
 
 #if UNIVERSAL_INTERFACES_VERSION < 0x0400
