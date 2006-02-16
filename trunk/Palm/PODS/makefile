@@ -86,7 +86,7 @@ DEBUG_OR_RELEASE=Release
 # Set the target platform for the build; either Device or Simulator
 # Use Device as a target for emulator builds.
 #
-TARGET_PLATFORM=Device
+TARGET_PLATFORM=Simulator
 
 # Specify the level of optimization that you want:
 # NONE, SOME, FULL, INTRAPROCEDURAL, INTERPROCEDURAL, INLINING.

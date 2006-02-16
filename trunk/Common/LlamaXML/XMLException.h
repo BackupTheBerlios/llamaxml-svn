@@ -83,7 +83,7 @@ namespace LlamaXML {
 }
 
 #define ThrowXMLError(x) LlamaXML::ThrowXMLException(x, __FILE__, __LINE__)
-#if defined(WIN32)
+#if defined(WIN32) && ! defined(__PALMOS__)
 	#define ThrowIfXMLError(x) do {HRESULT e = x; if (FAILED(e)) LlamaXML::ThrowXMLException(e, __FILE__, __LINE__);} while(0)
 #else
 	#define ThrowIfXMLError(x) do {int32_t e = x; if (e != 0) LlamaXML::ThrowXMLException(e, __FILE__, __LINE__);} while(0)
