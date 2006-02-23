@@ -8027,13 +8027,13 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaStdIO.h</PATH>
+                <PATH>LlamaStdIO.cpp</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaStdIO.cpp</PATH>
+                <PATH>LlamaStdIO.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
