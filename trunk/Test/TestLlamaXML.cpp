@@ -9,6 +9,9 @@
 
 #include "Tester.h"
 #include "TestTextEncoding.h"
+#include "LlamaXML/StringInputStream.h"
+#include "LlamaXML/XMLReader.h"
+#include "LlamaXML/UnicodeString.h"
 
 int main(int argc, const char * argv[]) {
 	Tester tester;
@@ -16,6 +19,17 @@ int main(int argc, const char * argv[]) {
 	tester.Test(TestTextEncoding, "TextEncoding");
 	
 	tester.WriteResults();
+	
+	LlamaXML::StringInputStream stream("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <foo>bar</foo>");
+
+	LlamaXML::XMLReader reader(stream);
+
+	reader.ReadStartElement("foo");
+
+	LlamaXML::UnicodeString bar = reader.GetAttribute("bar");
+	LlamaXML::UnicodeString foo = reader.ReadString();
+	reader.ReadEndElement();
+
 	
 	return 0;
 }
