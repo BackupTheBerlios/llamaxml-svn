@@ -684,17 +684,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -1490,17 +1479,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -2272,17 +2250,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -2908,17 +2875,6 @@
                 <SETTING><NAME>MWProject_68K_is_rseg_app</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
-
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
 
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
@@ -3619,17 +3575,6 @@
                 <SETTING><NAME>MWProject_68K_is_rseg_app</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
-
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
 
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
@@ -4426,17 +4371,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -5207,17 +5141,6 @@
                 <SETTING><NAME>MWProject_68K_is_rseg_app</NAME><VALUE>0</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
-
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
 
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
@@ -6074,17 +5997,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -6880,17 +6792,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -7662,17 +7563,6 @@
                 <SETTING><NAME>MWProject_68K_is_palmos_lib</NAME><VALUE>1</VALUE></SETTING>
                 <SETTING><NAME>MWProject_68K_palmos_main_entry</NAME><VALUE></VALUE></SETTING>
 
-                <!-- Settings for "PRCMerge Panel" panel -->
-                <SETTING><NAME>PRCMerge_outFileName</NAME><VALUE>Starter.prc</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbName</NAME><VALUE>Starter</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbType</NAME><VALUE>appl</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbCreator</NAME><VALUE>STRT</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbVersion</NAME><VALUE>1</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagReset</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagBackup</NAME><VALUE>true</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagHidden</NAME><VALUE>false</VALUE></SETTING>
-                <SETTING><NAME>PRCMerge_dbFlagProtect</NAME><VALUE>false</VALUE></SETTING>
-
                 <!-- Settings for "Rez Compiler" panel -->
                 <SETTING><NAME>MWRez_Language_maxwidth</NAME><VALUE>80</VALUE></SETTING>
                 <SETTING><NAME>MWRez_Language_script</NAME><VALUE>Roman</VALUE></SETTING>
@@ -7933,6 +7823,12 @@
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertString.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
                 <TARGETNAME>Reader Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
                 <PATH>InputStream.cpp</PATH>
@@ -7983,7 +7879,19 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
+                <PATH>UnicodeString.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
                 <PATH>XMLException.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>XMLException.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -8021,7 +7929,25 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertFromUnicode.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
                 <PATH>ConvertToUnicode.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertToUnicode.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>LlamaStdInt.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -8039,7 +7965,19 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
+                <PATH>PlatformConfig.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
                 <PATH>TextEncoding.cpp</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>TextEncoding.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
