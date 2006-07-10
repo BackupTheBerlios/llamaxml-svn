@@ -58,10 +58,13 @@ namespace LlamaXML {
 				sourceStart = charEnd;
 			}
 			else {
-				if (result == 0) {
-					result = ::GetLastError();
+				DWORD err = ::GetLastError();
+				if (err == ERROR_INSUFFICIENT_BUFFER) {
+					return;
 				}
-				if (result != ERROR_INSUFFICIENT_BUFFER) ThrowXMLError(result);
+				else {
+					ThrowXMLError(err);
+				}
 			}
 		}
 	}
