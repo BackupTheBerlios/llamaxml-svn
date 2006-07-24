@@ -119,14 +119,15 @@ namespace LlamaXML {
 			case kNone:
 				FillInputBuffer();
 				if ((mInputEnd - mInputStart) >= 2) {
-					uint16_t x = (uint16_t(mInputBuffer[0]) << 8) | mInputBuffer[1];
+					// We have to be careful here in case char is signed.
+					uint16_t x = (uint16_t(uint8_t(mInputBuffer[0])) << 8) | uint8_t(mInputBuffer[1]);
 					switch (x) {
-						case 0xFEFF:
-						case 0x003C:
+						case uint16_t(0xFEFF):
+						case uint16_t(0x003C):
 							mConverter.Reset(TextEncoding::UTF16BE());
 							break;
-						case 0xFFFE:
-						case 0x3C00:
+						case uint16_t(0xFFFE):
+						case uint16_t(0x3C00):
 							mConverter.Reset(TextEncoding::UTF16LE());
 							break;
 					}

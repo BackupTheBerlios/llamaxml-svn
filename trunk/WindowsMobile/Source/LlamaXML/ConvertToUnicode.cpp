@@ -31,9 +31,9 @@
 namespace LlamaXML {
 
 	ConvertToUnicode::ConvertToUnicode(TextEncoding sourceEncoding)
-	: mMultiLanguage(CLSID_CMultiLanguage)
+	: mSourceEncoding(sourceEncoding),
+	  mIsStartOfInput(true)
 	{
-		Reset(sourceEncoding);
 	}
 	
 	ConvertToUnicode::~ConvertToUnicode() {
@@ -42,28 +42,47 @@ namespace LlamaXML {
 	void ConvertToUnicode::Reset(TextEncoding sourceEncoding)
 	{
 		mSourceEncoding = sourceEncoding;
-		mMultiLanguage->CreateConvertCharset(sourceEncoding,
-			TextEncoding::UTF16(), 0, mConverter.Adopt());
+		mIsStartOfInput = true;
 	}
 		
 	void ConvertToUnicode::Convert(const char * & sourceStart, const char * sourceEnd,
 		UnicodeChar * & destStart, UnicodeChar * destEnd)
 	{
-		UINT sourceSize = UINT(sourceEnd - sourceStart);
-		UINT destSize = UINT(destEnd - destStart);
-		// It appears that DoConversionToUnicode fails if the destination buffer is too small.
-		// Limit the number of input characters to the number of output characters that the
-		// ouptut buffer can handle.
-		if (sourceSize > destSize) {
-			sourceSize = destSize;
+		// Note that Microsoft's code page 65001 (UTF-8) does not recognize BOM, so we have to
+		// handle that manually.
+		if (mIsStartOfInput && 
+			(mSourceEncoding == TextEncoding::UTF8()) &&
+			(sourceStart + 3 <= sourceEnd) &&
+			(destStart < destEnd) &&
+			(sourceStart[0] == char(0xEF)) &&
+			(sourceStart[1] == char(0xBB)) &&
+			(sourceStart[2] == char(0xBF))) {
+			*destStart++ = UnicodeChar(0xFEFF);
+			sourceStart += 3;
+			mIsStartOfInput = false;
 		}
-		HRESULT err = mConverter->DoConversionToUnicode(
-			const_cast<char *>(sourceStart), &sourceSize,
-			destStart, &destSize);
-		if (err == S_OK) {
-			sourceStart += sourceSize;
-			destStart += destSize;
+		while ((sourceStart < sourceEnd) && (destStart < destEnd)) {
+			const char * charEnd = sourceStart;
+			while (true) {
+				if (charEnd >= sourceEnd) return;
+				if (! ::IsDBCSLeadByteEx(mSourceEncoding, *charEnd++)) break;
+			}
+			int result = ::MultiByteToWideChar(mSourceEncoding, 0, sourceStart, int(charEnd - sourceStart),
+				destStart, int(destEnd - destStart));
+			if (result > 0) {
+				destStart += result;
+				sourceStart = charEnd;
+				mIsStartOfInput = false;
+			}
+			else {
+				DWORD err = ::GetLastError();
+				if (err == ERROR_INSUFFICIENT_BUFFER) {
+					return;
+				}
+				else {
+					ThrowXMLError(err);
+				}
+			}
 		}
-		else ThrowXMLError(err);
 	}
 }

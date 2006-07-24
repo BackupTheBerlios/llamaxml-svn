@@ -34,6 +34,8 @@
 
 #include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/Component.h"
+#include <mlang.h>
 
 namespace LlamaXML {
 
@@ -61,7 +63,9 @@ namespace LlamaXML {
 		}
 
 	private:
-		TextEncoding			mSourceEncoding;
+		TextEncoding					mSourceEncoding;
+		Component<IMultiLanguage2>		mMultiLanguage;
+		Component<IMLangConvertCharset>	mConverter;
 	};
 
 }

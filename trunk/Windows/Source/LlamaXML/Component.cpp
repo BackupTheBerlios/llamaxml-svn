@@ -36,4 +36,5 @@ namespace LlamaXML {
 	//const IID & Component<IStream>::kInterfaceID			= IID_IStream;
 	//const IID & Component<IPersistStream>::kInterfaceID		= IID_IPersistStream;
 	const IID & Component<IMultiLanguage2>::kInterfaceID		= IID_IMultiLanguage2;
+	const IID & Component<IMLangConvertCharset>::kInterfaceID	= IID_IMLangConvertCharset;
 }
