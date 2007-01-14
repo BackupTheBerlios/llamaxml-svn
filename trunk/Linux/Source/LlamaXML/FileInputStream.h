@@ -24,54 +24,38 @@
  * information.
  */
 
-#ifndef LLAMAXML_CONVERTTOUNICODE_H
-#define LLAMAXML_CONVERTTOUNICODE_H
+#ifndef FILEOUTPUTSTREAM_H
+#define FILEOUTPUTSTREAM_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once
 #endif
 
 
-#include "LlamaXML/UnicodeString.h"
-#include "LlamaXML/TextEncoding.h"
-#include "LlamaXML/RecodeOuter.h"
+#include "LlamaXML/PlatformConfig.h"
+#include "LlamaXML/InputStream.h"
+#include <stdio.h>
+
 
 namespace LlamaXML {
 
-	/**
-		\brief An internal class used by XMLReader to convert text in other
-		encodings to Unicode.  You should not need to use this class
-		directly.
+	/// \brief An InputStream from a file in the filesystem.  (Mac OS X, Windows and Windows Mobile only)
+    
+    class FileInputStream: public InputStream {
+    public:
+		/// Constructs a FileInputStream from a Posix file path. (Mac OS X only)
+		/// Throws an XMLException if the file cannot be opened.
+        FileInputStream(const char * posixPath);
 		
-		This class has different implementations on different platforms.
-	*/
-
-	class ConvertToUnicode {
-	public:
-		ConvertToUnicode(TextEncoding sourceEncoding);
-		~ConvertToUnicode();
-
-		void Reset(TextEncoding sourceEncoding);
-		
-		void Convert(const char * & sourceStart, const char * sourceEnd,
-			UnicodeChar * & destStart, UnicodeChar * destEnd);
-		
-		TextEncoding GetSourceEncoding() const
-		{
-			return mSourceEncoding;
-		}
-		
+	    virtual ~FileInputStream();
+	    
+		virtual uint32_t ReadUpTo(char * buffer, uint32_t length);
+		virtual void Restart();
+		virtual bool EndOfFile();
+	
 	private:
-		void ShiftOutput(UnicodeChar * & destStart, UnicodeChar * destEnd);
-
-	private:
-		TextEncoding	mSourceEncoding;
-		RECODE_REQUEST	mRequest;
-		char *			mOutputBuffer;
-		size_t			mOutputBufferUsed;
-		size_t			mOutputBufferSize;
-		size_t			mOutputBufferAlloc;
-	};
+	    FILE * mFile;
+    };
 
 }
 

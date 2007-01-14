@@ -31,9 +31,10 @@
 	#pragma once
 #endif
 
-
+#include "LlamaXML/PlatformConfig.h"
 #include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/TextEncoding.h"
+#include "LlamaXML/RecodeOuter.h"
 
 namespace LlamaXML {
 
@@ -57,9 +58,17 @@ namespace LlamaXML {
 		{
 			return mDestinationEncoding;
 		}
+		
+	private:
+		void ShiftOutput(char * & destStart, char * destEnd);
 
 	private:
-		TextEncoding			mDestinationEncoding;
+		TextEncoding	mDestinationEncoding;
+		RECODE_REQUEST	mRequest;
+		char *			mOutputBuffer;
+		size_t			mOutputBufferUsed;
+		size_t			mOutputBufferSize;
+		size_t			mOutputBufferAlloc;
 	};
 
 }

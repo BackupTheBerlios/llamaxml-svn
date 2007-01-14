@@ -19,10 +19,16 @@
 </configuration>
 <configuration artifactExtension="a" artifactName="LlamaXML" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.lib.release.275646157" name="Release" parent="cdt.managedbuild.config.gnu.lib.release">
 <toolChain id="cdt.managedbuild.toolchain.gnu.lib.release.83979649" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.lib.release">
-<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.258942584" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.258942584" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.release">
+<option id="gnu.cpp.compiler.option.include.paths.1223464961" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/LlamaXML/Common}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/LlamaXML/Source}&quot;"/>
+</option>
+</tool>
 <tool id="cdt.managedbuild.tool.gnu.c.compiler.lib.release.2107467692" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.lib.release"/>
 <tool id="cdt.managedbuild.tool.gnu.archiver.lib.release.75122793" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.lib.release"/>
 <tool id="cdt.managedbuild.tool.gnu.assembler.lib.release.611303114" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.lib.release"/>
+<macros/>
 </toolChain>
 </configuration>
 <macros/>

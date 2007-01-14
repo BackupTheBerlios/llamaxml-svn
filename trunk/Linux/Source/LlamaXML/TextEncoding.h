@@ -49,7 +49,6 @@ namespace LlamaXML {
 		bool operator == (const TextEncoding & other) const;
 		bool operator != (const TextEncoding & other) const;
 		
-		operator const std::string & () const;
 		operator const char * () const;
 		
 		const char * AsString() const;
