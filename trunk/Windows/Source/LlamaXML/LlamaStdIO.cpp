@@ -32,8 +32,12 @@ namespace LlamaXML {
 	int snprintf(char *buffer, size_t count, const char *format, ...) {
 		va_list args;
 		va_start(args, format);
-		int result = _vsnprintf(buffer, count - 1, format, args);
+#if _MSC_VER >= 1400
+		int result = _vsnprintf_s(buffer, sizeof(buffer), _TRUNCATE, format, args);
+#else
+		int result = std::_vsnprintf(buffer, count - 1, format, args);
 		buffer[count - 1] = 0;
+#endif
 		return result;
 	}
 }

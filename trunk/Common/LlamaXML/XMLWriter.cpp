@@ -26,6 +26,7 @@
 
 #include "LlamaXML/XMLWriter.h"
 #include "LlamaXML/XMLException.h"
+#include "LlamaXML/LlamaStdIO.h"
 #include <cstring>
 #include <cstdio>
 #include <stddef.h>
@@ -435,7 +436,7 @@ LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
 										int n)
 {
 	char buffer[64];
-	std::sprintf(buffer, "%d", n);
+	LlamaXML::snprintf(buffer, sizeof(buffer), "%d", n);
 	output.WriteString(buffer);
 	return output;
 }
@@ -445,7 +446,7 @@ LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
 										double n)
 {
 	char buffer[64];
-	std::sprintf(buffer, "%lf", n);
+	LlamaXML::snprintf(buffer, sizeof(buffer), "%lf", n);
 	output.WriteString(buffer);
 	return output;
 }
