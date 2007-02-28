@@ -34,7 +34,7 @@
 
 #include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/TextEncoding.h"
-#include "LlamaXML/RecodeOuter.h"
+#include <iconv.h>
 
 namespace LlamaXML {
 
@@ -62,15 +62,8 @@ namespace LlamaXML {
 		}
 		
 	private:
-		void ShiftOutput(UnicodeChar * & destStart, UnicodeChar * destEnd);
-
-	private:
 		TextEncoding	mSourceEncoding;
-		RECODE_REQUEST	mRequest;
-		char *			mOutputBuffer;
-		size_t			mOutputBufferUsed;
-		size_t			mOutputBufferSize;
-		size_t			mOutputBufferAlloc;
+            iconv_t	mConverter;
 	};
 
 }

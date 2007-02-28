@@ -26,7 +26,6 @@
 
 #include "LlamaXML/ConvertFromUnicode.h"
 #include "LlamaXML/XMLException.h"
-#include "LlamaXML/RecodeOuter.h"
 #include <errno.h>
 #include <cstring>
 #include <algorithm>
@@ -35,53 +34,33 @@ namespace LlamaXML {
 
 	ConvertFromUnicode::ConvertFromUnicode(TextEncoding destinationEncoding)
 	: mDestinationEncoding(destinationEncoding),
-	  mRequest(recode_new_request(RecodeOuter::Get())),
-	  mOutputBuffer(0),
-	  mOutputBufferUsed(0),
-	  mOutputBufferSize(0),
-	  mOutputBufferAlloc(0)
+          mConverter(iconv_open(destinationEncoding, "UCS-2-INTERNAL"))
 	{
-		std::string conversion("UCS-2-INTERNAL..");
-		conversion += mDestinationEncoding;
-		if (! recode_scan_request(mRequest, conversion.c_str())) {
-			ThrowXMLException(EINVAL, "Invalid encoding");
-		}
+            if (mConverter == (iconv_t)-1) {
+                ThrowXMLException(EINVAL, "Invalid encoding");
+            }
 	}
 	
 	ConvertFromUnicode::~ConvertFromUnicode() {
-		if (mOutputBuffer) free(mOutputBuffer);
-		recode_delete_request(mRequest);
+            iconv_close(mConverter);
 	}
 	
-	void ConvertFromUnicode::ShiftOutput(char * & destStart, char * destEnd) {
-		size_t shiftCount = std::min<size_t>(destEnd - destStart,
-			(mOutputBufferSize - mOutputBufferUsed) / sizeof(*destStart));
-		if (shiftCount > 0) {
-			std::memcpy(destStart, mOutputBuffer + mOutputBufferUsed, 
-				shiftCount * sizeof(*destStart));
-			mOutputBufferUsed += shiftCount * sizeof(*destStart);
-			destStart += shiftCount;
-			if (mOutputBufferUsed == mOutputBufferSize) {
-				mOutputBufferUsed = mOutputBufferSize = 0;
-			}
-		}
-	}
-		
 	void ConvertFromUnicode::Convert(const UnicodeChar * & sourceStart,
 		const UnicodeChar * sourceEnd, char * & destStart,
 		char * destEnd)
 	{
-		// If there is text left over from the previous conversion, append it first.
-		ShiftOutput(destStart, destEnd);
-		// If the output buffer is empty, fill it.
-		if (mOutputBufferSize == 0) {
-			if (! recode_buffer_to_buffer(mRequest, reinterpret_cast<const char *>(sourceStart),
-					(sourceEnd - sourceStart) * sizeof(*sourceStart),
-					&mOutputBuffer, &mOutputBufferSize, &mOutputBufferAlloc)) {
-				ThrowXMLException(EILSEQ, "Conversion error");
-			}
-			// Append as much of the new output as we can.
-			ShiftOutput(destStart, destEnd);
-		}
-	}
+            const char * inbuf = reinterpret_cast<const char *>(sourceStart);
+            size_t inbytesleft = (sourceEnd - sourceStart) * sizeof(*sourceStart);
+            char * outbuf = destStart;
+            size_t outbytesleft = (destEnd - destStart) * sizeof(*destStart);
+
+            size_t result = iconv (mConverter, &inbuf, &inbytesleft, &outbuf, &outbytesleft);
+
+            sourceStart = reinterpret_cast<const UnicodeChar *>(inbuf);
+            destStart = outbuf;
+
+            if ((result == (size_t)-1) && (errno == EILSEQ)) {
+                ThrowXMLException(EILSEQ, "Illegal character sequence");
+            }
+        }
 }

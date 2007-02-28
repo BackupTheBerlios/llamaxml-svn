@@ -27,7 +27,7 @@
 #include "LlamaXML/TextEncoding.h"
 #include "LlamaXML/XMLException.h"
 #include "LlamaXML/PlatformConfig.h"
-#include "LlamaXML/RecodeOuter.h"
+#include <iconv.h>
 
 
 namespace LlamaXML {
@@ -115,17 +115,22 @@ namespace LlamaXML {
 	
 	bool TextEncoding::IsAvailable() const
 	{
-		// See if the encoding is available by tring to convert from it to UCS2.
-		RECODE_REQUEST request = recode_new_request(RecodeOuter::Get());	
-		bool isAvailable = recode_scan_request(request, (mName + "..UCS-2-INTERNAL").c_str());
-		recode_delete_request(request);
-		return isAvailable;
+            // See if the encoding is available by tring to convert from it to UCS2.
+            iconv_t converter = iconv_open("UCS-2-INTERNAL", mName.c_str());
+
+            if (converter == (iconv_t)-1) {
+                return false;
+            }
+            else {
+                iconv_close(converter);
+                return true;
+            }
 	}
 	
 	
 	TextEncoding TextEncoding::WindowsLatin1()
 	{
-		return TextEncoding("windows-1252");
+		return TextEncoding("CP1252");
 	}
 	
 	
@@ -137,13 +142,13 @@ namespace LlamaXML {
 	
 	TextEncoding TextEncoding::PalmLatin1()
 	{
-		return TextEncoding("windows-1252");
+		return TextEncoding("CP1252");
 	}
 	
 	
 	TextEncoding TextEncoding::ShiftJIS()
 	{
-		return TextEncoding("SHIFT-JIS");
+		return TextEncoding("SHIFT_JIS");
 	}
 	
 	
@@ -162,7 +167,7 @@ namespace LlamaXML {
 	
 	TextEncoding TextEncoding::ASCII()
 	{
-		return TextEncoding("US-ASCII");
+		return TextEncoding("ASCII");
 	}
 	
 	

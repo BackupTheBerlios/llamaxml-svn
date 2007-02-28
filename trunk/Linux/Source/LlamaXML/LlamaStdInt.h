@@ -31,7 +31,11 @@
 	#pragma once
 #endif
 
-#include <stdint.h>
+#if defined(__FreeBSD__) && (__FreeBSD__ <= 4)
+  #include <inttypes.h>
+#else
+  #include <stdint.h>
+#endif
 
 namespace LlamaXML {
 	using ::uint16_t;

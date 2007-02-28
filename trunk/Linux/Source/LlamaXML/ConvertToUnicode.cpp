@@ -27,7 +27,6 @@
 #include "LlamaXML/ConvertToUnicode.h"
 #include "LlamaXML/XMLException.h"
 #include "LlamaXML/TextEncoding.h"
-#include "LlamaXML/RecodeOuter.h"
 #include <errno.h>
 #include <cstring>
 #include <algorithm>
@@ -36,59 +35,46 @@ namespace LlamaXML {
 
 	ConvertToUnicode::ConvertToUnicode(TextEncoding sourceEncoding)
 	: mSourceEncoding(sourceEncoding),
-	  mRequest(recode_new_request(RecodeOuter::Get())),
-	  mOutputBuffer(0),
-	  mOutputBufferUsed(0),
-	  mOutputBufferSize(0),
-	  mOutputBufferAlloc(0)
+          mConverter((iconv_t)-1)
 	{
-		Reset(sourceEncoding);
+            Reset(sourceEncoding);
 	}
 	
 	ConvertToUnicode::~ConvertToUnicode() {
-		if (mOutputBuffer) free(mOutputBuffer);
-		recode_delete_request(mRequest);
+            if (mConverter != (iconv_t)-1) {
+                iconv_close(mConverter);
+            }
 	}
 
 	void ConvertToUnicode::Reset(TextEncoding sourceEncoding)
 	{
-		mSourceEncoding = sourceEncoding;
-		std::string conversion(mSourceEncoding);
-		conversion += "..UCS-2-INTERNAL";
-		if (! recode_scan_request(mRequest, conversion.c_str())) {
-			ThrowXMLException(EINVAL, "Invalid encoding");
-		}
+            if (mConverter != (iconv_t)-1) {
+                iconv_close(mConverter);
+                mConverter = (iconv_t)-1;
+            }
+            mSourceEncoding = sourceEncoding;
+            mConverter = iconv_open("UCS-2-INTERNAL", mSourceEncoding);
+            if (mConverter == (iconv_t)-1) {
+                ThrowXMLException(EINVAL, "Invalid encoding");
+            }
 	}
 	
-	void ConvertToUnicode::ShiftOutput(UnicodeChar * & destStart, UnicodeChar * destEnd) {
-		size_t shiftCount = std::min<size_t>(destEnd - destStart,
-			(mOutputBufferSize - mOutputBufferUsed) / sizeof(*destStart));
-		if (shiftCount > 0) {
-			std::memcpy(destStart, mOutputBuffer + mOutputBufferUsed, 
-				shiftCount * sizeof(*destStart));
-			mOutputBufferUsed += shiftCount * sizeof(*destStart);
-			destStart += shiftCount;
-			if (mOutputBufferUsed == mOutputBufferSize) {
-				mOutputBufferUsed = mOutputBufferSize = 0;
-			}
-		}
-	}
-		
 	void ConvertToUnicode::Convert(const char * & sourceStart,
 		const char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{
-		// If there is text left over from the previous conversion, append it first.
-		ShiftOutput(destStart, destEnd);
-		// If the output buffer is empty, fill it.
-		if (mOutputBufferSize == 0) {
-			if (! recode_buffer_to_buffer(mRequest, reinterpret_cast<const char *>(sourceStart),
-					(sourceEnd - sourceStart) * sizeof(*sourceStart),
-					&mOutputBuffer, &mOutputBufferSize, &mOutputBufferAlloc)) {
-				ThrowXMLException(EILSEQ, "Conversion error");
-			}
-			// Append as much of the new output as we can.
-			ShiftOutput(destStart, destEnd);
-		}
+            const char * inbuf = sourceStart;
+            size_t inbytesleft = (sourceEnd - sourceStart) * sizeof(*sourceStart);
+            char * outbuf = reinterpret_cast<char *>(destStart);
+            size_t outbytesleft = (destEnd - destStart) * sizeof(*destStart);
+
+            size_t result = iconv (mConverter, &inbuf, &inbytesleft, &outbuf, &outbytesleft);
+
+            sourceStart = inbuf;
+            destStart = reinterpret_cast<UnicodeChar *>(outbuf);
+
+            if ((result == (size_t)-1) && (errno == EILSEQ)) {
+                ThrowXMLException(EILSEQ, "Illegal character sequence");
+            }
 	}
 }
