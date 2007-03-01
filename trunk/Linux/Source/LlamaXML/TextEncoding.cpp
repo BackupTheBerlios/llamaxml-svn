@@ -32,10 +32,10 @@
 
 namespace LlamaXML {
 
-#if __linux__
-    static const char * gUCS2 = "UCS-2";
-#else
+#if defined(_LIBICONV_VERSION) && (_LIBICONV_VERSION >= 0x0109)
     static const char * gUCS2 = "UCS-2-INTERNAL";
+#else
+    static const char * gUCS2 = "UCS-2";
 #endif
 	
 	TextEncoding::TextEncoding()

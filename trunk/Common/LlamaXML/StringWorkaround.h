@@ -193,6 +193,12 @@ namespace std {
     }
 #endif
 }
+#elif defined(__GNUC__) && ! defined(_GLIBCXX_USE_WCHAR_T)
+namespace std {
+    template<> struct char_traits<wchar_t>;
+
+    typedef basic_string<wchar_t> wstring;
+}
 #endif
 
 #endif
