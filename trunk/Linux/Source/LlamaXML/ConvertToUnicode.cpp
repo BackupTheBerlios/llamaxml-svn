@@ -53,7 +53,7 @@ namespace LlamaXML {
                 mConverter = (iconv_t)-1;
             }
             mSourceEncoding = sourceEncoding;
-            mConverter = iconv_open("UCS-2-INTERNAL", mSourceEncoding);
+            mConverter = iconv_open(TextEncoding::UCS2(), mSourceEncoding);
             if (mConverter == (iconv_t)-1) {
                 ThrowXMLException(EINVAL, "Invalid encoding");
             }

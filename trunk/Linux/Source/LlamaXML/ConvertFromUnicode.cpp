@@ -34,7 +34,7 @@ namespace LlamaXML {
 
 	ConvertFromUnicode::ConvertFromUnicode(TextEncoding destinationEncoding)
 	: mDestinationEncoding(destinationEncoding),
-          mConverter(iconv_open(destinationEncoding, "UCS-2-INTERNAL"))
+          mConverter(iconv_open(destinationEncoding, TextEncoding::UCS2()))
 	{
             if (mConverter == (iconv_t)-1) {
                 ThrowXMLException(EINVAL, "Invalid encoding");

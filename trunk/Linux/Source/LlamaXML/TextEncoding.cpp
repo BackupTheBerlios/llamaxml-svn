@@ -31,6 +31,12 @@
 
 
 namespace LlamaXML {
+
+#if __linux__
+    static const char * gUCS2 = "UCS-2";
+#else
+    static const char * gUCS2 = "UCS-2-INTERNAL";
+#endif
 	
 	TextEncoding::TextEncoding()
 	{
@@ -116,7 +122,7 @@ namespace LlamaXML {
 	bool TextEncoding::IsAvailable() const
 	{
             // See if the encoding is available by tring to convert from it to UCS2.
-            iconv_t converter = iconv_open("UCS-2-INTERNAL", mName.c_str());
+            iconv_t converter = iconv_open(gUCS2, mName.c_str());
 
             if (converter == (iconv_t)-1) {
                 return false;
@@ -176,7 +182,7 @@ namespace LlamaXML {
 		// UCS2 is essentially UTF16 without surrogate pairs.
 		// Windows doesn't seem to define this subset explicitly, so just
 		// use UTF16.
-		return TextEncoding("UCS-2-INTERNAL");
+		return TextEncoding(gUCS2);
 	}
 	
 	
