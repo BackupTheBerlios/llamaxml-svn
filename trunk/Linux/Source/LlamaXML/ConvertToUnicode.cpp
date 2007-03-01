@@ -63,7 +63,7 @@ namespace LlamaXML {
 		const char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{
-            const char * inbuf = sourceStart;
+            char * inbuf = const_cast<char *>(sourceStart);
             size_t inbytesleft = (sourceEnd - sourceStart) * sizeof(*sourceStart);
             char * outbuf = reinterpret_cast<char *>(destStart);
             size_t outbytesleft = (destEnd - destStart) * sizeof(*destStart);
