@@ -33,7 +33,9 @@
 
 
 #include "LlamaXML/OutputStream.h"
+#pragma GCC visibility push(default)
 #include <string>
+#pragma GCC visibility pop
 
 namespace LlamaXML {
 

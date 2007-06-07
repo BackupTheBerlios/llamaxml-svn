@@ -37,7 +37,9 @@
 #include "LlamaXML/ConvertToUnicode.h"
 #include "LlamaXML/ConvertFromUnicode.h"
 #include <vector>
+#pragma GCC visibility push(default)
 #include <string>
+#pragma GCC visibility pop
 
 namespace LlamaXML {
 

@@ -32,7 +32,9 @@
 #endif
 
 #include "LlamaXML/LlamaStdInt.h"
+#pragma GCC visibility push(default)
 #include <string>
+#pragma GCC visibility pop
 
 #if defined(__GNUC__) && (__GNUC__ < 4)
 
