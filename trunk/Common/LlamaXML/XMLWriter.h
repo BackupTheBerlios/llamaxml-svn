@@ -37,9 +37,13 @@
 #include "LlamaXML/ConvertToUnicode.h"
 #include "LlamaXML/ConvertFromUnicode.h"
 #include <vector>
+#if __APPLE_CC__
 #pragma GCC visibility push(default)
+#endif
 #include <string>
+#if __APPLE_CC__
 #pragma GCC visibility pop
+#endif
 
 namespace LlamaXML {
 

@@ -32,9 +32,13 @@
 #endif
 
 #include "LlamaXML/LlamaStdInt.h"
+#if __APPLE_CC__
 #pragma GCC visibility push(default)
+#endif
 #include <string>
+#if __APPLE_CC__
 #pragma GCC visibility pop
+#endif
 
 #if defined(__GNUC__) && (__GNUC__ < 4)
 

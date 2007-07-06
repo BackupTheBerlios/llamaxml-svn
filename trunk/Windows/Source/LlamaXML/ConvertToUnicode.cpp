@@ -27,6 +27,7 @@
 #include "LlamaXML/ConvertToUnicode.h"
 #include "LlamaXML/XMLException.h"
 #include "LlamaXML/PlatformConfig.h"
+#include <assert.h>
 
 namespace LlamaXML {
 
@@ -41,9 +42,11 @@ namespace LlamaXML {
 
 	void ConvertToUnicode::Reset(TextEncoding sourceEncoding)
 	{
+		assert(mMultiLanguage->IsConvertible(sourceEncoding.AsWindowsCodePage(),
+			TextEncoding::UTF16().AsWindowsCodePage()) == S_OK);
 		mSourceEncoding = sourceEncoding;
-		mMultiLanguage->CreateConvertCharset(sourceEncoding,
-			TextEncoding::UTF16(), 0, mConverter.Adopt());
+		ThrowIfXMLError(mMultiLanguage->CreateConvertCharset(sourceEncoding,
+			TextEncoding::UTF16(), 0, mConverter.Adopt()));
 	}
 		
 	void ConvertToUnicode::Convert(const char * & sourceStart, const char * sourceEnd,

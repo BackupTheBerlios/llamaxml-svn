@@ -34,9 +34,13 @@
 #include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/TextEncoding.h"
 #include "LlamaXML/LlamaStdInt.h"
+#if __APPLE_CC__
 #pragma GCC visibility push(default)
+#endif
 #include <string>
+#if __APPLE_CC__
 #pragma GCC visibility pop
+#endif
 
 /*! \file ConvertString.h
     \brief Utility functions for converting to and from Unicode text.
