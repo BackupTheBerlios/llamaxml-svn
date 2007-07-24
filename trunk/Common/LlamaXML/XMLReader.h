@@ -629,6 +629,20 @@ namespace LlamaXML {
 
 		static bool IsInRange(UnicodeChar c, const UniCharRange ranges[],
 			size_t n);
+	
+	private:
+		// This private class is used to ensure that the mSkippingContent flag
+		// is restored even if an exception is thrown while content is being
+		// skipped.
+		class SkippingContent {
+		public:
+			SkippingContent(XMLReader & reader);
+			~SkippingContent();
+		private:
+			XMLReader &	mReader;
+			bool		mWasSkippingContent;
+		};
+		friend class SkippingContent;
 
 	private:
 		static UnicodeString	sEmptyUniCharString;
@@ -656,6 +670,7 @@ namespace LlamaXML {
 		bool							mIsEmptyElement;
 
 		ConvertToUnicode				mConverter;
+		bool							mSkipContent;
 	};
 
 }

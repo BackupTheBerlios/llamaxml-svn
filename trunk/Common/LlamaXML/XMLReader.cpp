@@ -32,6 +32,18 @@
 #define countof(x) (sizeof(x) / sizeof(*x))
 
 namespace LlamaXML {
+
+	XMLReader::SkippingContent::SkippingContent(XMLReader & reader)
+	: mReader(reader),
+	  mWasSkippingContent(reader.mSkipContent)
+	{
+		mReader.mSkipContent = true;
+	}
+	
+	XMLReader::SkippingContent::~SkippingContent()
+	{
+		mReader.mSkipContent = mWasSkippingContent;
+	}
 	
 	void XMLReader::Name::SetName(const char * name) {
 		// Perform a crude conversion from ASCII to Unicode
@@ -85,7 +97,8 @@ namespace LlamaXML {
 	  mOutputStart(mOutputBuffer),
 	  mOutputEnd(mOutputBuffer),
 	  mNodeType(kNone),
-	  mConverter(initialEncoding)
+	  mConverter(initialEncoding),
+	  mSkipContent(false)
 	{
 	}
 	
@@ -350,6 +363,7 @@ namespace LlamaXML {
 
 	
 	void XMLReader::Skip() {
+		SkippingContent skipping(*this);
         int depth = 0;
         do {
             if ((mNodeType == kElement) && (! mIsEmptyElement)) {
@@ -503,7 +517,7 @@ namespace LlamaXML {
 				default: {
 				    UnicodeChar c = ReadChar();
 				    if (! IsWhitespace(c)) mNodeType = kText;
-					mValue += c;
+					if (! mSkipContent) mValue += c;
 					break;
 				}
 			}

@@ -77,7 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8DD76F6C0486A84900D96B5E /* LlamaXMLTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LlamaXMLTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD76F6C0486A84900D96B5E /* LlamaXMLTest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = LlamaXMLTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* LlamaXML.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LlamaXML.1; sourceTree = "<group>"; };
 		ED0586980926913700788C78 /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Version.h; path = ../../Common/LlamaXML/Version.h; sourceTree = SOURCE_ROOT; };
 		ED8EADE90946384100A41DB9 /* LlamaStdIO.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = LlamaStdIO.h; path = ../Source/LlamaXML/LlamaStdIO.h; sourceTree = SOURCE_ROOT; };
