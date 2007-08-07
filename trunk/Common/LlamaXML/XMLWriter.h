@@ -130,6 +130,7 @@ namespace LlamaXML {
 
 
 LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const char * s);
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const std::string & s);
 LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, unsigned long long n);
 LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, int n);
 LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const LlamaXML::UnicodeString & s);

@@ -407,6 +407,14 @@ LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
 
 
 LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
+								   const std::string & s)
+{
+	output.WriteString(s.c_str());
+	return output;
+}
+
+
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
 	unsigned long long n)
 {
 	if (n == 0) output.WriteString("0");
