@@ -1072,7 +1072,7 @@ namespace LlamaXML {
 	}
 
 
-#if LLAMA_DEBUG && 0
+#if LLAMA_UNIT_TESTS && 0
 
 	class StringInputStream: public InputStream {
 	public:

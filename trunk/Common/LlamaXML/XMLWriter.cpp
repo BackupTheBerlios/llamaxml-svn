@@ -459,7 +459,7 @@ LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output,
 	return output;
 }
 
-#if LLAMA_DEBUG && 0
+#if LLAMA_UNIT_TESTS && 0
 namespace Llamagraphics {
 
 	static bool OutputMatches(VectorOutputStream & output,

@@ -699,7 +699,7 @@ namespace LlamaXML {
 #endif
 	
 
-#if LLAMA_DEBUG && 0
+#if LLAMA_UNIT_TESTS && 0
 	static void TestTextEncoding()
 	{
 		{
