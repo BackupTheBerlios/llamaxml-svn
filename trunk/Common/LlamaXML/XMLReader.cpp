@@ -193,6 +193,9 @@ namespace LlamaXML {
 			case kEndElement:
 			case kText:
 		    case kWhitespace:
+			default:
+				// The default case handles several node types that we declare but never use.
+				// If we start parsing these node types then they should be handled explicitly.
 				if (BufferStartsWith("</")) return ParseEndElement();
 				else if (BufferStartsWith("<")) return ParseElement();
 				else return ParseText();

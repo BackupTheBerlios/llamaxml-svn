@@ -99,6 +99,8 @@ namespace LlamaXML {
 				break;
 			case kStateNormal:
 				break;
+			case kStateDocumentClosed:
+				return;
 		}
 		
 		if (mElementStack.size() < mIndentLevel) {
@@ -160,6 +162,8 @@ namespace LlamaXML {
 
 					mOutput << "</" << mElementStack.back().c_str() << ">";
 					break;
+				case kStateDocumentClosed:
+					return;
 			}
 			mElementStack.pop_back();
 		}
@@ -297,6 +301,8 @@ namespace LlamaXML {
 			case kStateOpenAttribute:
 				WriteApplicationContent(content);
 				break;
+			case kStateDocumentClosed:
+				return;
 		}
 	}
 	
@@ -315,6 +321,8 @@ namespace LlamaXML {
 			case kStateOpenAttribute:
 				WriteUnicodeContent(content.data(), content.data() + content.size());
 				break;
+			case kStateDocumentClosed:
+				return;
 		}
 	}
 	
@@ -333,6 +341,8 @@ namespace LlamaXML {
 			case kStateOpenAttribute:
 				WriteUnicodeContent(content, StringEnd(content));
 				break;
+			case kStateDocumentClosed:
+				return;
 		}
 	}
 	
@@ -353,6 +363,8 @@ namespace LlamaXML {
 			case kStateOpenTag:
 				mOutput << " " << name << "=\"";
 				break;
+			case kStateDocumentClosed:
+				return;
 		}
 		mState = kStateOpenAttribute;
 	}
