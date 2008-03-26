@@ -471,7 +471,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -1277,7 +1277,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -2059,7 +2059,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -3407,7 +3407,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -4213,7 +4213,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -4995,7 +4995,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -5861,7 +5861,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -6667,7 +6667,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -7449,7 +7449,7 @@
                 <SETTING><NAME>GlobalOptimizer_ARM_optfor</NAME><VALUE>Speed</VALUE></SETTING>
 
                 <!-- Settings for "68K CodeGen" panel -->
-                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Small</VALUE></SETTING>
+                <SETTING><NAME>MWCodeGen_68K_codesize</NAME><VALUE>Smart</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_structalignment</NAME><VALUE>MC68K</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_fp_mode</NAME><VALUE>Palm_OS</VALUE></SETTING>
                 <SETTING><NAME>MWCodeGen_68K_code68020</NAME><VALUE>0</VALUE></SETTING>
@@ -7914,54 +7914,6 @@
 
     <GROUPLIST>
         <GROUP><NAME>Rescued Items</NAME>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertString.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>UnicodeString.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>XMLException.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertFromUnicode.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertToUnicode.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaStdInt.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>PlatformConfig.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>TextEncoding.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
         </GROUP>
         <GROUP><NAME>Common</NAME>
             <FILEREF>
@@ -7980,12 +7932,6 @@
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
                 <PATH>ConvertString.cpp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertString.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -8039,19 +7985,7 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>UnicodeString.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
                 <PATH>XMLException.cpp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>XMLException.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -8089,25 +8023,7 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertFromUnicode.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
                 <PATH>ConvertToUnicode.cpp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>ConvertToUnicode.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaStdInt.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
@@ -8119,25 +8035,7 @@
             <FILEREF>
                 <TARGETNAME>Utilities Standard</TARGETNAME>
                 <PATHTYPE>Name</PATHTYPE>
-                <PATH>LlamaStdIO.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>PlatformConfig.h</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
                 <PATH>TextEncoding.cpp</PATH>
-                <PATHFORMAT>Windows</PATHFORMAT>
-            </FILEREF>
-            <FILEREF>
-                <TARGETNAME>Utilities Standard</TARGETNAME>
-                <PATHTYPE>Name</PATHTYPE>
-                <PATH>TextEncoding.h</PATH>
                 <PATHFORMAT>Windows</PATHFORMAT>
             </FILEREF>
             <FILEREF>
