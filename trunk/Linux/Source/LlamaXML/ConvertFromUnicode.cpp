@@ -49,7 +49,7 @@ namespace LlamaXML {
 		const UnicodeChar * sourceEnd, char * & destStart,
 		char * destEnd)
 	{
-#if defined(_LIBICONV_VERSION) && (_LIBICONV_VERSION >= 0x0109)
+#if defined(_LIBICONV_VERSION) && (_LIBICONV_VERSION <= 0x0109)
             const char * inbuf = reinterpret_cast<const char *>(sourceStart);
 #else
             char * inbuf = const_cast<char *>(reinterpret_cast<const char *>(sourceStart));

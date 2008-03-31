@@ -176,7 +176,9 @@ namespace LlamaXML {
 	
 	TextEncoding TextEncoding::Application()
 	{
-#if TARGET_API_MAC_CARBON
+#if TARGET_OS_ASPEN
+		return TextEncoding(::CFStringGetSystemEncoding());
+#elif TARGET_API_MAC_CARBON
 		return TextEncoding(::GetApplicationTextEncoding());
 #else
 		::TextEncoding encoding;

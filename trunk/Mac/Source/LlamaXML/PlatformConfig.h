@@ -32,7 +32,7 @@
 #endif
 
 #if __MACH__
-	#include <Carbon/Carbon.h>
+	#include <CoreFoundation/CoreFoundation.h>
 #else
     #include <Carbon.h>
 #endif
