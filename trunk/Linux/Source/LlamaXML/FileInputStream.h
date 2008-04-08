@@ -24,8 +24,8 @@
  * information.
  */
 
-#ifndef FILEOUTPUTSTREAM_H
-#define FILEOUTPUTSTREAM_H
+#ifndef FILEINPUTSTREAM_H
+#define FILEINPUTSTREAM_H
 
 #if (! __GNUC__) || __APPLE__
 	#pragma once
