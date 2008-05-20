@@ -7914,6 +7914,62 @@
 
     <GROUPLIST>
         <GROUP><NAME>Rescued Items</NAME>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertString.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>UnicodeString.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>XMLException.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertFromUnicode.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>ConvertToUnicode.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>LlamaStdInt.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>LlamaStdIO.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>PlatformConfig.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+            <FILEREF>
+                <TARGETNAME>Utilities Standard</TARGETNAME>
+                <PATHTYPE>Name</PATHTYPE>
+                <PATH>TextEncoding.h</PATH>
+                <PATHFORMAT>Windows</PATHFORMAT>
+            </FILEREF>
+        </GROUP>
+        <GROUP><NAME>Rescued Items</NAME>
         </GROUP>
         <GROUP><NAME>Common</NAME>
             <FILEREF>
