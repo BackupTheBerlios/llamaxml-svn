@@ -59,20 +59,25 @@ namespace LlamaXML {
             }
 	}
 	
+	// There is an annoying problem where some versions of iconv are defined:
+	// size_t iconv (iconv_t, const char **, size_t *, char **, size_t *);
+	// and others are defined:
+	// size_t iconv (iconv_t,       char **, size_t *, char **, size_t *);
+	// Since arg 2 is not actually modified, and the calling convention is the
+	// same, we simply coerce iconv to the const version and call that.
+
+	typedef size_t (*MyIconv)(iconv_t, const char **, size_t *, char **, size_t *);
+
 	void ConvertToUnicode::Convert(const char * & sourceStart,
 		const char * sourceEnd, UnicodeChar * & destStart,
 		UnicodeChar * destEnd)
 	{
-#if defined(_LIBICONV_VERSION) && (_LIBICONV_VERSION <= 0x0109)
             const char * inbuf = sourceStart;
-#else
-            char * inbuf = const_cast<char *>(sourceStart);
-#endif
             size_t inbytesleft = (sourceEnd - sourceStart) * sizeof(*sourceStart);
             char * outbuf = reinterpret_cast<char *>(destStart);
             size_t outbytesleft = (destEnd - destStart) * sizeof(*destStart);
 
-            size_t result = iconv (mConverter, &inbuf, &inbytesleft, &outbuf, &outbytesleft);
+            size_t result = (*reinterpret_cast<MyIconv>(iconv))(mConverter, &inbuf, &inbytesleft, &outbuf, &outbytesleft);
 
             sourceStart = inbuf;
             destStart = reinterpret_cast<UnicodeChar *>(outbuf);
