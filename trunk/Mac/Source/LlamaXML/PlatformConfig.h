@@ -33,6 +33,8 @@
 
 #if __MACH__
 	#include <CoreFoundation/CoreFoundation.h>
+	#include <CoreServices/CoreServices.h>
+	#include <Carbon/Carbon.h>
 #else
     #include <Carbon.h>
 #endif

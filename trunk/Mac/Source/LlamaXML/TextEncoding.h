@@ -26,8 +26,8 @@
 
 #pragma once
 
-#include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/PlatformConfig.h"
+#include "LlamaXML/UnicodeString.h"
 
 namespace LlamaXML {
 
