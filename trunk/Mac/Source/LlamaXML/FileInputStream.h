@@ -63,7 +63,7 @@ namespace LlamaXML {
 		virtual bool EndOfFile();
 	
 	private:
-	    SInt16 mRefnum;
+	    FSIORefNum mRefnum;
     };
 
 }

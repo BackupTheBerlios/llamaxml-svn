@@ -45,7 +45,7 @@ namespace LlamaXML {
 		virtual void WriteData(const char * buffer, uint32_t length);
 	
 	private:
-	    SInt16 mRefnum;
+	    FSIORefNum mRefnum;
 	};
 
 }
