@@ -31,16 +31,10 @@
 #pragma once
 #endif
 
+#include "LlamaXML/PlatformConfig.h"
 #include "LlamaXML/UnicodeString.h"
 #include "LlamaXML/TextEncoding.h"
 #include "LlamaXML/LlamaStdInt.h"
-#if __APPLE_CC__ && TARGET_OS_MAC && (! TARGET_OS_IPHONE)
-#pragma GCC visibility push(default)
-#endif
-#include <string>
-#if __APPLE_CC__ && TARGET_OS_MAC && (! TARGET_OS_IPHONE)
-#pragma GCC visibility pop
-#endif
 
 /*! \file ConvertString.h
     \brief Utility functions for converting to and from Unicode text.

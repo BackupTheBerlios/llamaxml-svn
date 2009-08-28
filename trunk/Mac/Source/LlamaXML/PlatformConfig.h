@@ -39,4 +39,12 @@
     #include <Carbon.h>
 #endif
 
+#if __APPLE_CC__ && TARGET_OS_MAC && (! TARGET_OS_IPHONE)
+#pragma GCC visibility push(default)
+#endif
+#include <string>
+#if __APPLE_CC__ && TARGET_OS_MAC && (! TARGET_OS_IPHONE)
+#pragma GCC visibility pop
+#endif
+
 #endif
