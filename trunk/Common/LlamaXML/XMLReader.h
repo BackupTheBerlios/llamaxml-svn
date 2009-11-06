@@ -431,6 +431,10 @@ namespace LlamaXML {
 		**/
 		bool IsNotEmptyElementRead();
 		
+		bool IsOpenElementRead();
+		bool IsOpenElementRead(const char * name);
+		bool IsOpenElementRead(const char * localName, const char * namespaceURI);
+		
 		/// Moves to the next sub-element in the current element.
 		
 		/**

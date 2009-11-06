@@ -10,6 +10,8 @@
 #include "LlamaXML/StdioInputStream.h"
 #include "LlamaXML/XMLException.h"
 
+extern "C" int errno;
+
 namespace LlamaXML {
 
 	StdioInputStream::StdioInputStream(const char * path)

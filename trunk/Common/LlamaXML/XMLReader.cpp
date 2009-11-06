@@ -278,6 +278,30 @@ namespace LlamaXML {
 	    return result;
 	}
 	
+	bool XMLReader::IsOpenElementRead() {
+		if (IsStartElement() && ! IsEmptyElement()) {
+			Read();
+			return true;
+		}
+		else return false;
+	}
+	
+	bool XMLReader::IsOpenElementRead(const char * name) {
+		if (IsStartElement(name) && ! IsEmptyElement()) {
+			Read();
+			return true;
+		}
+		else return false;
+	}
+	
+	bool XMLReader::IsOpenElementRead(const char * localName, const char * namespaceURI) {
+		if (IsStartElement(localName, namespaceURI) && ! IsEmptyElement()) {
+			Read();
+			return true;
+		}
+		else return false;
+	}
+	
 	
 	bool XMLReader::MoveToSubElement() {
 	    while (true) {
