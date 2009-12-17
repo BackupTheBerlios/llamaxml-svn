@@ -29,6 +29,13 @@
 
 namespace LlamaXML {
 
+	FileOutputStream::FileOutputStream(const char * path)
+		: mFile(::CreateFileA(path, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS,
+			FILE_ATTRIBUTE_NORMAL, NULL))
+	{
+		if (mFile == INVALID_HANDLE_VALUE) ThrowXMLError(::GetLastError());
+	}
+
 	FileOutputStream::FileOutputStream(const wchar_t * path)
 		: mFile(::CreateFileW(path, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS,
 			FILE_ATTRIBUTE_NORMAL, NULL))

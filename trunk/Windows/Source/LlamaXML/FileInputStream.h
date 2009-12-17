@@ -37,6 +37,7 @@
 namespace LlamaXML {
 	class FileInputStream: public InputStream {
 	public:
+		FileInputStream(const char * path);
 		FileInputStream(const wchar_t * path);
 		virtual ~FileInputStream();
 

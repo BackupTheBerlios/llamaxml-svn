@@ -29,6 +29,13 @@
 
 namespace LlamaXML {
 
+	FileInputStream::FileInputStream(const char * path)
+		: mFile(::CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, 0, OPEN_EXISTING,
+			FILE_ATTRIBUTE_NORMAL, NULL))
+	{
+		if (mFile == INVALID_HANDLE_VALUE) ThrowXMLError(::GetLastError());
+	}
+
 	FileInputStream::FileInputStream(const wchar_t * path)
 		: mFile(::CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, 0, OPEN_EXISTING,
 			FILE_ATTRIBUTE_NORMAL, NULL))
