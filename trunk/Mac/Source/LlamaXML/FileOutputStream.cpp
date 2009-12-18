@@ -29,6 +29,18 @@
 
 namespace LlamaXML {
     
+    FileOutputStream::FileOutputStream(const char * path)
+    : mRefnum(0)
+    {
+	    FSRef fileRef;
+		Boolean isDirectory;
+		ThrowIfXMLError(FSPathMakeRef(reinterpret_cast<const UInt8 *>(path), &fileRef, &isDirectory));
+        HFSUniStr255 dataForkName;
+        ThrowIfXMLError(::FSGetDataForkName(&dataForkName));
+        ThrowIfXMLError(::FSOpenFork(&fileRef, dataForkName.length, dataForkName.unicode,
+            fsWrDenyPerm, &mRefnum));
+    }
+    
     FileOutputStream::FileOutputStream(const FSRef * fileRef)
     : mRefnum(0)
     {

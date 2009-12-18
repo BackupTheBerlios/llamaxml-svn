@@ -39,6 +39,7 @@ namespace LlamaXML {
 
 	class FileOutputStream: public OutputStream {
 	public:
+		FileOutputStream(const char * path);
 	    FileOutputStream(const FSRef * fileRef);
 	    virtual ~FileOutputStream();
 	    
