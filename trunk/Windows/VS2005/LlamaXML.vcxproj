@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{596FCAFF-FA06-4751-A3D9-63A8A688C731}</ProjectGuid>
+    <RootNamespace>LlamaXML</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Source;$(ProjectDir)..\..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_BIND_TO_CURRENT_VCLIBS_VERSION=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LlamaXML.lib</OutputFile>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Source;$(ProjectDir)..\..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_BIND_TO_CURRENT_VCLIBS_VERSION=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LlamaXML.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Common\LlamaXML\BufferInputStream.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\Component.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\ConvertFromUnicode.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\ConvertString.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\ConvertToUnicode.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\FileInputStream.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\FileOutputStream.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\InputStream.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\LlamaStdIO.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\OutputStream.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\StringInputStream.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\StringOutputStream.cpp" />
+    <ClCompile Include="..\Source\LlamaXML\TextEncoding.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\XMLException.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\XMLReader.cpp" />
+    <ClCompile Include="..\..\Common\LlamaXML\XMLWriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Common\LlamaXML\BufferInputStream.h" />
+    <ClInclude Include="..\Source\LlamaXML\Component.h" />
+    <ClInclude Include="..\Source\LlamaXML\ConvertFromUnicode.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\ConvertString.h" />
+    <ClInclude Include="..\Source\LlamaXML\ConvertToUnicode.h" />
+    <ClInclude Include="..\Source\LlamaXML\FileInputStream.h" />
+    <ClInclude Include="..\Source\LlamaXML\FileOutputStream.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\InputStream.h" />
+    <ClInclude Include="..\Source\LlamaXML\LlamaStdInt.h" />
+    <ClInclude Include="..\Source\LlamaXML\LlamaStdIO.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\OutputStream.h" />
+    <ClInclude Include="..\Source\LlamaXML\PlatformConfig.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\StringInputStream.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\StringOutputStream.h" />
+    <ClInclude Include="..\Source\LlamaXML\TextEncoding.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\UnicodeString.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\XMLException.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\XMLReader.h" />
+    <ClInclude Include="..\..\Common\LlamaXML\XMLWriter.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
