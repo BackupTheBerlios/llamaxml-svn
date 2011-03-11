@@ -1140,8 +1140,6 @@ namespace LlamaXML {
 		}
 #if TARGET_OS_WIN32
 		else ThrowXMLError(E_FAIL);
-#elif TARGET_OS_PALM
-		else ThrowXMLError(vfsErrFileEOF);
 #elif TARGET_OS_MAC
 		else ThrowXMLError(errEndOfDocument);
 #else
