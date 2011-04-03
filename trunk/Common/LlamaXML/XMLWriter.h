@@ -46,6 +46,17 @@
 #endif
 
 namespace LlamaXML {
+    class XMLWriter;
+}
+
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const char * s);
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const std::string & s);
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, unsigned long long n);
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, int n);
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const LlamaXML::UnicodeString & s);
+LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, double n);
+
+namespace LlamaXML {
 
 	class XMLWriter {
 	public:
@@ -85,7 +96,7 @@ namespace LlamaXML {
         void WriteAttribute(const char * name, const T & value)
 		{
 			StartAttribute(name);
-			*this << value;
+            (*this) << value;
 			EndAttribute();
 		}
     
@@ -127,13 +138,5 @@ namespace LlamaXML {
 	};
 
 }
-
-
-LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const char * s);
-LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const std::string & s);
-LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, unsigned long long n);
-LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, int n);
-LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, const LlamaXML::UnicodeString & s);
-LlamaXML::XMLWriter & operator << (LlamaXML::XMLWriter & output, double n);
 
 #endif
